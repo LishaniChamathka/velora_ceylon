@@ -240,7 +240,7 @@ export default function VeloraCeylonHero() {
           >
             <h1
               style={{
-                fontSize: "clamp(2.6rem,5.8vw,5rem)",
+                fontSize: "clamp(2.6rem,5.8vw,4.5rem)",
                 fontWeight: 500,
                 color: "#fff",
                 lineHeight: 1.08,
