@@ -89,7 +89,7 @@ const LearnMoreSection = () => {
         boxSizing: 'border-box',
       }}
     >
-      <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
+      <div style={{  margin: '0 auto' }}>
  
         {/* ── Header row ── */}
         <div

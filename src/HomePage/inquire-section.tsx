@@ -43,10 +43,9 @@ export default function InquireSection() {
         style={{
           position: 'relative',
           width: '100%',
-          maxWidth: '1280px',
           borderRadius: isMobile ? '1rem' : '2rem',
           overflow: 'hidden',
-          minHeight: isMobile ? '280px' : '400px',
+          minHeight: isMobile ? '280px' : '500px',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
