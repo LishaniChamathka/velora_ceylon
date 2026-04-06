@@ -74,7 +74,6 @@ export default function HeroSection() {
         }
 
         .hero-inner {
-          max-width: 1500px;
           margin: 0 auto;
           padding: 56px 80px;
           display: flex;

@@ -2,6 +2,9 @@
 import HeroSection from "./HomePage/hero-section";
 import ContactSection from "./HomePage/contact-section"
 import ToursSection from "./HomePage/tours-section"
+import TrustedExpertise from "./HomePage/expertise-section";
+import TopDestinations from "./HomePage/destinations-section";
+import RealFeedback from "./HomePage/review-section";
 
 const App = () => {
   return (
@@ -10,6 +13,9 @@ const App = () => {
       <HeroSection />
       <ContactSection />
       <ToursSection />
+      <TrustedExpertise />
+      <TopDestinations />
+      <RealFeedback />
     </div>
   );
 };
