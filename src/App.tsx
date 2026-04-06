@@ -6,6 +6,9 @@ import ToursSection from "./HomePage/tours-section"
 import TrustedExpertise from "./HomePage/expertise-section";
 import TopDestinations from "./HomePage/destinations-section";
 import RealFeedback from "./HomePage/review-section";
+import LearnMoreSection from "./HomePage/learnmore-section";
+import InquireSection from "./HomePage/inquire-section";
+import Footer from "./Layout/footer";
 
 const App = () => {
   return (
@@ -18,6 +21,9 @@ const App = () => {
         <TrustedExpertise />
         <TopDestinations />
         <RealFeedback />
+        <LearnMoreSection />
+        <InquireSection />
+        {/* <Footer /> */}
       </div>
     // </div>
   );
