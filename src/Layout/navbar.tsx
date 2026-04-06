@@ -79,16 +79,11 @@ export default function VeloraCeylonNavbar() {
             flexShrink: 0,
           }}
         >
-          <svg width="44" height="44" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <ellipse cx="24" cy="36" rx="19" ry="8" fill="#1899cc" opacity="0.85"/>
-            <path d="M6 36 Q13 30 24 33 Q35 36 42 30" stroke="#0d7aad" strokeWidth="1.4" fill="none" strokeLinecap="round"/>
-            <path d="M6 39 Q13 34 24 37 Q35 40 42 34" stroke="#5dd4f5" strokeWidth="0.8" fill="none" strokeLinecap="round" opacity="0.5"/>
-            <polygon points="24,10 34,30 14,30" fill="#36b865" opacity="0.95"/>
-            <polygon points="24,10 29,21 19,21" fill="#28a054"/>
-            <polygon points="24,10 27,16 21,16" fill="rgba(255,255,255,0.75)"/>
-            <ellipse cx="24" cy="11" rx="2.4" ry="2.4" fill="#1a1a2e" opacity="0.9"/>
-            <path d="M15 13 Q19 9 24 11.5 Q29 9 33 13 Q29 11 24 13 Q19 11 15 13Z" fill="#1a1a2e" opacity="0.85"/>
-          </svg>
+          {/* <img
+            src="/homepage/logo.png"
+            alt="Velora Ceylon"
+            style={{ width: "30px", height: "30px" }}
+          /> */}
           <span
             style={{
               color: "#ffffff",
