@@ -461,7 +461,7 @@ export default function VeloraCeylonHero() {
                       flexDirection: "column",
                       cursor: "pointer",
                       // featured: much wider; thumbs: also wider than before
-                      width: isFeatured ? "300px" : "180px",
+                      width: isFeatured ? "280px" : "180px",
                       transition: "width 0.65s cubic-bezier(0.4,0,0.2,1)",
                       animationDelay: `${pos * 0.06}s`,
                     }}

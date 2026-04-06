@@ -369,7 +369,7 @@ export default function ToursSection() {
           .tour-card { height: 440px; }
           .tours-all-btn { padding: 6px 6px 6px 18px; }
           .tours-all-btn span:first-child { font-size: 15px; }
-          .tours-subtitle { font-size: 14px; }
+          .tours-subtitle { font-size: 18px; }
         }
       `}</style>
 
