@@ -1,4 +1,5 @@
 
+// import VeloraCeylonNavbar from "./Layout/navbar";
 import HeroSection from "./HomePage/hero-section";
 import ContactSection from "./HomePage/contact-section"
 import ToursSection from "./HomePage/tours-section"
@@ -8,15 +9,17 @@ import RealFeedback from "./HomePage/review-section";
 
 const App = () => {
   return (
-    <div className="relative">
-      {/* <Navbar /> */}
-      <HeroSection />
-      <ContactSection />
-      <ToursSection />
-      <TrustedExpertise />
-      <TopDestinations />
-      <RealFeedback />
-    </div>
+    // <div className="relative">
+    //   <VeloraCeylonNavbar />
+      <div>
+        <HeroSection />
+        <ContactSection />
+        <ToursSection />
+        <TrustedExpertise />
+        <TopDestinations />
+        <RealFeedback />
+      </div>
+    // </div>
   );
 };
 
