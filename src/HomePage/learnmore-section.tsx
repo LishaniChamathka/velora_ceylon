@@ -220,9 +220,9 @@ const LearnMoreSection = () => {
               borderTop: '1px solid #e5e7eb',
             }}
           >
-            {faqItems.map((item, index) => {
+            {faqItems.map((item, ) => {
               const isOpen = expandedId === item.id;
-              const isLast = index === faqItems.length - 1;
+            //   const isLast = index === faqItems.length - 1;
  
               return (
                 <div
