@@ -90,17 +90,13 @@ function TourCard({ tour, index }: { tour: (typeof tours)[0]; index: number }) {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      {/* Background image */}
       <img
         src={tour.image}
         alt={tour.title}
         className={`tour-card__img${hovered ? " tour-card__img--zoom" : ""}`}
       />
-
-      {/* Dark gradient overlay */}
       <div className="tour-card__overlay" />
 
-      {/* Content */}
       <div className="tour-card__body">
         <h3 className="tour-card__title">{tour.title}</h3>
         <p className="tour-card__desc">{tour.desc}</p>
@@ -111,7 +107,6 @@ function TourCard({ tour, index }: { tour: (typeof tours)[0]; index: number }) {
           <span className="tour-card__dur">{tour.duration}</span>
         </div>
 
-        {/* Hover button — full width */}
         <div className={`tour-card__btn-wrap${hovered ? " tour-card__btn-wrap--visible" : ""}`}>
           <button className="tour-card__btn">
             <span className="tour-card__btn-label">See More Details</span>
@@ -374,7 +369,6 @@ export default function ToursSection() {
       `}</style>
 
       <section className="tours-section">
-        {/* ── Header ── */}
         <motion.div
           ref={headerRef}
           className="tours-header"
@@ -402,7 +396,6 @@ export default function ToursSection() {
           </motion.button>
         </motion.div>
 
-        {/* ── Grid ── */}
         <div className="tours-grid">
           {tours.map((tour, index) => (
             <TourCard key={tour.id} tour={tour} index={index} />

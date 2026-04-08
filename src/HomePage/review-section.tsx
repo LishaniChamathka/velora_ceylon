@@ -79,7 +79,6 @@ export default function RealFeedback() {
   const trackRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
 
-  // Intersection observer for scroll animations
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => { if (entry.isIntersecting) setVisible(true); },
@@ -89,7 +88,6 @@ export default function RealFeedback() {
     return () => observer.disconnect();
   }, []);
 
-  // Handle responsive visible cards
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 1024) {
@@ -99,7 +97,7 @@ export default function RealFeedback() {
       } else {
         setVisibleCards(1);
       }
-      setIndex(0); // Reset to first card on resize
+      setIndex(0); 
     };
 
     handleResize();
@@ -336,8 +334,6 @@ export default function RealFeedback() {
 
       <section ref={sectionRef} className="rf-section">
         <div className="rf-inner">
-
-          {/* Header */}
           <div className="rf-header">
             <div className="rf-header-left">
               <h2 className={visible ? "go" : ""}>
@@ -368,7 +364,6 @@ export default function RealFeedback() {
             </div>
           </div>
 
-          {/* Slider */}
           <div className="rf-slider-outer">
             <div
               ref={trackRef}

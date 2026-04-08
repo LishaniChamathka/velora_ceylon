@@ -4,10 +4,6 @@ import { useState, useEffect, useCallback } from "react";
 import Navbar from "../Layout/navbar";
 import { ArrowUpRight } from "lucide-react";
 
-// Add to app/layout.tsx <head>:
-// <link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap" rel="stylesheet"/>
-
-// ─── Slide data ────────────────────────────────────────────────────────────────
 const SLIDES = [
   {
     img: "/homepage/mirissa-beach.jpg",
@@ -192,7 +188,6 @@ export default function VeloraCeylonHero() {
           background: "#0d1a0d",
         }}
       >
-        {/* Static background */}
         <div
           style={{
             position: "absolute",
@@ -203,8 +198,6 @@ export default function VeloraCeylonHero() {
             zIndex: 0,
           }}
         />
-
-        {/* Overlay */}
         <div
           style={{
             position: "absolute",
@@ -217,7 +210,6 @@ export default function VeloraCeylonHero() {
 
         <Navbar />
 
-        {/* ══════════ HERO CONTENT ══════════ */}
         <div
           className="vc-content-pad"
           style={{
@@ -229,7 +221,6 @@ export default function VeloraCeylonHero() {
             padding: "10px 44px 32px",
           }}
         >
-          {/* Heading */}
           <div
             className="vc-heading-anim"
             style={{
@@ -254,7 +245,6 @@ export default function VeloraCeylonHero() {
             </h1>
           </div>
 
-          {/* ── Bottom row ── */}
           <div className="vc-bottom">
             <div
               className="vc-info-card-wrap"
@@ -265,7 +255,6 @@ export default function VeloraCeylonHero() {
                 marginRight: "40px",
               }}
             >
-              {/* Left: Info card */}
               <div
                 className="vc-info-card-inner"
                 style={{
@@ -281,7 +270,6 @@ export default function VeloraCeylonHero() {
                   boxShadow: "0 8px 32px rgba(0, 0, 0, 0.1)",
                 }}
               >
-                {/* Avatars */}
                 <div
                   style={{
                     display: "flex",
@@ -352,7 +340,6 @@ export default function VeloraCeylonHero() {
                   </span>
                 </div>
 
-                {/* Slide description - takes remaining space */}
                 <p
                   className={textVisible ? "vc-text-visible" : "vc-text-hidden"}
                   style={{
@@ -368,7 +355,6 @@ export default function VeloraCeylonHero() {
                   {SLIDES[current].desc}
                 </p>
 
-                {/* Explore Tours button - always at bottom */}
                 <a
                   href="#"
                   className="vc-explore-button"
@@ -441,7 +427,6 @@ export default function VeloraCeylonHero() {
               </div>
             </div>
 
-            {/* Right: Slider */}
             <div className="vc-slider-outer">
               {visibleSlides.map((slide, pos) => {
                 const isFeatured = pos === 0;
@@ -460,13 +445,11 @@ export default function VeloraCeylonHero() {
                       display: "flex",
                       flexDirection: "column",
                       cursor: "pointer",
-                      // featured: much wider; thumbs: also wider than before
                       width: isFeatured ? "280px" : "180px",
                       transition: "width 0.65s cubic-bezier(0.4,0,0.2,1)",
                       animationDelay: `${pos * 0.06}s`,
                     }}
                   >
-                    {/* Image — shorter height, maximised width */}
                     <div style={{ borderRadius: "16px", overflow: "hidden" }}>
                       <img
                         className={`vc-slide-img ${isFeatured ? "vc-feat-img" : "vc-thumb-img"}`}
@@ -474,19 +457,17 @@ export default function VeloraCeylonHero() {
                         alt={slide.title}
                         loading="lazy"
                         style={{
-                          // featured: reduced height as requested; thumbs: match
                           height: isFeatured ? "240px" : "300px",
                         }}
                       />
                     </div>
 
-                    {/* Caption below — featured only, bigger text */}
                     {isFeatured && (
                       <div style={{ padding: "12px 4px 0" }}>
                         <h3
                           className="vc-feat-title"
                           style={{
-                            fontSize: "1.08rem", // bigger title
+                            fontSize: "1.08rem",
                             fontWeight: 700,
                             color: "#fff",
                             margin: "0 0 6px",
@@ -500,7 +481,7 @@ export default function VeloraCeylonHero() {
                         <p
                           className="vc-feat-desc"
                           style={{
-                            fontSize: "0.85rem", // bigger desc
+                            fontSize: "0.85rem",
                             color: "rgba(255,255,255,0.72)",
                             lineHeight: 1.6,
                             margin: 0,
