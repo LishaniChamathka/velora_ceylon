@@ -23,7 +23,7 @@ const Footer = () => {
         style={{
           position: 'absolute',
           inset: 0,
-          backgroundImage: 'url(/homepage/footer.jpg)',
+          backgroundImage: 'url(/homepage/footer.png)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           zIndex: 0,
@@ -31,35 +31,43 @@ const Footer = () => {
       />
 
       {/* Gradient Overlay - White fade at top, dark at bottom */}
-      <div
+      {/* <div
         style={{
           position: 'absolute',
           inset: 0,
           backgroundImage: 'linear-gradient(180deg, rgba(255, 255, 255, 0.4) 0%, rgba(0, 0, 0, 0.65) 100%)',
           zIndex: 1,
         }}
-      />
+      /> */}
 
       {/* Content */}
       <div
         style={{
           position: 'relative',
           zIndex: 2,
-          padding: isMobile ? '2.5rem 1.25rem' : '3.5rem 5rem',
           boxSizing: 'border-box',
+          minHeight: '500px',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'space-between',
         }}
       >
-        {/* Top Section */}
+        {/* Top Section with padding */}
         <div
           style={{
-            maxWidth: '1280px',
-            margin: '0 auto',
-            marginBottom: isMobile ? '2rem' : '3rem',
-            display: 'grid',
-            gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr 1fr 1fr',
-            gap: isMobile ? '2rem' : '3rem',
+            padding: isMobile ? '2.5rem 1.25rem' : '3.5rem 5rem',
           }}
         >
+          <div
+            style={{
+              maxWidth: '1280px',
+              margin: '0 auto',
+              marginBottom: isMobile ? '2rem' : '3rem',
+              display: 'grid',
+              gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr 1fr 1fr',
+              gap: isMobile ? '2rem' : '3rem',
+            }}
+          >
           {/* Left - Logo & Description */}
           <div>
             <div
@@ -292,27 +300,23 @@ const Footer = () => {
               ))}
             </div>
           </div>
+          </div>
         </div>
 
-        {/* Divider */}
+        {/* Bottom section with divider and copyright */}
         <div
           style={{
-            maxWidth: '1280px',
-            margin: '0 auto',
             borderTop: '1px solid rgba(255, 255, 255, 0.1)',
-            marginBottom: isMobile ? '1.5rem' : '2rem',
-            paddingTop: isMobile ? '1.5rem' : '2rem',
-          }}
-        />
-
-        {/* Bottom - Copyright */}
-        <div
-          style={{
-            maxWidth: '1280px',
-            margin: '0 auto',
-            textAlign: 'center',
+            padding: isMobile ? '1.5rem 1.25rem' : '2rem 5rem',
           }}
         >
+          <div
+            style={{
+              maxWidth: '1280px',
+              margin: '0 auto',
+              textAlign: 'center',
+            }}
+          >
           <p
             style={{
               fontFamily: "'Clash Display', sans-serif",
@@ -323,6 +327,7 @@ const Footer = () => {
           >
             2026 Velora Ceylon Travels. All right Reserved.
           </p>
+          </div>
         </div>
       </div>
     </footer>

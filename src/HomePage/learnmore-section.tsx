@@ -60,16 +60,6 @@ const LearnMoreSection = () => {
   const [isMobile, setIsMobile] = useState(false);
  
   useEffect(() => {
-    // Inject Clash Display font once
-    // if (!document.getElementById('clash-display-font')) {
-    //   const link = document.createElement('link');
-    //   link.id = 'clash-display-font';
-    //   link.rel = 'stylesheet';
-    //   link.href =
-    //     'https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&display=swap';
-    //   document.head.appendChild(link);
-    // }
- 
     const check = () => setIsMobile(window.innerWidth < 768);
     check();
     window.addEventListener('resize', check);
@@ -90,8 +80,6 @@ const LearnMoreSection = () => {
       }}
     >
       <div style={{  margin: '0 auto' }}>
- 
-        {/* ── Header row ── */}
         <div
           style={{
             display: 'flex',
@@ -102,7 +90,6 @@ const LearnMoreSection = () => {
             marginBottom: isMobile ? '2rem' : '3rem',
           }}
         >
-          {/* Title + description */}
           <div style={{ flex: 1 }}>
             <h2
               style={{
@@ -133,8 +120,6 @@ const LearnMoreSection = () => {
               unforgettable journey with Velora Ceylon Travels.
             </p>
           </div>
- 
-          {/* Learn More pill button */}
           <div style={{ flexShrink: 0, paddingTop: isMobile ? 0 : '0.25rem' }}>
             <button
               style={{
@@ -180,7 +165,6 @@ const LearnMoreSection = () => {
           </div>
         </div>
  
-        {/* ── Two-column: image + FAQ ── */}
         <div
           style={{
             display: 'grid',
@@ -189,7 +173,6 @@ const LearnMoreSection = () => {
             alignItems: 'center',
           }}
         >
-          {/* Left — image */}
           <div
             style={{
               width: '100%',
@@ -213,8 +196,7 @@ const LearnMoreSection = () => {
               }}
             />
           </div>
- 
-          {/* Right — FAQ accordion */}
+
           <div
             style={{
               borderTop: '1px solid #e5e7eb',
@@ -222,7 +204,6 @@ const LearnMoreSection = () => {
           >
             {faqItems.map((item, ) => {
               const isOpen = expandedId === item.id;
-            //   const isLast = index === faqItems.length - 1;
  
               return (
                 <div
@@ -292,7 +273,6 @@ const LearnMoreSection = () => {
                     </div>
                   </button>
  
-                  {/* Answer — CSS transition on max-height */}
                   <div
                     style={{
                       overflow: 'hidden',
