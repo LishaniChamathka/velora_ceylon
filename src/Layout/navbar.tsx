@@ -1,33 +1,34 @@
-"use client";
-
 import { useState, useEffect } from "react";
 import { ArrowUpRight } from "lucide-react";
+import { useNavigate, useLocation } from "react-router-dom";
 
-const NAV_LINKS = ["Home", "About Us", "Tours", "Faq", "Contact Us"];
+const NAV_LINKS = [
+  { label: "Home", path: "/" },
+  { label: "About Us", path: "/about-us" },
+  { label: "Tours", path: "/tours" },
+  { label: "Faq", path: "/faq" },
+  { label: "Contact Us", path: "/contact-us" },
+];
 
 export default function VeloraCeylonNavbar() {
-  const [active, setActive] = useState("Home");
+  const navigate = useNavigate();
+  const location = useLocation();
+
   const [menuOpen, setMenuOpen] = useState(false);
   const [hovered, setHovered] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
 
-  // ── Scroll listener ──────────────────────────────────────────────────────
+  const active =
+    NAV_LINKS.find((l) => l.path === location.pathname)?.label ?? "Home";
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // ── Logo click handler ───────────────────────────────────────────────────
-  const handleLogoClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-    setActive("Home");
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
   return (
     <>
-      {/* ── Styles ── */}
       <style>{`
         .vc-nav * { font-family: 'Clash Display', sans-serif; }
 
@@ -53,18 +54,10 @@ export default function VeloraCeylonNavbar() {
           .vc-mobile-menu { display: none !important; }
         }
 
-        /* Logo hover */
-        .vc-logo-img {
-          transition: transform 0.2s ease;
-        }
-        .vc-logo:hover .vc-logo-img {
-          transform: scale(1.08);
-        }
+        .vc-logo-img { transition: transform 0.2s ease; }
+        .vc-logo:hover .vc-logo-img { transform: scale(1.08); }
       `}</style>
 
-      {/* ══════════════════════════════════════════════════
-          NAVBAR
-      ══════════════════════════════════════════════════ */}
       <nav
         className="vc-nav"
         style={{
@@ -79,7 +72,6 @@ export default function VeloraCeylonNavbar() {
           alignItems: "center",
           justifyContent: "space-between",
           boxSizing: "border-box",
-          // Scrolled glass effect
           background: scrolled ? "rgba(25, 35, 45, 0.12)" : "transparent",
           backdropFilter: scrolled ? "blur(24px)" : "none",
           WebkitBackdropFilter: scrolled ? "blur(24px)" : "none",
@@ -95,11 +87,13 @@ export default function VeloraCeylonNavbar() {
           ].join(", "),
         }}
       >
-        {/* ── Logo ── */}
         <a
-          href="#"
+          href="/"
           className="vc-logo"
-          onClick={handleLogoClick}
+          onClick={(e) => {
+            e.preventDefault();
+            navigate("/");
+          }}
           style={{
             display: "flex",
             alignItems: "center",
@@ -112,27 +106,10 @@ export default function VeloraCeylonNavbar() {
             src="/logo.png"
             alt="Velora Ceylon"
             className="vc-logo-img"
-            style={{
-              width: "150px",
-              height: "50px",
-              objectFit: "contain",
-            }}
+            style={{ width: "150px", height: "50px", objectFit: "contain" }}
           />
-          {/* <span
-            style={{
-              color: "#ffffff",
-              fontSize: "1.05rem",
-              fontWeight: 600,
-              letterSpacing: "0.04em",
-              whiteSpace: "nowrap",
-              opacity: 0.92,
-            }}
-          >
-            Velora Ceylon
-          </span> */}
         </a>
 
-        {/* ── Desktop pill nav ── */}
         <div
           className="vc-desktop"
           style={{
@@ -146,16 +123,19 @@ export default function VeloraCeylonNavbar() {
             background: "rgba(255,255,255,0.10)",
           }}
         >
-          {NAV_LINKS.map((link) => {
-            const isActive = active === link;
-            const isHovered = hovered === link;
+          {NAV_LINKS.map(({ label, path }) => {
+            const isActive = active === label;
+            const isHovered = hovered === label;
             return (
               <a
-                key={link}
-                href="#"
-                onMouseEnter={() => setHovered(link)}
+                key={label}
+                href={path}
+                onMouseEnter={() => setHovered(label)}
                 onMouseLeave={() => setHovered(null)}
-                onClick={(e) => { e.preventDefault(); setActive(link); }}
+                onClick={(e) => {
+                  e.preventDefault();
+                  navigate(path);
+                }}
                 style={{
                   fontSize: "0.875rem",
                   fontWeight: isActive ? 500 : 400,
@@ -169,23 +149,26 @@ export default function VeloraCeylonNavbar() {
                   background: isActive
                     ? "rgba(255,255,255,0.92)"
                     : isHovered
-                    ? "rgba(255,255,255,0.18)"
-                    : "transparent",
+                      ? "rgba(255,255,255,0.18)"
+                      : "transparent",
                   color: isActive ? "#1c1c1c" : "rgba(255,255,255,0.88)",
                 }}
               >
-                {link}
+                {label}
               </a>
             );
           })}
         </div>
 
-        {/* ── Book Now button ── */}
         <a
-          href="#"
+          href="/contact-us"
           className="vc-desktop"
           onMouseEnter={() => setHovered("book")}
           onMouseLeave={() => setHovered(null)}
+          onClick={(e) => {
+            e.preventDefault();
+            navigate("/contact-us");
+          }}
           style={{
             alignItems: "center",
             gap: "10px",
@@ -229,7 +212,6 @@ export default function VeloraCeylonNavbar() {
           </span>
         </a>
 
-        {/* ── Hamburger button ── */}
         <button
           className="vc-hamburger"
           onClick={() => setMenuOpen((v) => !v)}
@@ -248,22 +230,38 @@ export default function VeloraCeylonNavbar() {
         >
           <span
             className={`vc-bar vc-bar-top ${menuOpen ? "open" : ""}`}
-            style={{ display: "block", width: "22px", height: "2px", background: "#fff", borderRadius: "2px" }}
+            style={{
+              display: "block",
+              width: "22px",
+              height: "2px",
+              background: "#fff",
+              borderRadius: "2px",
+            }}
           />
           <span
             className={`vc-bar vc-bar-mid ${menuOpen ? "open" : ""}`}
-            style={{ display: "block", width: "22px", height: "2px", background: "#fff", borderRadius: "2px" }}
+            style={{
+              display: "block",
+              width: "22px",
+              height: "2px",
+              background: "#fff",
+              borderRadius: "2px",
+            }}
           />
           <span
             className={`vc-bar vc-bar-bot ${menuOpen ? "open" : ""}`}
-            style={{ display: "block", width: "22px", height: "2px", background: "#fff", borderRadius: "2px" }}
+            style={{
+              display: "block",
+              width: "22px",
+              height: "2px",
+              background: "#fff",
+              borderRadius: "2px",
+            }}
           />
         </button>
       </nav>
 
-      {/* ══════════════════════════════════════════════════
-          MOBILE DROPDOWN
-      ══════════════════════════════════════════════════ */}
+      {/* ── Mobile dropdown ── */}
       {menuOpen && (
         <div
           className="vc-nav vc-mobile-menu"
@@ -284,15 +282,15 @@ export default function VeloraCeylonNavbar() {
             padding: "10px",
           }}
         >
-          {NAV_LINKS.map((link) => {
-            const isActive = active === link;
+          {NAV_LINKS.map(({ label, path }) => {
+            const isActive = active === label;
             return (
               <a
-                key={link}
-                href="#"
+                key={label}
+                href={path}
                 onClick={(e) => {
                   e.preventDefault();
-                  setActive(link);
+                  navigate(path);
                   setMenuOpen(false);
                 }}
                 style={{
@@ -310,12 +308,18 @@ export default function VeloraCeylonNavbar() {
                   transition: "background 0.15s, color 0.15s",
                 }}
               >
-                {link}
+                {label}
               </a>
             );
           })}
+
           <a
-            href="#"
+            href="/contact-us"
+            onClick={(e) => {
+              e.preventDefault();
+              navigate("/contact-us");
+              setMenuOpen(false);
+            }}
             style={{
               marginTop: "6px",
               display: "flex",

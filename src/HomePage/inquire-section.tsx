@@ -53,7 +53,6 @@ export default function InquireSection() {
           textAlign: 'center',
         }}
       >
-        {/* Background Image */}
         <div
           style={{
             position: 'absolute',
@@ -65,8 +64,6 @@ export default function InquireSection() {
             filter: 'brightness(0.6)',
           }}
         />
-
-        {/* Overlay Scrim */}
         <div
           style={{
             position: 'absolute',
@@ -75,8 +72,6 @@ export default function InquireSection() {
             zIndex: 1,
           }}
         />
-
-        {/* Content */}
         <div
           style={{
             position: 'relative',
@@ -112,8 +107,6 @@ export default function InquireSection() {
           >
             Whether you're looking for adventure, relaxation, or cultural exploration, Velora Ceylon Travels is here to make your journey unforgettable. Get in touch now, and we'll help you create the perfect itinerary.
           </p>
-
-          {/* Button */}
           <button
             style={{
               display: 'inline-flex',
