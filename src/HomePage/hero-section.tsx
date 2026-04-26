@@ -170,6 +170,7 @@ export default function VeloraCeylonHero() {
           .vc-info-card-inner { padding: 14px 15px !important; }
           .vc-feat-title { font-size: 0.95rem !important; }
           .vc-feat-desc  { font-size: 0.75rem !important; }
+          
         }
 
         .vc-slider-outer::-webkit-scrollbar { display: none; }
@@ -225,7 +226,7 @@ export default function VeloraCeylonHero() {
             className="vc-heading-anim"
             style={{
               textAlign: "center",
-              marginTop: "100px",
+              marginTop: "130px",
               marginBottom: "auto",
             }}
           >
@@ -250,7 +251,7 @@ export default function VeloraCeylonHero() {
               className="vc-info-card-wrap"
               style={{
                 flexShrink: 0,
-                width: "500px",
+                width: "400px",
                 marginLeft: "auto",
                 marginRight: "40px",
               }}
@@ -264,7 +265,7 @@ export default function VeloraCeylonHero() {
                   backdropFilter: "blur(3px)",
                   WebkitBackdropFilter: "blur(5px)",
                   padding: "22px 24px",
-                  height: "250px",
+                  height: "220px",
                   display: "flex",
                   flexDirection: "column",
                   boxShadow: "0 8px 32px rgba(0, 0, 0, 0.1)",
@@ -305,11 +306,11 @@ export default function VeloraCeylonHero() {
                       width: "38px",
                       height: "38px",
                       borderRadius: "9999px",
-                      background: "rgba(255,255,255,0.2)",
+                      background: "#fff",
                       border: "2px solid rgba(255,255,255,0.45)",
                       fontSize: "0.65rem",
-                      color: "#fff",
-                      fontWeight: 600,
+                      color: "#212121",
+                      fontWeight: 500,
                       marginLeft: "-9px",
                       flexShrink: 0,
                       display: "flex",
@@ -356,7 +357,7 @@ export default function VeloraCeylonHero() {
                 </p>
 
                 <a
-                  href="#"
+                  href="/tours"
                   className="vc-explore-button"
                   style={{
                     display: "inline-flex",
