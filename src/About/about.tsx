@@ -5,6 +5,7 @@ import TopDestinations from "../HomePage/destinations-section";
 import RealFeedback from "../HomePage/review-section";
 import InquireSection from "../HomePage/inquire-section";
 import Footer from "../Layout/footer";
+import { ArrowUpRight } from "lucide-react";
 
 interface StatItem {
   value: string;
@@ -146,7 +147,7 @@ export default function AboutUsPage() {
         .au-hero {
           position: relative;
           width: 100%;
-          min-height: 520px;
+          min-height: 650px;
           display: flex;
           flex-direction: column;
           align-items: center;
@@ -168,7 +169,7 @@ export default function AboutUsPage() {
           background: linear-gradient(
             to bottom,
             rgba(0,0,0,0.22) 0%,
-            rgba(0,0,0,0.08) 40%,
+            rgba(0,0,0,0.08) 10%,
             rgba(0,0,0,0.62) 100%
           );
         }
@@ -283,7 +284,7 @@ export default function AboutUsPage() {
           position: absolute;
           bottom: 0; right: 0;
           width: 56%; height: 55%;
-          border-radius: 16px;
+          border-radius: 30px;
           overflow: hidden;
           box-shadow: 0 14px 40px rgba(0,0,0,0.12);
           z-index: 3;
@@ -429,6 +430,8 @@ export default function AboutUsPage() {
         }
         @media (max-width: 480px) {
           .au-stat-divider { display: none; }
+          .au-hero { min-height: 400px; }
+          .au-hero-content { padding: 0 12px; margin-top: 60px; }
         }
       `}</style>
 
@@ -444,7 +447,7 @@ export default function AboutUsPage() {
             </p>
             <a href="#" className="au-pill-btn">
               Explore Tours
-              <span className="au-pill-btn-icon">↗</span>
+              <span className="au-pill-btn-icon"><ArrowUpRight size={16} /></span>
             </a>
           </div>
         </section>
@@ -495,7 +498,7 @@ export default function AboutUsPage() {
                 ))}
               </div>
 
-              <a href="#" className="au-inquire-btn">
+              <a href="/contact-us" className="au-inquire-btn">
                 Inquire Now
                 <span className="au-inquire-btn-icon">↗</span>
               </a>

@@ -3,6 +3,7 @@
 import { ArrowUpRight } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import { motion, useInView, type Variants } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const tours = [
   {
@@ -76,6 +77,7 @@ const headerVariants: Variants = {
 
 function TourCard({ tour, index }: { tour: (typeof tours)[0]; index: number }) {
   const [hovered, setHovered] = useState(false);
+  const navigate = useNavigate();
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, amount: 0.15 });
 
@@ -108,7 +110,13 @@ function TourCard({ tour, index }: { tour: (typeof tours)[0]; index: number }) {
         </div>
 
         <div className={`tour-card__btn-wrap${hovered ? " tour-card__btn-wrap--visible" : ""}`}>
-          <button className="tour-card__btn">
+           <button
+            className="tour-card__btn"
+            onClick={() => {                         
+              navigate(`/tours/${tour.id}`);
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }}
+          >
             <span className="tour-card__btn-label">See More Details</span>
             <span className="tour-card__btn-icon">
               <ArrowUpRight size={14} color="#333" />
@@ -121,6 +129,7 @@ function TourCard({ tour, index }: { tour: (typeof tours)[0]; index: number }) {
 }
 
 export default function ToursSection() {
+  const navigate = useNavigate();
   const headerRef = useRef(null);
   const headerInView = useInView(headerRef, { once: true, amount: 0.3 });
 
@@ -365,6 +374,12 @@ export default function ToursSection() {
           .tours-all-btn { padding: 6px 6px 6px 18px; }
           .tours-all-btn span:first-child { font-size: 15px; }
           .tours-subtitle { font-size: 18px; }
+
+          .tour-card__btn-wrap {
+            max-height: 70px;
+            opacity: 1;
+            margin-top: 10px;
+          }
         }
       `}</style>
 
@@ -388,6 +403,7 @@ export default function ToursSection() {
             className="tours-all-btn"
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.97 }}
+            onClick={() => navigate("/tours")}
           >
             <span>See All Tours</span>
             <span className="tours-all-btn-icon">

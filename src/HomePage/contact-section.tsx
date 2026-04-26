@@ -244,7 +244,7 @@ export default function HeroSection() {
             </motion.p>
 
             <motion.a
-              href="#contact"
+              href="/contact-us"
               className="hero-btn"
               variants={fadeInUp}
               whileHover={{ scale: 1.05 }}
