@@ -259,7 +259,7 @@ const Footer = () => {
               }}
             >
               {[
-                { name: 'facebook', icon: 'facebook.png' },
+                { name: 'facebook', icon: 'facebook (2).png' },
                 { name: 'instagram', icon: 'instagram.png' },
                 { name: 'whatsapp', icon: 'whatsapp.png' },
                 { name: 'tiktok', icon: 'tiktok.png' },

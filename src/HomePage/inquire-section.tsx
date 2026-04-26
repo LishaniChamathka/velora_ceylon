@@ -1,5 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const clash: React.CSSProperties = {
   fontFamily: "'Clash Display', sans-serif",
@@ -9,6 +10,7 @@ export default function InquireSection() {
   const [visible, setVisible] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const check = () => setIsMobile(window.innerWidth < 768);
@@ -108,6 +110,7 @@ export default function InquireSection() {
             Whether you're looking for adventure, relaxation, or cultural exploration, Velora Ceylon Travels is here to make your journey unforgettable. Get in touch now, and we'll help you create the perfect itinerary.
           </p>
           <button
+            onClick={() => navigate("/contact-us")}
             style={{
               display: 'inline-flex',
               alignItems: 'center',

@@ -1,7 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import VeloraCeylonNavbar from "./Layout/navbar";
 
-// Home page sections
 import HeroSection from "./HomePage/hero-section";
 import ContactSection from "./HomePage/contact-section";
 import ToursSection from "./HomePage/tours-section";
@@ -12,13 +11,13 @@ import LearnMoreSection from "./HomePage/learnmore-section";
 import InquireSection from "./HomePage/inquire-section";
 import Footer from "./Layout/footer";
 
-// Pages (create these files if they don't exist yet)
 import AboutUs from "./About/about";
-// import Tours from "./Pages/tours";
-// import Faq from "./Pages/faq";
-// import ContactUs from "./Pages/contact-us";
+import ToursPage from "./Tours/tours";
+import TourDetailsPage from "./Tours/tourDetail";
+import ContactUsPage from "./Contact/contact";
 
-// Home page assembled
+import ScrollToTop from "./ScrollToTop"; 
+
 const HomePage = () => (
   <>
     <HeroSection />
@@ -37,13 +36,15 @@ const App = () => {
   return (
     <BrowserRouter>
       <div className="relative">
+        <ScrollToTop /> 
         <VeloraCeylonNavbar />
         <Routes>
           <Route path="/"           element={<HomePage />} />
           <Route path="/about-us"   element={<AboutUs />} />
-          {/* <Route path="/tours"      element={<Tours />} />
-          <Route path="/faq"        element={<Faq />} />
-          <Route path="/contact-us" element={<ContactUs />} /> */}
+          <Route path="/tours"      element={<ToursPage />} />
+          <Route path="/tours/:id" element={<TourDetailsPage />} />
+           {/* <Route path="/faq"        element={<Faq />} /> */}
+          <Route path="/contact-us" element={<ContactUsPage />} /> 
         </Routes>
       </div>
     </BrowserRouter>
