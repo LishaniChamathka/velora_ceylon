@@ -209,7 +209,7 @@ export default function AboutUsPage() {
           background: rgba(255,255,255,0.10);
           border: 1.5px solid rgba(255,255,255,0.32);
           border-radius: 9999px;
-          padding: 10px 14px 10px 24px;
+          padding: 8px 14px 8px 22px;
           color: #fff;
           font-size: 0.86rem;
           font-family: 'Clash Display', sans-serif;
@@ -498,10 +498,77 @@ export default function AboutUsPage() {
                 ))}
               </div>
 
-              <a href="/contact-us" className="au-inquire-btn">
+              {/* <a href="/contact-us" className="au-inquire-btn">
                 Inquire Now
                 <span className="au-inquire-btn-icon">↗</span>
-              </a>
+              </a> */}
+              <a
+              href="/contact-us"
+              className="vc-explore-button"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "10px",
+                border: "1.5px solid rgba(255,255,255,0.32)",
+                borderRadius: "9999px",
+                padding: "10px 10px 10px 18px",
+                color: "rgba(255,255,255,0.90)",
+                fontSize: "1rem",
+                fontWeight: 400,
+                textDecoration: "none",
+                transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+                cursor: "pointer",
+                width: "fit-content",
+                flexShrink: 0,
+                background: "#65ABEA",
+                backdropFilter: "blur(4px)",
+              }}
+              onMouseEnter={(e) => {
+                const button = e.currentTarget;
+                const arrow = button.querySelector(".vc-arrow-icon");
+                button.style.transform = "translateX(5px)";
+                button.style.borderColor = "rgba(255,255,255,0.6)";
+                button.style.background = "#0096df";
+                if (arrow) {
+                  (arrow as HTMLElement).style.transform = "translateX(4px)";
+                  (arrow as HTMLElement).style.background = "#fff";
+                  (arrow as HTMLElement).style.color = "#000";
+                }
+              }}
+              onMouseLeave={(e) => {
+                const button = e.currentTarget;
+                const arrow = button.querySelector(".vc-arrow-icon");
+                button.style.transform = "translateX(0px)";
+                button.style.borderColor = "rgba(255,255,255,0.32)";
+                button.style.background = "#65ABEA";
+                if (arrow) {
+                  (arrow as HTMLElement).style.transform = "translateX(0px)";
+                  (arrow as HTMLElement).style.background = "#fff";
+                  (arrow as HTMLElement).style.color = "#000";
+                }
+              }}
+            >
+              Inquire Now
+              <span
+                className="vc-arrow-icon"
+                style={{
+                  width: "26px",
+                  height: "26px",
+                  borderRadius: "9999px",
+                  border: "1.5px solid rgba(255,255,255,0.36)",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  fontSize: "0.82rem",
+                  color: "#000",
+                  background: "#fff",
+                  transition:
+                    "transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), background 0.3s ease",
+                }}
+              >
+                <ArrowUpRight size={16} />
+              </span>
+            </a>
             </div>
           </div>
         </section>
