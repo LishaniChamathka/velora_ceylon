@@ -231,10 +231,10 @@ const Footer = () => {
             </h4>
             <div style={{ display: "flex", gap: "15px" }}>
               {[
-                { name: "facebook", icon: "public/social-icons/facebook (2).png" },
-                { name: "instagram", icon: "public/social-icons/instagram.png" },
-                { name: "whatsapp", icon: "public/social-icons/whatsapp.png" },
-                { name: "tiktok", icon: "public/social-icons/tiktok.png" },
+                { name: "facebook", icon: "/social-icons/facebook.png" },
+                { name: "instagram", icon: "/social-icons/instagram.png" },
+                { name: "whatsapp", icon: "/social-icons/whatsapp.png" },
+                { name: "tiktok", icon: "/social-icons/tiktok.png" },
               ].map((social) => (
                 <a
                   key={social.name}
@@ -261,7 +261,7 @@ const Footer = () => {
                   }}
                 >
                   <img
-                    src={`/${social.icon}`}
+                    src={social.icon}
                     alt={social.name}
                     style={{ width: "18px", height: "18px" }}
                   />
