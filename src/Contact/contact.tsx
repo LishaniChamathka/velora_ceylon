@@ -36,18 +36,18 @@ export default function ContactUsPage() {
     setCfSending(true);
     try {
       await emailjs.send(
-        "YOUR_SERVICE_ID",
-        "YOUR_TEMPLATE_ID",
+        "service_2utkl5v",
+        "template_bd5buxw",
         {
           to_email: "lishanichamathka2003@gmail.com",
-          first_name: cfFirstName,
-          last_name: cfLastName,
-          email: cfEmail,
-          phone: cfPhone,
-          subject: cfSubject,
-          message: cfMessage,
+          cfFirstName: cfFirstName,
+          cfLastName: cfLastName,
+          cfEmail: cfEmail,
+          cfPhone: cfPhone,
+          cfSubject: cfSubject,
+          cfMessage: cfMessage,
         },
-        "YOUR_PUBLIC_KEY",
+        "E15zjmQHovis0Upeb",
       );
       setCfSuccess(true);
       setCfFirstName("");
