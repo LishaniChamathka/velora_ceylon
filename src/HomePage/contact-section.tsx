@@ -1,4 +1,3 @@
-
 import { ArrowUpRight } from "lucide-react";
 import { useEffect, useRef } from "react";
 import { motion, useInView, type Variants } from "framer-motion";
@@ -8,7 +7,7 @@ export default function HeroSection() {
   const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
 
   useEffect(() => {
-    if (!document.querySelector('link[data-clash-display]')) {
+    if (!document.querySelector("link[data-clash-display]")) {
       const link = document.createElement("link");
       link.rel = "stylesheet";
       link.setAttribute("data-clash-display", "true");
@@ -18,14 +17,14 @@ export default function HeroSection() {
     }
   }, []);
 
-  const fadeInUp: Variants = {
-    hidden: { opacity: 0, y: 60 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] },
-    },
-  };
+  // const fadeInUp: Variants = {
+  //   hidden: { opacity: 0, y: 60 },
+  //   visible: {
+  //     opacity: 1,
+  //     y: 0,
+  //     transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] },
+  //   },
+  // };
 
   const fadeInLeft: Variants = {
     hidden: { opacity: 0, x: -80 },
@@ -221,7 +220,6 @@ export default function HeroSection() {
         }}
       >
         <div className="hero-inner">
-
           {/* Left */}
           <motion.div
             className="hero-left"
@@ -235,15 +233,15 @@ export default function HeroSection() {
 
             <motion.p className="hero-desc" variants={fadeInLeft}>
               Velora Ceylon Travels is your trusted travel partner in Sri Lanka,
-              offering personalized, immersive experiences. Whether you're seeking
-              adventure, culture, or relaxation, our tailored tours provide
-              unforgettable journeys through Sri Lanka's rich history, pristine
-              landscapes, and vibrant heritage. We are passionate about showcasing
-              the beauty of Sri Lanka, ensuring every traveler's dream vacation
-              becomes a reality.
+              offering personalized, immersive experiences. Whether you're
+              seeking adventure, culture, or relaxation, our tailored tours
+              provide unforgettable journeys through Sri Lanka's rich history,
+              pristine landscapes, and vibrant heritage. We are passionate about
+              showcasing the beauty of Sri Lanka, ensuring every traveler's
+              dream vacation becomes a reality.
             </motion.p>
 
-            <motion.a
+            {/* <motion.a
               href="/contact-us"
               className="hero-btn"
               variants={fadeInUp}
@@ -254,7 +252,74 @@ export default function HeroSection() {
               <span className="hero-btn-icon">
                 <ArrowUpRight size={16} />
               </span>
-            </motion.a>
+            </motion.a> */}
+            <a
+              href="/contact-us"
+              className="vc-explore-button"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "10px",
+                border: "1.5px solid rgba(255,255,255,0.32)",
+                borderRadius: "9999px",
+                padding: "10px 10px 10px 18px",
+                color: "rgba(255,255,255,0.90)",
+                fontSize: "1rem",
+                fontWeight: 400,
+                textDecoration: "none",
+                transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+                cursor: "pointer",
+                width: "fit-content",
+                flexShrink: 0,
+                background: "#65ABEA",
+                backdropFilter: "blur(4px)",
+              }}
+              onMouseEnter={(e) => {
+                const button = e.currentTarget;
+                const arrow = button.querySelector(".vc-arrow-icon");
+                button.style.transform = "translateX(5px)";
+                button.style.borderColor = "rgba(255,255,255,0.6)";
+                button.style.background = "#0096df";
+                if (arrow) {
+                  (arrow as HTMLElement).style.transform = "translateX(4px)";
+                  (arrow as HTMLElement).style.background = "#fff";
+                  (arrow as HTMLElement).style.color = "#000";
+                }
+              }}
+              onMouseLeave={(e) => {
+                const button = e.currentTarget;
+                const arrow = button.querySelector(".vc-arrow-icon");
+                button.style.transform = "translateX(0px)";
+                button.style.borderColor = "rgba(255,255,255,0.32)";
+                button.style.background = "#65ABEA";
+                if (arrow) {
+                  (arrow as HTMLElement).style.transform = "translateX(0px)";
+                  (arrow as HTMLElement).style.background = "#fff";
+                  (arrow as HTMLElement).style.color = "#000";
+                }
+              }}
+            >
+              Inquire Now
+              <span
+                className="vc-arrow-icon"
+                style={{
+                  width: "26px",
+                  height: "26px",
+                  borderRadius: "9999px",
+                  border: "1.5px solid rgba(255,255,255,0.36)",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  fontSize: "0.82rem",
+                  color: "#000",
+                  background: "#fff",
+                  transition:
+                    "transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), background 0.3s ease",
+                }}
+              >
+                <ArrowUpRight size={16} />
+              </span>
+            </a>
           </motion.div>
 
           {/* Right — two overlapping images */}
@@ -287,7 +352,6 @@ export default function HeroSection() {
               />
             </motion.div>
           </div>
-
         </div>
       </motion.section>
     </>

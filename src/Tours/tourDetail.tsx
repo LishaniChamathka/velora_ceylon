@@ -1134,6 +1134,208 @@ function InquiryForm({ tour }: { tour: TourData }) {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [sending, setSending] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
+  const [countrySearch, setCountrySearch] = useState("");
+  const [countryOpen, setCountryOpen] = useState(false);
+
+  const allCountries = [
+    "Afghanistan",
+    "Albania",
+    "Algeria",
+    "Andorra",
+    "Angola",
+    "Argentina",
+    "Armenia",
+    "Australia",
+    "Austria",
+    "Azerbaijan",
+    "Bahamas",
+    "Bahrain",
+    "Bangladesh",
+    "Barbados",
+    "Belarus",
+    "Belgium",
+    "Belize",
+    "Benin",
+    "Bhutan",
+    "Bolivia",
+    "Bosnia and Herzegovina",
+    "Botswana",
+    "Brazil",
+    "Brunei",
+    "Bulgaria",
+    "Burkina Faso",
+    "Burundi",
+    "Cambodia",
+    "Cameroon",
+    "Canada",
+    "Cape Verde",
+    "Central African Republic",
+    "Chad",
+    "Chile",
+    "China",
+    "Colombia",
+    "Comoros",
+    "Congo",
+    "Costa Rica",
+    "Croatia",
+    "Cuba",
+    "Cyprus",
+    "Czech Republic",
+    "Denmark",
+    "Djibouti",
+    "Dominica",
+    "Dominican Republic",
+    "Ecuador",
+    "Egypt",
+    "El Salvador",
+    "Equatorial Guinea",
+    "Eritrea",
+    "Estonia",
+    "Eswatini",
+    "Ethiopia",
+    "Fiji",
+    "Finland",
+    "France",
+    "Gabon",
+    "Gambia",
+    "Georgia",
+    "Germany",
+    "Ghana",
+    "Greece",
+    "Grenada",
+    "Guatemala",
+    "Guinea",
+    "Guinea-Bissau",
+    "Guyana",
+    "Haiti",
+    "Honduras",
+    "Hungary",
+    "Iceland",
+    "India",
+    "Indonesia",
+    "Iran",
+    "Iraq",
+    "Ireland",
+    "Israel",
+    "Italy",
+    "Jamaica",
+    "Japan",
+    "Jordan",
+    "Kazakhstan",
+    "Kenya",
+    "Kiribati",
+    "Kuwait",
+    "Kyrgyzstan",
+    "Laos",
+    "Latvia",
+    "Lebanon",
+    "Lesotho",
+    "Liberia",
+    "Libya",
+    "Liechtenstein",
+    "Lithuania",
+    "Luxembourg",
+    "Madagascar",
+    "Malawi",
+    "Malaysia",
+    "Maldives",
+    "Mali",
+    "Malta",
+    "Marshall Islands",
+    "Mauritania",
+    "Mauritius",
+    "Mexico",
+    "Micronesia",
+    "Moldova",
+    "Monaco",
+    "Mongolia",
+    "Montenegro",
+    "Morocco",
+    "Mozambique",
+    "Myanmar",
+    "Namibia",
+    "Nauru",
+    "Nepal",
+    "Netherlands",
+    "New Zealand",
+    "Nicaragua",
+    "Niger",
+    "Nigeria",
+    "North Korea",
+    "North Macedonia",
+    "Norway",
+    "Oman",
+    "Pakistan",
+    "Palau",
+    "Palestine",
+    "Panama",
+    "Papua New Guinea",
+    "Paraguay",
+    "Peru",
+    "Philippines",
+    "Poland",
+    "Portugal",
+    "Qatar",
+    "Romania",
+    "Russia",
+    "Rwanda",
+    "Saint Kitts and Nevis",
+    "Saint Lucia",
+    "Saint Vincent and the Grenadines",
+    "Samoa",
+    "San Marino",
+    "Sao Tome and Principe",
+    "Saudi Arabia",
+    "Senegal",
+    "Serbia",
+    "Seychelles",
+    "Sierra Leone",
+    "Singapore",
+    "Slovakia",
+    "Slovenia",
+    "Solomon Islands",
+    "Somalia",
+    "South Africa",
+    "South Korea",
+    "South Sudan",
+    "Spain",
+    "Sri Lanka",
+    "Sudan",
+    "Suriname",
+    "Sweden",
+    "Switzerland",
+    "Syria",
+    "Taiwan",
+    "Tajikistan",
+    "Tanzania",
+    "Thailand",
+    "Timor-Leste",
+    "Togo",
+    "Tonga",
+    "Trinidad and Tobago",
+    "Tunisia",
+    "Turkey",
+    "Turkmenistan",
+    "Tuvalu",
+    "Uganda",
+    "Ukraine",
+    "United Arab Emirates",
+    "United Kingdom",
+    "United States",
+    "Uruguay",
+    "Uzbekistan",
+    "Vanuatu",
+    "Vatican City",
+    "Venezuela",
+    "Vietnam",
+    "Yemen",
+    "Zambia",
+    "Zimbabwe",
+  ];
+
+  const filteredCountries = allCountries.filter((c) =>
+    c.toLowerCase().includes(countrySearch.toLowerCase()),
+  );
 
   const nameInput =
     (s: (v: string) => void) => (e: React.ChangeEvent<HTMLInputElement>) =>
@@ -1168,15 +1370,15 @@ function InquiryForm({ tour }: { tour: TourData }) {
     setSending(true);
     try {
       await emailjs.send(
-        "YOUR_SERVICE_ID", // replace with your EmailJS service ID
-        "YOUR_TEMPLATE_ID", // replace with your EmailJS template ID
+        "service_2utkl5v", // replace with your EmailJS service ID
+        "template_kzh1jvm", // replace with your EmailJS template ID
         {
           to_email: "lishanichamathka2003@gmail.com",
           tour_title: tour.title,
           tour_days: tour.days,
           tour_price: tour.price,
-          first_name: firstName,
-          last_name: lastName,
+          firstName: firstName,
+          lastName: lastName,
           adults: adults,
           kids: kids,
           email: email,
@@ -1184,7 +1386,7 @@ function InquiryForm({ tour }: { tour: TourData }) {
           country: country || "Not specified",
           extra: extra || "None",
         },
-        "YOUR_PUBLIC_KEY", // replace with your EmailJS public key
+        "E15zjmQHovis0Upeb", // replace with your EmailJS public key
       );
       setShowSuccess(true);
       setFirstName("");
@@ -1360,22 +1562,118 @@ function InquiryForm({ tour }: { tour: TourData }) {
             <div className="td-field td-field-full">
               <label className="td-label">Country</label>
               <div className="td-input-wrap td-select-wrap">
-                <select
-                  className="td-select"
-                  value={country}
-                  onChange={(e) => setCountry(e.target.value)}
-                >
-                  <option value="">United States</option>
-                  <option>United Kingdom</option>
-                  <option>Australia</option>
-                  <option>Germany</option>
-                  <option>France</option>
-                  <option>Canada</option>
-                  <option>Japan</option>
-                  <option>India</option>
-                  <option>Singapore</option>
-                  <option>Other</option>
-                </select>
+                <div style={{ position: "relative" }}>
+                  {/* Display Box */}
+                  <div
+                    className="td-select"
+                    onClick={() => setCountryOpen(!countryOpen)}
+                    style={{
+                      cursor: "pointer",
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "center",
+                      userSelect: "none",
+                    }}
+                  >
+                    <span>{country || "Select Country"}</span>
+                    <span style={{ fontSize: "10px" }}>
+                      {/* {countryOpen ? "▲" : "▼"} */}
+                    </span>
+                  </div>
+
+                  {/* Dropdown */}
+                  {countryOpen && (
+                    <div
+                      style={{
+                        position: "absolute",
+                        top: "100%",
+                        left: 0,
+                        right: 0,
+                        background: "#fff",
+                        border: "1px solid #ddd",
+                        borderRadius: "6px",
+                        zIndex: 100,
+                        boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
+                        overflow: "hidden",
+                      }}
+                    >
+                      {/* Search Input */}
+                      <div style={{ padding: "8px" }}>
+                        <input
+                          type="text"
+                          placeholder="Search country..."
+                          value={countrySearch}
+                          onChange={(e) => setCountrySearch(e.target.value)}
+                          autoFocus
+                          style={{
+                            width: "100%",
+                            padding: "6px 10px",
+                            border: "1px solid #ddd",
+                            borderRadius: "4px",
+                            fontSize: "13px",
+                            outline: "none",
+                            boxSizing: "border-box",
+                          }}
+                        />
+                      </div>
+
+                      {/* Country List */}
+                      <ul
+                        style={{
+                          listStyle: "none",
+                          margin: 0,
+                          padding: 0,
+                          maxHeight: "200px",
+                          overflowY: "auto",
+                        }}
+                      >
+                        {filteredCountries.length > 0 ? (
+                          filteredCountries.map((c) => (
+                            <li
+                              key={c}
+                              onClick={() => {
+                                setCountry(c);
+                                setCountryOpen(false);
+                                setCountrySearch("");
+                              }}
+                              style={{
+                                padding: "8px 14px",
+                                fontSize: "13px",
+                                cursor: "pointer",
+                                color: "#333",
+                                backgroundColor:
+                                  country === c ? "#f0f0f0" : "transparent",
+                              }}
+                              onMouseEnter={(e) => {
+                                (
+                                  e.currentTarget as HTMLLIElement
+                                ).style.backgroundColor = "#f5f5f5";
+                              }}
+                              onMouseLeave={(e) => {
+                                (
+                                  e.currentTarget as HTMLLIElement
+                                ).style.backgroundColor =
+                                  country === c ? "#f0f0f0" : "transparent";
+                              }}
+                            >
+                              {c}
+                            </li>
+                          ))
+                        ) : (
+                          <li
+                            style={{
+                              padding: "10px 14px",
+                              fontSize: "13px",
+                              color: "#999",
+                            }}
+                          >
+                            No results found
+                          </li>
+                        )}
+                      </ul>
+                    </div>
+                  )}
+                </div>
                 <ChevronDown size={15} className="td-input-icon" />
               </div>
             </div>
@@ -1480,7 +1778,7 @@ export default function TourDetailsPage() {
 
   const contactCards = [
     {
-      icon: <Phone size={18}/>,
+      icon: <Phone size={18} />,
       label: "Phone",
       value: "+1 234 567 890",
       note: "Mon–Sat, 9am–5pm",

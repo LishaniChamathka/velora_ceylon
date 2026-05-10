@@ -129,7 +129,6 @@ function TourCard({ tour, index }: { tour: (typeof tours)[0]; index: number }) {
 }
 
 export default function ToursSection() {
-  const navigate = useNavigate();
   const headerRef = useRef(null);
   const headerInView = useInView(headerRef, { once: true, amount: 0.3 });
 
@@ -399,7 +398,7 @@ export default function ToursSection() {
               Discover our handpicked tours that showcase Sri Lanka's beauty, culture, and adventure. Find your perfect getaway today!
             </p>
           </div>
-          <motion.button
+          {/* <motion.button
             className="tours-all-btn"
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.97 }}
@@ -409,7 +408,74 @@ export default function ToursSection() {
             <span className="tours-all-btn-icon">
               <ArrowUpRight size={16} />
             </span>
-          </motion.button>
+          </motion.button> */}
+          <a
+              href="/tours"
+              className="vc-explore-button"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "10px",
+                border: "1.5px solid rgba(255,255,255,0.32)",
+                borderRadius: "9999px",
+                padding: "10px 10px 10px 18px",
+                color: "rgba(255,255,255,0.90)",
+                fontSize: "1rem",
+                fontWeight: 400,
+                textDecoration: "none",
+                transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+                cursor: "pointer",
+                width: "fit-content",
+                flexShrink: 0,
+                background: "#65ABEA",
+                backdropFilter: "blur(4px)",
+              }}
+              onMouseEnter={(e) => {
+                const button = e.currentTarget;
+                const arrow = button.querySelector(".vc-arrow-icon");
+                button.style.transform = "translateX(5px)";
+                button.style.borderColor = "rgba(255,255,255,0.6)";
+                button.style.background = "#0096df";
+                if (arrow) {
+                  (arrow as HTMLElement).style.transform = "translateX(4px)";
+                  (arrow as HTMLElement).style.background = "#fff";
+                  (arrow as HTMLElement).style.color = "#000";
+                }
+              }}
+              onMouseLeave={(e) => {
+                const button = e.currentTarget;
+                const arrow = button.querySelector(".vc-arrow-icon");
+                button.style.transform = "translateX(0px)";
+                button.style.borderColor = "rgba(255,255,255,0.32)";
+                button.style.background = "#65ABEA";
+                if (arrow) {
+                  (arrow as HTMLElement).style.transform = "translateX(0px)";
+                  (arrow as HTMLElement).style.background = "#fff";
+                  (arrow as HTMLElement).style.color = "#000";
+                }
+              }}
+            >
+              See All Tours
+              <span
+                className="vc-arrow-icon"
+                style={{
+                  width: "26px",
+                  height: "26px",
+                  borderRadius: "9999px",
+                  border: "1.5px solid rgba(255,255,255,0.36)",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  fontSize: "0.82rem",
+                  color: "#000",
+                  background: "#fff",
+                  transition:
+                    "transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), background 0.3s ease",
+                }}
+              >
+                <ArrowUpRight size={16} />
+              </span>
+            </a>
         </motion.div>
 
         <div className="tours-grid">

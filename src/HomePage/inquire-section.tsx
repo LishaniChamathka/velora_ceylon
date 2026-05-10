@@ -1,6 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 const clash: React.CSSProperties = {
   fontFamily: "'Clash Display', sans-serif",
@@ -10,7 +9,6 @@ export default function InquireSection() {
   const [visible, setVisible] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
-  const navigate = useNavigate();
 
   useEffect(() => {
     const check = () => setIsMobile(window.innerWidth < 768);
@@ -109,7 +107,7 @@ export default function InquireSection() {
           >
             Whether you're looking for adventure, relaxation, or cultural exploration, Velora Ceylon Travels is here to make your journey unforgettable. Get in touch now, and we'll help you create the perfect itinerary.
           </p>
-          <button
+          {/* <button
             onClick={() => navigate("/contact-us")}
             style={{
               display: 'inline-flex',
@@ -153,7 +151,77 @@ export default function InquireSection() {
             >
               <ArrowUpRight size={16} color="#002a3c" />
             </div>
-          </button>
+          </button> */}
+          <a
+                  href="/contact-us"
+                  className="vc-explore-button"
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "10px",
+                    border: "1.5px solid rgba(255,255,255,0.32)",
+                    borderRadius: "9999px",
+                    padding: "8px 10px 8px 18px",
+                    color: "rgba(255,255,255,0.90)",
+                    fontSize: "1rem",
+                    fontWeight: 400,
+                    textDecoration: "none",
+                    transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+                    cursor: "pointer",
+                    width: "fit-content",
+                    flexShrink: 0,
+                    background: "rgba(255,255,255,0.05)",
+                    backdropFilter: "blur(4px)",
+                    fontFamily: 'Clash Display',
+                  }}
+                  onMouseEnter={(e) => {
+                    const button = e.currentTarget;
+                    const arrow = button.querySelector(".vc-arrow-icon");
+                    button.style.transform = "translateX(5px)";
+                    button.style.borderColor = "rgba(255,255,255,0.6)";
+                    button.style.background = "rgba(255,255,255,0.15)";
+                    if (arrow) {
+                      (arrow as HTMLElement).style.transform =
+                        "translateX(4px)";
+                      (arrow as HTMLElement).style.background = "#fff";
+                      (arrow as HTMLElement).style.color = "#000";
+                    }
+                  }}
+                  onMouseLeave={(e) => {
+                    const button = e.currentTarget;
+                    const arrow = button.querySelector(".vc-arrow-icon");
+                    button.style.transform = "translateX(0px)";
+                    button.style.borderColor = "rgba(255,255,255,0.32)";
+                    button.style.background = "rgba(255,255,255,0.05)";
+                    if (arrow) {
+                      (arrow as HTMLElement).style.transform =
+                        "translateX(0px)";
+                      (arrow as HTMLElement).style.background = "#fff";
+                      (arrow as HTMLElement).style.color = "#000";
+                    }
+                  }}
+                >
+                  Inquire Now
+                  <span
+                    className="vc-arrow-icon"
+                    style={{
+                      width: "26px",
+                      height: "26px",
+                      borderRadius: "9999px",
+                      border: "1.5px solid rgba(255,255,255,0.36)",
+                      display: "inline-flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      fontSize: "0.82rem",
+                      color: "#000",
+                      background: "#fff",
+                      transition:
+                        "transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), background 0.3s ease",
+                    }}
+                  >
+                    <ArrowUpRight size={16} />
+                  </span>
+                </a>
         </div>
       </div>
     </div>

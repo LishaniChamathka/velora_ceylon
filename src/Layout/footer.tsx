@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 const Footer = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -6,157 +6,151 @@ const Footer = () => {
   useEffect(() => {
     const check = () => setIsMobile(window.innerWidth < 768);
     check();
-    window.addEventListener('resize', check);
-    return () => window.removeEventListener('resize', check);
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
   }, []);
 
   return (
     <footer
       style={{
-        position: 'relative',
-        width: '100%',
-        overflow: 'hidden',
+        position: "relative",
+        width: "100%",
+        minHeight: "500px",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "flex-end",
+        overflow: "hidden",
+        color: "white",
       }}
     >
       {/* Background Image */}
       <div
         style={{
-          position: 'absolute',
+          position: "absolute",
           inset: 0,
-          backgroundImage: 'url(/homepage/footer.png)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
+          backgroundImage: "url('/homepage/footer.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
           zIndex: 0,
         }}
       />
 
-      {/* Gradient Overlay - White fade at top, dark at bottom */}
-      {/* <div
-        style={{
-          position: 'absolute',
-          inset: 0,
-          backgroundImage: 'linear-gradient(180deg, rgba(255, 255, 255, 0.4) 0%, rgba(0, 0, 0, 0.65) 100%)',
-          zIndex: 1,
-        }}
-      /> */}
-
-      {/* Content */}
+      {/* Gradient Overlay */}
       <div
         style={{
-          position: 'relative',
+          position: "absolute",
+          inset: 0,
+          background: isMobile
+            ? "linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 25%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0.55) 100%)"
+            : "linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,0.2) 25%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0.55) 100%)",
+          zIndex: 1,
+        }}
+      />
+
+      {/* Content - sits at the bottom */}
+      <div
+        style={{
+          position: "relative",
           zIndex: 2,
-          boxSizing: 'border-box',
-          minHeight: '500px',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'space-between',
+          padding: isMobile ? "40px 24px 24px" : "60px 80px 30px",
+          width: "100%",
         }}
       >
-        {/* Top Section with padding */}
+        {/* Top Section */}
         <div
           style={{
-            padding: isMobile ? '2.5rem 1.25rem' : '3.5rem 5rem',
+            display: "grid",
+            gridTemplateColumns: isMobile ? "1fr" : "1.4fr 1fr 1.2fr 1fr",
+            gap: isMobile ? "32px" : "40px",
+            alignItems: "start",
           }}
         >
+          {/* Left - Logo & Description */}
           <div
             style={{
-              maxWidth: '1280px',
-              margin: '0 auto',
-              marginBottom: isMobile ? '2rem' : '3rem',
-              display: 'grid',
-              gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr 1fr 1fr',
-              gap: isMobile ? '2rem' : '3rem',
+              display: "flex",
+              flexDirection: "column",
+              gap: "16px",
+              marginTop: isMobile ? "40px" : "-30px",
             }}
           >
-          {/* Left - Logo & Description */}
-          <div>
-            <div
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '0.5rem',
-                marginBottom: isMobile ? '1rem' : '1.5rem',
-              }}
-            >
+            <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
               <img
-                src="/logo-icon.png"
+                src="/logo.png"
                 alt="Velora Ceylon"
-                style={{ width: '40px', height: '40px' }}
+                style={{ width: "200px", height: "auto" }}
                 onError={(e) => {
-                  (e.target as HTMLImageElement).style.display = 'none';
+                  (e.target as HTMLImageElement).style.display = "none";
                 }}
               />
-              <span
-                style={{
-                  fontFamily: "'Clash Display', sans-serif",
-                  fontSize: isMobile ? '18px' : '20px',
-                  fontWeight: 500,
-                  color: '#ffffff',
-                }}
-              >
-                Velora Ceylon
-              </span>
             </div>
             <p
               style={{
-                fontSize: isMobile ? '14px' : '16px',
-                color: 'rgba(255, 255, 255, 0.85)',
-                lineHeight: 1.7,
+                fontSize: "14px",
+                lineHeight: "1.7",
+                color: "rgba(255,255,255,0.85)",
                 margin: 0,
-                fontFamily: "'Clash Display', sans-serif",
+                maxWidth: "300px",
+                fontFamily: "Clash Display",
               }}
             >
-              Velora Ceylon Travels offers personalized tours across Sri Lanka, providing unforgettable experiences through unique cultural, wildlife, and beach destinations. Our goal is to make every journey a memorable adventure.
+              Velora Ceylon Travels offers personalized tours across Sri Lanka,
+              providing unforgettable experiences through unique cultural,
+              wildlife, and beach destinations. Our goal is to make every
+              journey a memorable adventure.
             </p>
           </div>
 
           {/* Quick Links */}
-          <div>
-            <h3
+          <div
+            style={{ display: "flex", flexDirection: "column", gap: "14px" }}
+          >
+            <h4
               style={{
-                fontFamily: "'Clash Display', sans-serif",
-                fontSize: isMobile ? '16px' : '18px',
-                fontWeight: 600,
-                color: '#ffffff',
-                marginBottom: isMobile ? '1rem' : '1.5rem',
+                fontSize: "24px",
+                fontWeight: 500,
                 margin: 0,
-                paddingBottom: isMobile ? '0.75rem' : '1rem',
+                fontFamily: "Clash Display",
               }}
             >
               Quick Links
-            </h3>
+            </h4>
             <ul
               style={{
-                listStyle: 'none',
+                listStyle: "none",
                 padding: 0,
                 margin: 0,
-                display: 'flex',
-                flexDirection: 'column',
-                gap: isMobile ? '0.65rem' : '0.85rem',
+                display: "flex",
+                flexDirection: "column",
+                gap: "16px",
               }}
             >
-              {['Home', 'About Us', 'Tours', 'Faq', 'Contact'].map((link) => (
-                <li key={link}>
+              {[
+                { label: "Home", href: "/" },
+                { label: "About Us", href: "/about-us" },
+                { label: "Tours", href: "/tours" },
+                { label: "Faq", href: "/faq" },
+                { label: "Contact", href: "/contact-us" },
+              ].map((link) => (
+                <li key={link.label}>
                   <a
-                    href="#"
+                    href={link.href}
                     style={{
-                      fontFamily: "'Clash Display', sans-serif",
-                      fontSize: isMobile ? '14px' : '16px',
-                      color: 'rgba(255, 255, 255, 0.8)',
-                      textDecoration: 'none',
-                      transition: 'color 0.3s ease',
-                      display: 'inline-block',
+                      color: "rgba(255,255,255,0.8)",
+                      textDecoration: "none",
+                      fontSize: "14px",
+                      fontFamily: "Clash Display",
                     }}
                     onMouseEnter={(e) => {
                       (e.target as HTMLAnchorElement).style.color =
-                        'rgba(255, 255, 255, 1)';
+                        "rgba(255,255,255,1)";
                     }}
                     onMouseLeave={(e) => {
                       (e.target as HTMLAnchorElement).style.color =
-                        'rgba(255, 255, 255, 0.8)';
+                        "rgba(255,255,255,0.8)";
                     }}
                   >
-                    {link}
+                    {link.label}
                   </a>
                 </li>
               ))}
@@ -164,170 +158,138 @@ const Footer = () => {
           </div>
 
           {/* Contact Info */}
-          <div>
-            <h3
+          <div
+            style={{ display: "flex", flexDirection: "column", gap: "14px" }}
+          >
+            <h4
               style={{
-                fontFamily: "'Clash Display', sans-serif",
-                fontSize: isMobile ? '16px' : '18px',
-                fontWeight: 600,
-                color: '#ffffff',
-                marginBottom: isMobile ? '1rem' : '1.5rem',
+                fontSize: "24px",
+                fontWeight: 500,
                 margin: 0,
-                paddingBottom: isMobile ? '0.75rem' : '1rem',
+                fontFamily: "Clash Display",
               }}
             >
               Contact Info
-            </h3>
+            </h4>
             <div
               style={{
-                display: 'flex',
-                flexDirection: 'column',
-                gap: isMobile ? '0.65rem' : '0.85rem',
+                display: "flex",
+                flexDirection: "column",
+                gap: "16px",
+                fontSize: "14px",
+                color: "rgba(255,255,255,0.85)",
+                fontFamily: "Clash Display",
               }}
             >
-              <div>
-                <p
-                  style={{
-                    fontFamily: "'Clash Display', sans-serif",
-                    fontSize: isMobile ? '14px' : '16px',
-                    color: 'rgba(255, 255, 255, 0.8)',
-                    margin: 0,
-                  }}
-                >
-                  infoveloraceylon@gmail.com
-                </p>
-              </div>
-              <div>
-                <p
-                  style={{
-                    fontFamily: "'Clash Display', sans-serif",
-                    fontSize: isMobile ? '14px' : '16px',
-                    color: 'rgba(255, 255, 255, 0.8)',
-                    margin: 0,
-                  }}
-                >
-                  +94 70.327.2582
-                </p>
-              </div>
-              <div>
-                <p
-                  style={{
-                    fontFamily: "'Clash Display', sans-serif",
-                    fontSize: isMobile ? '14px' : '16px',
-                    color: 'rgba(255, 255, 255, 0.8)',
-                    margin: 0,
-                  }}
-                >
-                  +94 70.327.2582
-                </p>
-              </div>
-              <div>
-                <p
-                  style={{
-                    fontFamily: "'Clash Display', sans-serif",
-                    fontSize: isMobile ? '14px' : '16px',
-                    color: 'rgba(255, 255, 255, 0.8)',
-                    margin: 0,
-                  }}
-                >
-                  Sri Lanka
-                </p>
-              </div>
+              <a
+                href="mailto:infoveloraceylon@gmail.com"
+                style={{
+                  color: "rgba(255,255,255,0.85)",
+                  textDecoration: "none",
+                  fontSize: "14px",
+                }}
+              >
+                infoveloraceylon@gmail.com
+              </a>
+              <a
+                href="tel:+94703272582"
+                style={{
+                  color: "rgba(255,255,255,0.85)",
+                  textDecoration: "none",
+                  fontSize: "14px",
+                }}
+              >
+                +94 70 327 2582
+              </a>
+              <a
+                href="tel:+94703272582"
+                style={{
+                  color: "rgba(255,255,255,0.85)",
+                  textDecoration: "none",
+                  fontSize: "14px",
+                }}
+              >
+                +94 70 327 2582
+              </a>
+              <span>Sri Lanka</span>
             </div>
           </div>
 
           {/* Social Media */}
-          <div>
-            <h3
+          <div
+            style={{ display: "flex", flexDirection: "column", gap: "14px" }}
+          >
+            <h4
               style={{
-                fontFamily: "'Clash Display', sans-serif",
-                fontSize: isMobile ? '16px' : '18px',
-                fontWeight: 600,
-                color: '#ffffff',
-                marginBottom: isMobile ? '1rem' : '1.5rem',
+                fontSize: "24px",
+                fontWeight: 500,
                 margin: 0,
-                paddingBottom: isMobile ? '0.75rem' : '1rem',
+                fontFamily: "Clash Display",
               }}
             >
               Social Media
-            </h3>
-            <div
-              style={{
-                display: 'flex',
-                gap: '1rem',
-                flexWrap: 'wrap',
-              }}
-            >
+            </h4>
+            <div style={{ display: "flex", gap: "15px" }}>
               {[
-                { name: 'facebook', icon: 'facebook (2).png' },
-                { name: 'instagram', icon: 'instagram.png' },
-                { name: 'whatsapp', icon: 'whatsapp.png' },
-                { name: 'tiktok', icon: 'tiktok.png' },
+                { name: "facebook", icon: "/social-icons/facebook (2).png" },
+                { name: "instagram", icon: "/social-icons/instagram.png" },
+                { name: "whatsapp", icon: "/social-icons/whatsapp.png" },
+                { name: "tiktok", icon: "/social-icons/tiktok.png" },
               ].map((social) => (
                 <a
                   key={social.name}
                   href="#"
                   style={{
-                    width: isMobile ? '40px' : '44px',
-                    height: isMobile ? '40px' : '44px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    borderRadius: '50%',
-                    backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                    transition: 'all 0.3s ease',
+                    width: "40px",
+                    height: "40px",
+                    borderRadius: "50%",
+                    backgroundColor: "rgba(255,255,255,0.1)",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    transition: "all 0.3s ease",
                   }}
                   onMouseEnter={(e) => {
                     const el = e.currentTarget;
-                    el.style.backgroundColor = 'rgba(255, 255, 255, 0.25)';
-                    el.style.transform = 'scale(1.1)';
+                    el.style.backgroundColor = "rgba(255,255,255,0.25)";
+                    el.style.transform = "scale(1.1)";
                   }}
                   onMouseLeave={(e) => {
                     const el = e.currentTarget;
-                    el.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
-                    el.style.transform = 'scale(1)';
+                    el.style.backgroundColor = "rgba(255,255,255,0.1)";
+                    el.style.transform = "scale(1)";
                   }}
                 >
                   <img
-                    src={`/social-icons/${social.icon}`}
+                    src={`/${social.icon}`}
                     alt={social.name}
-                    style={{
-                      width: isMobile ? '20px' : '22px',
-                      height: isMobile ? '20px' : '22px',
-                    }}
+                    style={{ width: "18px", height: "18px" }}
                   />
                 </a>
               ))}
             </div>
           </div>
-          </div>
         </div>
 
-        {/* Bottom section with divider and copyright */}
-        <div
-          style={{
-            borderTop: '1px solid rgba(255, 255, 255, 0.1)',
-            padding: isMobile ? '1.5rem 1.25rem' : '2rem 5rem',
-          }}
-        >
+        {/* Divider + Copyright */}
+        <div style={{ marginTop: isMobile ? "32px" : "50px" }}>
           <div
             style={{
-              maxWidth: '1280px',
-              margin: '0 auto',
-              textAlign: 'center',
+              height: "1px",
+              background: "rgba(255,255,255,0.2)",
+              marginBottom: "16px",
             }}
-          >
+          />
           <p
             style={{
-              fontFamily: "'Clash Display', sans-serif",
-              fontSize: isMobile ? '13px' : '14px',
-              color: 'rgba(255, 255, 255, 0.7)',
+              textAlign: "left",
+              fontSize: "13px",
+              color: "rgba(255,255,255,0.7)",
               margin: 0,
             }}
           >
             2026 Velora Ceylon Travels. All right Reserved.
           </p>
-          </div>
         </div>
       </div>
     </footer>

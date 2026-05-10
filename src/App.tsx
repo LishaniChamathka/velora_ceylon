@@ -15,6 +15,7 @@ import AboutUs from "./About/about";
 import ToursPage from "./Tours/tours";
 import TourDetailsPage from "./Tours/tourDetail";
 import ContactUsPage from "./Contact/contact";
+import FAQPage from "./FAQ/faq";
 
 import ScrollToTop from "./ScrollToTop"; 
 
@@ -43,7 +44,7 @@ const App = () => {
           <Route path="/about-us"   element={<AboutUs />} />
           <Route path="/tours"      element={<ToursPage />} />
           <Route path="/tours/:id" element={<TourDetailsPage />} />
-           {/* <Route path="/faq"        element={<Faq />} /> */}
+           <Route path="/faq"        element={<FAQPage />} />
           <Route path="/contact-us" element={<ContactUsPage />} /> 
         </Routes>
       </div>

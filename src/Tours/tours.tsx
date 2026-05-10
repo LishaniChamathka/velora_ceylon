@@ -238,7 +238,7 @@ function TourCard({ tour }: { tour: Tour }) {
           >
             View Details
             <span className="tour-btn-icon">
-              <ArrowUpRight size={14} />
+              <ArrowUpRight size={14}/>
             </span>
           </button>
         </div>
@@ -671,7 +671,7 @@ _Sent via Velora Ceylon Travels Website_`;
 }
 
 /* ─────────────────────────── Main Page ─────────────────────── */
-export default function AboutUsPage() {
+export default function ToursPage() {
   const [heroVisible, setHeroVisible] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
 
@@ -751,6 +751,7 @@ export default function AboutUsPage() {
           line-height: 1.04;
           letter-spacing: -0.03em;
           margin-bottom: 16px;
+          max-width: 1200px;
         }
         .au-hero-sub {
           font-size: clamp(0.82rem, 1.8vw, 1rem);
@@ -890,7 +891,7 @@ export default function AboutUsPage() {
 
         /* ══════ TOURS SECTION (Images 2 & 3) ══════ */
         .au-tours-section {
-          padding: clamp(40px, 5vw, 72px) clamp(24px, 6vw, 80px);
+          padding: clamp(40px, 5vw, 7px) clamp(24px, 6vw, 80px);
           background: #fff;
         }
 
@@ -1029,11 +1030,12 @@ export default function AboutUsPage() {
         .tour-btn-icon {
           width: 24px; height: 24px;
           border-radius: 50%;
-          background: rgba(255,255,255,0.25);
+          background: #fff;
           display: inline-flex;
           align-items: center;
           justify-content: center;
           flex-shrink: 0;
+          color: #000;
         }
 
         /* Customize CTA */
@@ -1043,7 +1045,7 @@ export default function AboutUsPage() {
         }
         .tours-cta-text {
           font-size: 0.85rem;
-          color: #aaa;
+          color: #999999;
           margin-bottom: 14px;
           font-family: 'Clash Display', sans-serif;
         }
@@ -1343,10 +1345,77 @@ export default function AboutUsPage() {
               guides.
             </p>
 
-            <a href="/contact-us" className="au-inquire-btn">
+            {/* <a href="/contact-us" className="au-inquire-btn">
               Inquire Now
               <span className="au-inquire-btn-icon">
                 <ArrowUpRight size={16} color="#212121" />
+              </span>
+            </a> */}
+            <a
+              href="/contact-us"
+              className="vc-explore-button"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "10px",
+                border: "1.5px solid rgba(255,255,255,0.32)",
+                borderRadius: "9999px",
+                padding: "10px 10px 10px 18px",
+                color: "rgba(255,255,255,0.90)",
+                fontSize: "1rem",
+                fontWeight: 400,
+                textDecoration: "none",
+                transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+                cursor: "pointer",
+                width: "fit-content",
+                flexShrink: 0,
+                background: "#65ABEA",
+                backdropFilter: "blur(4px)",
+              }}
+              onMouseEnter={(e) => {
+                const button = e.currentTarget;
+                const arrow = button.querySelector(".vc-arrow-icon");
+                button.style.transform = "translateX(5px)";
+                button.style.borderColor = "rgba(255,255,255,0.6)";
+                button.style.background = "#0096df";
+                if (arrow) {
+                  (arrow as HTMLElement).style.transform = "translateX(4px)";
+                  (arrow as HTMLElement).style.background = "#fff";
+                  (arrow as HTMLElement).style.color = "#000";
+                }
+              }}
+              onMouseLeave={(e) => {
+                const button = e.currentTarget;
+                const arrow = button.querySelector(".vc-arrow-icon");
+                button.style.transform = "translateX(0px)";
+                button.style.borderColor = "rgba(255,255,255,0.32)";
+                button.style.background = "#65ABEA";
+                if (arrow) {
+                  (arrow as HTMLElement).style.transform = "translateX(0px)";
+                  (arrow as HTMLElement).style.background = "#fff";
+                  (arrow as HTMLElement).style.color = "#000";
+                }
+              }}
+            >
+              Inquire Now
+              <span
+                className="vc-arrow-icon"
+                style={{
+                  width: "26px",
+                  height: "26px",
+                  borderRadius: "9999px",
+                  border: "1.5px solid rgba(255,255,255,0.36)",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  fontSize: "0.82rem",
+                  color: "#000",
+                  background: "#fff",
+                  transition:
+                    "transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), background 0.3s ease",
+                }}
+              >
+                <ArrowUpRight size={16} />
               </span>
             </a>
           </div>
