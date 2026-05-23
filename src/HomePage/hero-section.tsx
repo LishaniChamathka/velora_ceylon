@@ -265,7 +265,7 @@ export default function VeloraCeylonHero() {
                   backdropFilter: "blur(3px)",
                   WebkitBackdropFilter: "blur(5px)",
                   padding: "22px 24px",
-                  height: "220px",
+                  height: "260px",
                   display: "flex",
                   flexDirection: "column",
                   boxShadow: "0 8px 32px rgba(0, 0, 0, 0.1)",
@@ -333,7 +333,7 @@ export default function VeloraCeylonHero() {
                         display: "block",
                         color: "#fff",
                         fontWeight: 600,
-                        fontSize: "0.82rem",
+                        fontSize: "16px",
                       }}
                     >
                       People Joined
@@ -344,7 +344,7 @@ export default function VeloraCeylonHero() {
                 <p
                   className={textVisible ? "vc-text-visible" : "vc-text-hidden"}
                   style={{
-                    fontSize: "0.83rem",
+                    fontSize: "18px",
                     color: "rgba(255,255,255,0.85)",
                     lineHeight: 1.7,
                     marginBottom: "18px",
@@ -367,7 +367,7 @@ export default function VeloraCeylonHero() {
                     borderRadius: "9999px",
                     padding: "8px 10px 8px 18px",
                     color: "rgba(255,255,255,0.90)",
-                    fontSize: "0.82rem",
+                    fontSize: "13px",
                     fontWeight: 400,
                     textDecoration: "none",
                     transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
@@ -468,7 +468,7 @@ export default function VeloraCeylonHero() {
                         <h3
                           className="vc-feat-title"
                           style={{
-                            fontSize: "1.08rem",
+                            fontSize: "20px",
                             fontWeight: 700,
                             color: "#fff",
                             margin: "0 0 6px",
@@ -482,7 +482,7 @@ export default function VeloraCeylonHero() {
                         <p
                           className="vc-feat-desc"
                           style={{
-                            fontSize: "0.85rem",
+                            fontSize: "18px",
                             color: "rgba(255,255,255,0.72)",
                             lineHeight: 1.6,
                             margin: 0,

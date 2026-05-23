@@ -87,7 +87,7 @@ export default function HeroSection() {
         }
 
         .hero-title {
-          font-size: 46px;
+          font-size: 50px;
           font-weight: 500;
           color: #0f0f0f;
           line-height: 1.13;

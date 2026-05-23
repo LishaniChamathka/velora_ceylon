@@ -286,6 +286,7 @@ const Footer = () => {
               fontSize: "13px",
               color: "rgba(255,255,255,0.7)",
               margin: 0,
+              fontFamily: "Clash Display",
             }}
           >
             2026 Velora Ceylon Travels. All right Reserved.
