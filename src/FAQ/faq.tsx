@@ -107,9 +107,9 @@ const faqItems: FAQItem[] = [
   },
 ];
 
-const clash: React.CSSProperties = {
-  fontFamily: "'Clash Display', sans-serif",
-};
+// const clash: React.CSSProperties = {
+//   fontFamily: "'Clash Display', sans-serif",
+// };
 
 function useInView(threshold = 0.15) {
   const ref = useRef<HTMLDivElement>(null);
@@ -162,7 +162,7 @@ function StarRating({ rating, reviews }: { rating: number; reviews: number }) {
 
 export default function FAQPage() {
   const [expandedId, setExpandedId] = useState<number | null>(2);
-  const [isMobile, setIsMobile] = useState(false);
+  const [, setIsMobile] = useState(false);
   const [heroVisible, setHeroVisible] = useState(false);
   const { ref: toursRef, visible: toursVisible } = useInView(0.1);
   const navigate = useNavigate();

@@ -766,7 +766,7 @@ export default function ContactUsPage() {
             onClick={cfSend}
             disabled={cfSending}
             style={{
-              display: "inline-flex",
+              // display: "inline-flex",
               alignItems: "center",
               gap: "10px",
               border: "1.5px solid rgba(255,255,255,0.32)",
