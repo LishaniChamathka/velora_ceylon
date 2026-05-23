@@ -67,20 +67,34 @@ function useCountUp(item: StatItem, duration = 1600, trigger: boolean) {
 
 function StatCounter({ item, trigger }: { item: StatItem; trigger: boolean }) {
   const display = useCountUp(item, 1600, trigger);
+  
+  // Split display and suffix for separate styling
+  const displayWithoutSuffix = display.replace(item.suffix, '');
+  
+  // Extract just the plus sign
+  const suffixWithoutPlus = item.suffix.replace('+', '');
+  const hasPlus = item.suffix.includes('+');
+  
   return (
     <div style={{ minWidth: 0 }}>
       <div style={{
-        fontSize: "clamp(1.6rem, 3vw, 2.2rem)",
+        fontSize: "clamp(1.6rem, 3vw, 40px)",
         fontWeight: 600,
         color: "#111",
         letterSpacing: "-0.03em",
         lineHeight: 1,
         fontFamily: "'Clash Display', sans-serif",
       }}>
-        {display}
+        {displayWithoutSuffix}
+        {suffixWithoutPlus}
+        {hasPlus && (
+          <span style={{ color: "#65ABEA", marginLeft: "2px" }}>
+            +
+          </span>
+        )}
       </div>
       <div style={{
-        fontSize: "clamp(0.72rem, 1.3vw, 0.8rem)",
+        fontSize: "clamp(0.72rem, 1.3vw, 18px)",
         color: "#000",
         marginTop: "5px",
         fontFamily: "'Clash Display', sans-serif",
@@ -91,7 +105,6 @@ function StatCounter({ item, trigger }: { item: StatItem; trigger: boolean }) {
     </div>
   );
 }
-
 function useInView(threshold = 0.15) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
@@ -294,7 +307,7 @@ export default function AboutUsPage() {
         .au-text-col { display: flex; flex-direction: column; }
 
         .au-main-heading {
-          font-size: clamp(1.8rem, 4vw, 3rem);
+          font-size: clamp(1.8rem, 4vw, 50px);
           font-weight: 500;
           color: #212121;
           line-height: 1.12;
@@ -303,10 +316,10 @@ export default function AboutUsPage() {
         }
 
         .au-blockquote {
-          font-size: clamp(0.8rem, 1.5vw, 0.92rem);
+          font-size: clamp(0.8rem, 1.5vw, 18px);
           color: #999999;
           line-height: 1.8;
-          margin-bottom: 18px;
+          margin-bottom: 30px;
           font-weight: 400;
         }
 
@@ -391,6 +404,13 @@ export default function AboutUsPage() {
           transform: translateY(-4px);
         }
 
+        .au-mv-header {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          margin-bottom: 16px;
+        }
+
         .au-mv-icon {
           width: 42px; height: 42px;
           border-radius: 12px;
@@ -398,9 +418,9 @@ export default function AboutUsPage() {
           display: flex;
           align-items: center;
           justify-content: center;
-          margin-bottom: 16px;
           overflow: hidden;
           padding: 8px;
+          flex-shrink: 0;
         }
         .au-mv-icon img {
           width: 100%;
@@ -412,7 +432,8 @@ export default function AboutUsPage() {
           font-size: clamp(1rem, 1.8vw, 1.15rem);
           font-weight: 600;
           color: var(--dark);
-          margin-bottom: 10px;
+          margin: 0;
+          margin-left: 5px;
         }
         .au-mv-desc {
           font-size: clamp(0.8rem, 1.3vw, 0.87rem);
@@ -445,7 +466,7 @@ export default function AboutUsPage() {
             <p className="au-hero-sub">
               Your Journey Begins Here – Discover Sri Lanka Like Never Before
             </p>
-            <a href="#" className="au-pill-btn">
+            <a href="/tours" className="au-pill-btn">
               Explore Tours
               <span className="au-pill-btn-icon"><ArrowUpRight size={16} /></span>
             </a>
@@ -515,6 +536,7 @@ export default function AboutUsPage() {
                 color: "rgba(255,255,255,0.90)",
                 fontSize: "1rem",
                 fontWeight: 400,
+                marginTop: "30px",
                 textDecoration: "none",
                 transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
                 cursor: "pointer",
@@ -580,10 +602,12 @@ export default function AboutUsPage() {
           >
             {MV_CARDS.map((card) => (
               <div key={card.title} className="au-mv-card">
-                <div className="au-mv-icon">
-                  <img src={card.icon} alt={card.title} />
+                <div className="au-mv-header">
+                  <div className="au-mv-icon">
+                    <img src={card.icon} alt={card.title} />
+                  </div>
+                  <h3 className="au-mv-title">{card.title}</h3>
                 </div>
-                <h3 className="au-mv-title">{card.title}</h3>
                 <p className="au-mv-desc">{card.desc}</p>
               </div>
             ))}

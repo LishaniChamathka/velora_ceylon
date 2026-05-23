@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { ChevronDown, Mail, Phone } from "lucide-react";
+import { ChevronDown, Mail, Phone, ArrowUpRight } from "lucide-react";
 import InquireSection from "../HomePage/inquire-section";
 import Footer from "../Layout/footer";
 import emailjs from "@emailjs/browser";
@@ -763,11 +763,77 @@ export default function ContactUsPage() {
           </div>
 
           <button
-            className="contact-send-btn"
             onClick={cfSend}
             disabled={cfSending}
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "10px",
+              border: "1.5px solid rgba(255,255,255,0.32)",
+              borderRadius: "9999px",
+              padding: "10px 10px 10px 18px",
+              color: "rgba(255,255,255,0.90)",
+              fontSize: "1rem",
+              fontWeight: 400,
+              marginTop: "30px",
+              textDecoration: "none",
+              fontFamily: "'Clash Display', sans-serif",
+              transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+              cursor: cfSending ? "not-allowed" : "pointer",
+              width: "fit-content",
+              flexShrink: 0,
+              background: "#65ABEA",
+              backdropFilter: "blur(4px)",
+              opacity: cfSending ? 0.65 : 1,
+              display: "flex",
+              marginLeft: "auto",
+            }}
+            onMouseEnter={(e) => {
+              if (cfSending) return;
+              const button = e.currentTarget;
+              const arrow = button.querySelector(".vc-arrow-icon");
+              button.style.transform = "translateX(5px)";
+              button.style.borderColor = "rgba(255,255,255,0.6)";
+              button.style.background = "#0096df";
+              if (arrow) {
+                (arrow as HTMLElement).style.transform = "translateX(4px)";
+                (arrow as HTMLElement).style.background = "#fff";
+                (arrow as HTMLElement).style.color = "#000";
+              }
+            }}
+            onMouseLeave={(e) => {
+              if (cfSending) return;
+              const button = e.currentTarget;
+              const arrow = button.querySelector(".vc-arrow-icon");
+              button.style.transform = "translateX(0px)";
+              button.style.borderColor = "rgba(255,255,255,0.32)";
+              button.style.background = "#65ABEA";
+              if (arrow) {
+                (arrow as HTMLElement).style.transform = "translateX(0px)";
+                (arrow as HTMLElement).style.background = "#fff";
+                (arrow as HTMLElement).style.color = "#000";
+              }
+            }}
           >
             {cfSending ? "Sending..." : "Send Message"}
+            <span
+              className="vc-arrow-icon"
+              style={{
+                width: "26px",
+                height: "26px",
+                borderRadius: "9999px",
+                border: "1.5px solid rgba(255,255,255,0.36)",
+                display: "inline-flex",
+                alignItems: "center",
+                justifyContent: "center",
+                fontSize: "0.82rem",
+                color: "#000",
+                background: "#fff",
+                transition: "transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), background 0.3s ease",
+              }}
+            >
+              <ArrowUpRight size={16} />
+            </span>
           </button>
         </section>
 
@@ -857,14 +923,14 @@ export default function ContactUsPage() {
                   <img src="/social-icons/tiktok1.png" />
                 </a>
                 {/* LinkedIn */}
-                <a
+                {/* <a
                   className="contact-social-icon"
                   href="#"
                   target="_blank"
                   rel="noreferrer"
                 >
                   <img src="/social-icons/Vector1.png" />
-                </a>
+                </a> */}
               </div>
             </div>
           </div>

@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect } from "react";
-import { ChevronLeft, ChevronRight, Star } from "lucide-react";
+import { ArrowLeft, ArrowRight, ChevronLeft, ChevronRight, Star } from "lucide-react";
 
 const reviews = [
   {
@@ -351,7 +351,7 @@ export default function RealFeedback() {
                 disabled={index <= 0}
                 aria-label="Previous"
               >
-                <ChevronLeft size={20} />
+                <ArrowLeft size={20} />
               </button>
               <button
                 className="rf-arrow"
@@ -359,7 +359,7 @@ export default function RealFeedback() {
                 disabled={index >= maxIndex}
                 aria-label="Next"
               >
-                <ChevronRight size={20} />
+                <ArrowRight  size={20} />
               </button>
             </div>
           </div>

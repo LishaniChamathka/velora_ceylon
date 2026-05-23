@@ -812,14 +812,14 @@ export default function ToursPage() {
           gap: 18px;
         }
         .au-curated-heading {
-          font-size: clamp(1.9rem, 4vw, 2.8rem);
+          font-size: clamp(1.9rem, 4vw, 50px);
           font-weight: 500;
           color: #111;
           line-height: 1.12;
           letter-spacing: -0.025em;
         }
         .au-curated-desc {
-          font-size: clamp(0.8rem, 1.4vw, 0.9rem);
+          font-size: clamp(0.8rem, 1.4vw, 18px);
           color: #999;
           line-height: 1.8;
           font-weight: 400;
@@ -1003,6 +1003,9 @@ export default function ToursPage() {
           align-items: center;
           justify-content: space-between;
           gap: 8px;
+          border-top: 1px solid #e0e0e0;
+          padding-top: 14px;
+          margin-top: 14px;
         }
         .tour-price {
           font-size: clamp(0.82rem, 1.3vw, 0.9rem);
@@ -1365,6 +1368,7 @@ export default function ToursPage() {
                 fontSize: "1rem",
                 fontWeight: 400,
                 textDecoration: "none",
+                marginTop: "30px",
                 transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
                 cursor: "pointer",
                 width: "fit-content",
