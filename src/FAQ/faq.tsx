@@ -1,4 +1,3 @@
-
 import InquireSection from "../HomePage/inquire-section";
 import Footer from "../Layout/footer";
 import { useState, useEffect, useRef } from "react";
@@ -108,9 +107,9 @@ const faqItems: FAQItem[] = [
   },
 ];
 
-const clash: React.CSSProperties = {
-  fontFamily: "'Clash Display', sans-serif",
-};
+// const clash: React.CSSProperties = {
+//   fontFamily: "'Clash Display', sans-serif",
+// };
 
 function useInView(threshold = 0.15) {
   const ref = useRef<HTMLDivElement>(null);
@@ -161,13 +160,12 @@ function StarRating({ rating, reviews }: { rating: number; reviews: number }) {
   );
 }
 
-
-
 export default function FAQPage() {
   const [expandedId, setExpandedId] = useState<number | null>(2);
-  const [isMobile, setIsMobile] = useState(false);
+  const [, setIsMobile] = useState(false);
   const [heroVisible, setHeroVisible] = useState(false);
   const { ref: toursRef, visible: toursVisible } = useInView(0.1);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const t = setTimeout(() => setHeroVisible(true), 80);
@@ -186,48 +184,46 @@ export default function FAQPage() {
   };
 
   function TourCard({ tour }: { tour: Tour }) {
-  const navigate = useNavigate();
-
-  return (
-    <div className="tour-card">
-      <div className="tour-img-wrap">
-        <img src={tour.image} alt={tour.alt} className="tour-img" />
-        <div className="tour-badge">
-          <Clock size={12} />
-          <span>{tour.days} Days</span>
-        </div>
-      </div>
-      <div className="tour-body">
-        <StarRating rating={tour.rating} reviews={tour.reviews} />
-        <h3 className="tour-title">{tour.title}</h3>
-        <p className="tour-desc">{tour.desc}</p>
-        <div className="tour-footer">
-          <div>
-            <div
-              style={{
-                fontSize: "0.72rem",
-                color: "#aaa",
-                fontFamily: "'Clash Display', sans-serif",
-              }}
-            >
-              From
-            </div>
-            <div className="tour-price">{tour.price}</div>
+    return (
+      <div className="tour-card">
+        <div className="tour-img-wrap">
+          <img src={tour.image} alt={tour.alt} className="tour-img" />
+          <div className="tour-badge">
+            <Clock size={12} />
+            <span>{tour.days} Days</span>
           </div>
-          <button
-            className="tour-btn"
-            onClick={() => navigate(`/tours/${tour.id}`)}
-          >
-            View Details
-            <span className="tour-btn-icon">
-              <ArrowUpRight size={14} />
-            </span>
-          </button>
+        </div>
+        <div className="tour-body">
+          <StarRating rating={tour.rating} reviews={tour.reviews} />
+          <h3 className="tour-title">{tour.title}</h3>
+          <p className="tour-desc">{tour.desc}</p>
+          <div className="tour-footer">
+            <div>
+              <div
+                style={{
+                  fontSize: "0.72rem",
+                  color: "#aaa",
+                  fontFamily: "'Clash Display', sans-serif",
+                }}
+              >
+                From
+              </div>
+              <div className="tour-price">{tour.price}</div>
+            </div>
+            <button
+              className="tour-btn"
+              onClick={() => navigate(`/tours/${tour.id}`)}
+            >
+              View Details
+              <span className="tour-btn-icon">
+                <ArrowUpRight size={14} />
+              </span>
+            </button>
+          </div>
         </div>
       </div>
-    </div>
-  );
-}
+    );
+  }
 
   return (
     <>
@@ -312,44 +308,171 @@ export default function FAQPage() {
           margin-right: auto;
         }
 
-        .au-pill-btn {
+        /* ══════ FAQ SECTION ══════ */
+        .faq-main-section {
+          width: 100%;
+          background-color: #ffffff;
+          padding: clamp(32px, 5vw, 72px) clamp(24px, 6vw, 80px);
+          box-sizing: border-box;
+        }
+
+        .faq-header-row {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: clamp(32px, 5vw, 80px);
+          align-items: flex-start;
+          margin-bottom: clamp(32px, 5vw, 60px);
+        }
+
+        .faq-header-left h2 {
+          font-family: 'Clash Display', sans-serif;
+          font-size: clamp(1.85rem, 5vw, 2.8rem);
+          font-weight: 500;
+          color: #212121;
+          line-height: 1.2;
+          margin: 0;
+          max-width: 600px;
+        }
+
+        .faq-header-right {
+          font-size: clamp(0.78rem, 1.3vw, 18px);
+          color: #aaa;
+          line-height: 1.7;
+          font-weight: 400;
+          max-width: 600px;
+          margin-left: auto;
+          text-align: left;
+        }
+
+        .faq-header-right p {
+          font-size: clamp(0.85rem, 1.3vw, 18px);
+          color: #999999;
+          font-weight: 400;
+          line-height: 1.7;
+          margin: 0;
+          font-family: 'Clash Display', sans-serif;
+          max-width: 550px;
+        }
+
+        .faq-learn-more-btn {
           display: inline-flex;
           align-items: center;
-          gap: 12px;
-          background: rgba(255,255,255,0.10);
-          border: 1.5px solid rgba(255,255,255,0.32);
+          gap: 10px;
+          background-color: #65ABEA;
+          color: #ffffff;
+          border: none;
           border-radius: 9999px;
-          padding: 10px 14px 10px 24px;
-          color: #fff;
-          font-size: 0.86rem;
-          font-family: 'Clash Display', sans-serif;
-          font-weight: 500;
+          padding: 10px 16px 10px 18px;
+          font-size: 0.875rem;
+          font-weight: 600;
           cursor: pointer;
-          text-decoration: none;
-          transition: background 0.22s, border-color 0.22s, transform 0.22s;
-          backdrop-filter: blur(10px);
+          white-space: nowrap;
+          font-family: 'Clash Display', sans-serif;
+          transition: all 0.25s ease;
+          width: fit-content;
         }
-        .au-pill-btn:hover {
-          background: rgba(255,255,255,0.20);
-          border-color: rgba(255,255,255,0.55);
-          transform: translateX(5px);
+
+        .faq-learn-more-btn:hover {
+          background-color: #4a9add;
+          transform: translateX(4px);
         }
-        .au-pill-btn-icon {
-          width: 30px; height: 30px;
+
+        .faq-learn-more-icon {
+          width: 28px;
+          height: 28px;
           border-radius: 50%;
-          background: #fff;
-          color: #111;
+          background-color: rgba(255,255,255,0.28);
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          font-size: 1rem;
-          font-weight: 700;
           flex-shrink: 0;
-          transition: transform 0.2s;
         }
-        .au-pill-btn:hover .au-pill-btn-icon { transform: translateX(4px); }
 
-        /* ══════ TOURS SECTION (Images 2 & 3) ══════ */
+        .faq-content-row {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: clamp(32px, 5vw, 80px);
+          align-items: stretch;
+        }
+
+        .faq-image-wrap {
+          width: 100%;
+          border-radius: 1.5rem;
+          overflow: hidden;
+          height: clamp(400px, 50vw, 700px);
+        }
+
+        .faq-image-wrap img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+        }
+
+        .faq-items-wrap {
+          border-top: 1px solid #e5e7eb;
+        }
+
+        .faq-item {
+          border-bottom: 1px solid #e5e7eb;
+        }
+
+        .faq-item-btn {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 16px 0;
+          background: none;
+          border: none;
+          cursor: pointer;
+          text-align: left;
+          gap: 16px;
+        }
+
+        .faq-item-question {
+          display: flex;
+          align-items: flex-start;
+          gap: 12px;
+          flex: 1;
+          min-width: 0;
+        }
+
+        .faq-item-number {
+          font-family: 'Clash Display', sans-serif;
+          font-size: clamp(1.2rem, 2vw, 1.5rem);
+          font-weight: 500;
+          color: #212121;
+          flex-shrink: 0;
+        }
+
+        .faq-item-text {
+          font-family: 'Clash Display', sans-serif;
+          font-size: clamp(1rem, 1.8vw, 1.25rem);
+          font-weight: 500;
+          color: #212121;
+        }
+
+        .faq-item-icon {
+          flex-shrink: 0;
+          color: #6b7280;
+        }
+
+        .faq-item-answer {
+          overflow: hidden;
+          transition: max-height 0.3s ease;
+        }
+
+        .faq-item-answer p {
+          font-size: clamp(0.85rem, 1.3vw, 1rem);
+          color: #999999;
+          line-height: 1.75;
+          margin: 0 0 16px 0;
+          font-family: 'Clash Display', sans-serif;
+          padding-left: 32px;
+        }
+
+        /* ══════ TOURS SECTION ══════ */
         .au-tours-section {
           padding: clamp(40px, 5vw, 72px) clamp(24px, 6vw, 80px);
           background: #fff;
@@ -374,13 +497,13 @@ export default function FAQPage() {
         }
 
         .au-tours-subtext {
-        font-size: clamp(0.78rem, 1.3vw, 0.88rem);
-        color: #aaa;
-        line-height: 1.7;
-        font-weight: 400;
-        max-width: 450px;    
-        margin-left: auto; 
-        text-align: left;
+          font-size: clamp(0.78rem, 1.3vw, 18px);
+          color: #aaa;
+          line-height: 1.7;
+          font-weight: 400;
+          max-width: 450px;
+          margin-left: auto;
+          text-align: left;
         }
 
         .tours-grid {
@@ -454,7 +577,7 @@ export default function FAQPage() {
           line-height: 1.7;
           font-weight: 400;
           flex: 1;
-          margin-bottom: 14px;
+          margin-bottom: 12px;
           font-family: 'Clash Display', sans-serif;
         }
         .tour-footer {
@@ -462,6 +585,9 @@ export default function FAQPage() {
           align-items: center;
           justify-content: space-between;
           gap: 8px;
+          border-top: 1px solid #ddd;
+          padding-top: 12px;
+          margin-top: 0;
         }
         .tour-price {
           font-size: clamp(0.82rem, 1.3vw, 0.9rem);
@@ -497,48 +623,55 @@ export default function FAQPage() {
         }
 
         /* ══════ RESPONSIVE ══════ */
-        @media (max-width: 768px) {
-          .au-about-row  { grid-template-columns: 1fr; }
-          .au-img-stack  { height: clamp(240px, 65vw, 360px); }
-          .au-mv-grid    { grid-template-columns: 1fr; }
-          .au-stats      { gap: 16px; }
-        }
-        @media (max-width: 480px) {
-          .au-stat-divider { display: none; }
-          .au-hero { min-height: 400px; }
-          .au-hero-content { padding: 0 12px; margin-top: 60px; }
-        }
-
         @media (max-width: 900px) {
           .tours-grid { grid-template-columns: repeat(2, 1fr); }
         }
+
         @media (max-width: 768px) {
-          .au-curated-section {
-            flex-direction: column;
+          .faq-header-row {
+            grid-template-columns: 1fr;
+            gap: 24px;
           }
-          .au-curated-img-wrap {
-            width: 100%;
-            max-width: 100%;
-            height: clamp(200px, 55vw, 320px);
+
+          .faq-content-row {
+            grid-template-columns: 1fr;
+            gap: 24px;
           }
-          .au-stats { gap: 16px; }
+
+          .faq-image-wrap {
+            height: clamp(300px, 60vw, 500px);
+          }
+
           .au-tours-header { flex-direction: column; gap: 8px; }
           .au-tours-subtext { text-align: left; }
+          .tours-grid { grid-template-columns: 1fr; }
         }
+
         @media (max-width: 600px) {
           .tours-grid { grid-template-columns: 1fr; }
-          .modal-row-2 { grid-template-columns: 1fr; }
         }
+
         @media (max-width: 480px) {
-          .au-stat-divider { display: none; }
+          .faq-header-left h2 {
+            font-size: 1.5rem;
+          }
+
+          .faq-item-number {
+            font-size: 1rem;
+          }
+
+          .faq-item-text {
+            font-size: 0.95rem;
+          }
+
           .au-tours-subtext { text-align: left; margin-top: -15px; }
           .au-hero { min-height: 400px; }
           .au-hero-content { padding: 0 12px; margin-top: 60px; }
-          .au-tours-subtext { margin-top: 15px; }
         }
       `}</style>
 
       <div className="au-page">
+        {/* ── HERO ── */}
         <section className="au-hero">
           <div className={`au-hero-bg ${heroVisible ? "visible" : ""}`} />
           <div className="au-hero-overlay" />
@@ -551,262 +684,115 @@ export default function FAQPage() {
           </div>
         </section>
 
-        <section
-          style={{
-            width: "100%",
-            backgroundColor: "#ffffff",
-            padding: isMobile ? "2.5rem 1.25rem" : "3.5rem 5rem",
-            boxSizing: "border-box",
-          }}
-        >
-          <div style={{ margin: "0 auto" }}>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: isMobile ? "column" : "row",
-                alignItems: "flex-start",
-                justifyContent: "space-between",
-                gap: isMobile ? "1.25rem" : "3rem",
-                marginBottom: isMobile ? "2rem" : "3rem",
-              }}
-            >
-              <div style={{ flex: 1 }}>
-                <h2
-                  style={{
-                    ...clash,
-                    fontSize: isMobile ? "1.85rem" : "50px",
-                    fontWeight: 500,
-                    color: "#212121",
-                    lineHeight: 1.2,
-                    margin: "0 0 1rem 0",
-                    maxWidth: "700px",
-                  }}
-                >
-                  Everything You Need to Know Before You Travel
-                </h2>
-                <p
-                  style={{
-                    fontSize: "18px",
-                    color: "#999999",
-                    fontWeight: 400,
-                    lineHeight: 1.5,
-                    margin: 0,
-                    fontFamily: "Clash Display",
-                    maxWidth: "720px",
-                  }}
-                >
-                  We understand that planning a trip can raise many questions.
-                  Below, we've answered the most common queries to help you
-                  prepare for your unforgettable journey with Velora Ceylon
-                  Travels.
-                </p>
-              </div>
-              <div
-                style={{ flexShrink: 0, paddingTop: isMobile ? 0 : "0.25rem" }}
-              >
-                <button
-                  style={{
-                    display: "inline-flex",
-                    alignItems: "center",
-                    gap: "0.5rem",
-                    backgroundColor: "#65ABEA",
-                    color: "#ffffff",
-                    border: "none",
-                    borderRadius: "9999px",
-                    padding: "0.6rem 1.1rem 0.6rem 1.4rem",
-                    fontSize: "0.875rem",
-                    fontWeight: 600,
-                    cursor: "pointer",
-                    whiteSpace: "nowrap",
-                    fontFamily: "Clash Display",
-                  }}
-                >
-                  Learn More
-                  <span
-                    style={{
-                      width: "28px",
-                      height: "28px",
-                      borderRadius: "50%",
-                      backgroundColor: "rgba(255,255,255,0.28)",
-                      display: "inline-flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      flexShrink: 0,
-                    }}
-                  >
-                    <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
-                      <path
-                        d="M1.5 11.5L11.5 1.5M11.5 1.5H4.5M11.5 1.5V8.5"
-                        stroke="white"
-                        strokeWidth="1.8"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </span>
-                </button>
-              </div>
+        {/* ── FAQ SECTION ── */}
+        <section className="faq-main-section">
+          {/* Header with title on left and description + button on right */}
+          <div className="faq-header-row">
+            <div className="faq-header-left">
+              <h2>Frequently Asked Questions</h2>
+            </div>
+            <div className="faq-header-right">
+              <p>
+                Browse through our list of frequently asked questions to get all the information you need about our tours, booking, and more. If you can't find what you're looking for, feel free to reach out to us directly.
+              </p>
+              {/* <button className="faq-learn-more-btn">
+                Learn More
+                <span className="faq-learn-more-icon">
+                  <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+                    <path
+                      d="M1.5 11.5L11.5 1.5M11.5 1.5H4.5M11.5 1.5V8.5"
+                      stroke="white"
+                      strokeWidth="1.8"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </span>
+              </button> */}
+            </div>
+          </div>
+
+          {/* FAQ Content Row */}
+          <div className="faq-content-row">
+            {/* Image on left */}
+            <div className="faq-image-wrap">
+              <img
+                src="/faqpage/faq-left.jpg"
+                alt="Wildlife tour"
+                onError={(e) => {
+                  (e.target as HTMLImageElement).src =
+                    "https://images.unsplash.com/photo-1564760055775-d63b17a55c44?w=800&q=80";
+                }}
+              />
             </div>
 
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr",
-                gap: isMobile ? "2rem" : "4rem",
-                alignItems: "center",
-              }}
-            >
-              <div
-                style={{
-                  width: "100%",
-                  borderRadius: "1.5rem",
-                  overflow: "hidden",
-                  height: isMobile ? "400px" : "700px",
-                }}
-              >
-                <img
-                  src="/faqpage/faq-left.jpg"
-                  alt="Wildlife tour"
-                  onError={(e) => {
-                    (e.target as HTMLImageElement).src =
-                      "https://images.unsplash.com/photo-1564760055775-d63b17a55c44?w=800&q=80";
-                  }}
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "cover",
-                    display: "block",
-                  }}
-                />
-              </div>
+            {/* FAQ Items on right */}
+            <div className="faq-items-wrap">
+              {faqItems.map((item) => {
+                const isOpen = expandedId === item.id;
 
-              <div
-                style={{
-                  borderTop: "1px solid #e5e7eb",
-                }}
-              >
-                {faqItems.map((item) => {
-                  const isOpen = expandedId === item.id;
+                return (
+                  <div key={item.id} className="faq-item">
+                    <button
+                      className="faq-item-btn"
+                      onClick={() => toggleExpand(item.id)}
+                    >
+                      <div className="faq-item-question">
+                        <span className="faq-item-number">{item.id}.</span>
+                        <span className="faq-item-text">{item.question}</span>
+                      </div>
 
-                  return (
+                      <div className="faq-item-icon">
+                        {isOpen ? (
+                          <svg
+                            width="20"
+                            height="20"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M20 12H4"
+                            />
+                          </svg>
+                        ) : (
+                          <svg
+                            width="20"
+                            height="20"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M12 4v16m8-8H4"
+                            />
+                          </svg>
+                        )}
+                      </div>
+                    </button>
+
                     <div
-                      key={item.id}
+                      className="faq-item-answer"
                       style={{
-                        borderBottom: "1px solid #e5e7eb",
+                        maxHeight: isOpen ? "160px" : "0px",
                       }}
                     >
-                      {/* Question */}
-                      <button
-                        onClick={() => toggleExpand(item.id)}
-                        style={{
-                          width: "100%",
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "space-between",
-                          padding: "1.05rem 0",
-                          background: "none",
-                          border: "none",
-                          cursor: "pointer",
-                          textAlign: "left",
-                          gap: "1rem",
-                        }}
-                      >
-                        <div
-                          style={{
-                            display: "flex",
-                            alignItems: "flex-start",
-                            gap: "0.35rem",
-                            flex: 1,
-                            minWidth: 0,
-                          }}
-                        >
-                          <span
-                            style={{
-                              ...clash,
-                              fontSize: "24px",
-                              fontWeight: 500,
-                              color: "#212121",
-                              flexShrink: 0,
-                            }}
-                          >
-                            {item.id}.
-                          </span>
-                          <span
-                            style={{
-                              ...clash,
-                              fontSize: "24px",
-                              fontWeight: 500,
-                              color: "#212121",
-                            }}
-                          >
-                            {item.question}
-                          </span>
-                        </div>
-
-                        <div style={{ flexShrink: 0, color: "#6b7280" }}>
-                          {isOpen ? (
-                            <svg
-                              width="20"
-                              height="20"
-                              fill="none"
-                              stroke="currentColor"
-                              viewBox="0 0 24 24"
-                            >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M20 12H4"
-                              />
-                            </svg>
-                          ) : (
-                            <svg
-                              width="20"
-                              height="20"
-                              fill="none"
-                              stroke="currentColor"
-                              viewBox="0 0 24 24"
-                            >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M12 4v16m8-8H4"
-                              />
-                            </svg>
-                          )}
-                        </div>
-                      </button>
-
-                      <div
-                        style={{
-                          overflow: "hidden",
-                          maxHeight: isOpen ? "160px" : "0px",
-                          transition: "max-height 0.3s ease",
-                        }}
-                      >
-                        <p
-                          style={{
-                            fontSize: "18px",
-                            color: "#999999",
-                            lineHeight: 1.75,
-                            margin: "0 0 1rem 1.25rem",
-                            fontFamily: "Clash Display",
-                          }}
-                        >
-                          {item.answer}
-                        </p>
-                      </div>
+                      <p>{item.answer}</p>
                     </div>
-                  );
-                })}
-              </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </section>
 
-
-        {/* ── FEATURED TOURS (Images 2 & 3 style) ── */}
+        {/* ── FEATURED TOURS SECTION ── */}
         <section className="au-tours-section">
           <div className="au-tours-header">
             <h2 className="au-tours-heading">
@@ -827,6 +813,7 @@ export default function FAQPage() {
             ))}
           </div>
         </section>
+
         <InquireSection />
         <Footer />
       </div>

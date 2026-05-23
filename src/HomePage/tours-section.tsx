@@ -117,7 +117,7 @@ function TourCard({ tour, index }: { tour: (typeof tours)[0]; index: number }) {
               window.scrollTo({ top: 0, behavior: "smooth" });
             }}
           >
-            <span className="tour-card__btn-label">See More Details</span>
+            <span className="tour-card__btn-label">View Details</span>
             <span className="tour-card__btn-icon">
               <ArrowUpRight size={14} color="#333" />
             </span>
@@ -171,7 +171,7 @@ export default function ToursSection() {
         .tours-header-left { flex: 1; min-width: 220px; }
 
         .tours-title {
-          font-size: clamp(26px, 3.5vw, 42px);
+          font-size: clamp(26px, 3.5vw, 50px);
           font-weight: 500;
           color: #0f0f0f;
           line-height: 1.15;

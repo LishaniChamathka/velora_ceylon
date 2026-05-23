@@ -267,9 +267,9 @@ const LearnMoreSection = () => {
           </div>
 
           <div
-            style={{
-              borderTop: '1px solid #e5e7eb',
-            }}
+            // style={{
+            //   borderTop: '2px solid #e5e7eb',
+            // }}
           >
             {faqItems.map((item, ) => {
               const isOpen = expandedId === item.id;
@@ -289,7 +289,7 @@ const LearnMoreSection = () => {
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'space-between',
-                      padding: '1.05rem 0',
+                      padding: '1.4rem 0',
                       background: 'none',
                       border: 'none',
                       cursor: 'pointer',
@@ -320,7 +320,7 @@ const LearnMoreSection = () => {
                       <span
                         style={{
                           ...clash,
-                          fontSize: '24px',
+                          fontSize: '20px',
                           fontWeight: 500,
                           color: '#212121',
                         }}
