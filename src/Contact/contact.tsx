@@ -456,6 +456,7 @@ export default function ContactUsPage() {
           font-size: 1.05rem;
           font-weight: 600;
           color: #111;
+          margin-top: 5px;
           font-family: 'Clash Display', sans-serif;
         }
         .contact-wa-sub {
@@ -463,7 +464,7 @@ export default function ContactUsPage() {
           color: #aaa;
           font-family: 'Clash Display', sans-serif;
           line-height: 1.6;
-          max-width: 240px;
+          max-width: 350px;
         }
         .contact-qr-wrap {
           width: 148px; height: 148px;
@@ -480,11 +481,11 @@ export default function ContactUsPage() {
           font-family: 'Clash Display', sans-serif;
         }
         .contact-wa-btn {
-          width: 100%;
+          width: 50%;
           background: #25D366;
           border: none;
-          border-radius: 12px;
-          padding: 13px;
+          border-radius: 76px;
+          padding: 15px;
           color: #fff;
           font-size: 0.86rem;
           font-family: 'Clash Display', sans-serif;

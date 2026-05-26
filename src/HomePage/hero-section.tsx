@@ -42,29 +42,34 @@ const AVATAR_COLORS = [
 export default function VeloraCeylonHero() {
   const [current, setCurrent] = useState(0);
   const [textVisible, setTextVisible] = useState(true);
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   const goTo = useCallback(
     (idx: number) => {
-      if (idx === current) return;
+      if (idx === current || isTransitioning) return;
+      setIsTransitioning(true);
       setTextVisible(false);
       setTimeout(() => {
         setCurrent(idx);
         setTextVisible(true);
-      }, 350);
+        setIsTransitioning(false);
+      }, 400);
     },
-    [current],
+    [current, isTransitioning],
   );
 
   const next = useCallback(() => {
+    setIsTransitioning(true);
     setTextVisible(false);
     setTimeout(() => {
       setCurrent((prev) => (prev + 1) % SLIDES.length);
       setTextVisible(true);
-    }, 350);
+      setIsTransitioning(false);
+    }, 400);
   }, []);
 
   useEffect(() => {
-    const timer = setInterval(next, 3800);
+    const timer = setInterval(next, 4000);
     return () => clearInterval(timer);
   }, [next]);
 
@@ -98,8 +103,8 @@ export default function VeloraCeylonHero() {
 
         .vc-heading-anim { animation: vcFadeUp 0.9s 0.15s ease both; }
         .vc-info-anim    { animation: vcCardIn 0.9s 0.35s ease both; }
-        .vc-text-visible { animation: vcTextIn 0.4s ease both; }
-        .vc-text-hidden  { opacity:0; transform:translateY(8px); transition:opacity 0.3s,transform 0.3s; }
+        .vc-text-visible { animation: vcTextIn 0.5s ease-out both; }
+        .vc-text-hidden  { opacity:0; transform:translateY(8px); transition:opacity 0.4s ease-in,transform 0.4s ease-in; }
         .vc-slide-wrap   { animation: vcSlideIn 0.5s ease both; }
 
         .vc-slide-img {
@@ -111,7 +116,15 @@ export default function VeloraCeylonHero() {
         }
         .vc-slide-wrap:hover .vc-slide-img { transform: scale(1.04); }
 
-        .vc-nav-link { transition: background 0.2s, color 0.2s; cursor: pointer; }
+        .vc-slide-wrap {
+          flex-shrink: 0;
+          display: flex;
+          flex-direction: column;
+          cursor: pointer;
+          transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .vc-slide-wrap.featured { width: 280px; }
+        .vc-slide-wrap.thumb { width: 180px; }
         .vc-nav-link:hover { background: rgba(255,255,255,0.14) !important; color:#fff !important; }
 
         /* ── Desktop bottom layout ── */
@@ -132,6 +145,7 @@ export default function VeloraCeylonHero() {
           overflow: hidden;
           min-width: 0;
           flex: 1;
+          transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
         /* ── Tablet ≤ 1024px ── */
@@ -447,7 +461,6 @@ export default function VeloraCeylonHero() {
                       flexDirection: "column",
                       cursor: "pointer",
                       width: isFeatured ? "280px" : "180px",
-                      transition: "width 0.65s cubic-bezier(0.4,0,0.2,1)",
                       animationDelay: `${pos * 0.06}s`,
                     }}
                   >

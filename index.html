@@ -5,6 +5,33 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Velora Ceylon</title>
+    <style>
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: #f5f5f5;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: #65ABEA;
+        border-radius: 5px;
+        transition: background 0.2s ease;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: #4a9add;
+      }
+
+      /* Firefox Scrollbar */
+      * {
+        scrollbar-color: #65ABEA #f5f5f5;
+        scrollbar-width: thin;
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>
