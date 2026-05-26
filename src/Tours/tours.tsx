@@ -1083,10 +1083,10 @@ export default function ToursPage() {
         }
         .modal-box {
           background: #fff;
-          border-radius: 20px;
+          border-radius: 20px 0 0 20px;
           padding: clamp(24px, 4vw, 36px);
           width: 100%;
-          max-width: 560px;
+          max-width: 700px;
           max-height: 90vh;
           overflow-y: auto;
           position: relative;
@@ -1219,7 +1219,7 @@ export default function ToursPage() {
           width: 100%;
           background: var(--blue);
           border: none;
-          border-radius: 12px;
+          border-radius: 76px;
           padding: 14px;
           color: #fff;
           font-size: 0.92rem;
