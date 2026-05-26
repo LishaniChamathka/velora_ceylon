@@ -1138,199 +1138,35 @@ function InquiryForm({ tour }: { tour: TourData }) {
   const [countryOpen, setCountryOpen] = useState(false);
 
   const allCountries = [
-    "Afghanistan",
-    "Albania",
-    "Algeria",
-    "Andorra",
-    "Angola",
-    "Argentina",
-    "Armenia",
-    "Australia",
-    "Austria",
-    "Azerbaijan",
-    "Bahamas",
-    "Bahrain",
-    "Bangladesh",
-    "Barbados",
-    "Belarus",
-    "Belgium",
-    "Belize",
-    "Benin",
-    "Bhutan",
-    "Bolivia",
-    "Bosnia and Herzegovina",
-    "Botswana",
-    "Brazil",
-    "Brunei",
-    "Bulgaria",
-    "Burkina Faso",
-    "Burundi",
-    "Cambodia",
-    "Cameroon",
-    "Canada",
-    "Cape Verde",
-    "Central African Republic",
-    "Chad",
-    "Chile",
-    "China",
-    "Colombia",
-    "Comoros",
-    "Congo",
-    "Costa Rica",
-    "Croatia",
-    "Cuba",
-    "Cyprus",
-    "Czech Republic",
-    "Denmark",
-    "Djibouti",
-    "Dominica",
-    "Dominican Republic",
-    "Ecuador",
-    "Egypt",
-    "El Salvador",
-    "Equatorial Guinea",
-    "Eritrea",
-    "Estonia",
-    "Eswatini",
-    "Ethiopia",
-    "Fiji",
-    "Finland",
-    "France",
-    "Gabon",
-    "Gambia",
-    "Georgia",
-    "Germany",
-    "Ghana",
-    "Greece",
-    "Grenada",
-    "Guatemala",
-    "Guinea",
-    "Guinea-Bissau",
-    "Guyana",
-    "Haiti",
-    "Honduras",
-    "Hungary",
-    "Iceland",
-    "India",
-    "Indonesia",
-    "Iran",
-    "Iraq",
-    "Ireland",
-    "Israel",
-    "Italy",
-    "Jamaica",
-    "Japan",
-    "Jordan",
-    "Kazakhstan",
-    "Kenya",
-    "Kiribati",
-    "Kuwait",
-    "Kyrgyzstan",
-    "Laos",
-    "Latvia",
-    "Lebanon",
-    "Lesotho",
-    "Liberia",
-    "Libya",
-    "Liechtenstein",
-    "Lithuania",
-    "Luxembourg",
-    "Madagascar",
-    "Malawi",
-    "Malaysia",
-    "Maldives",
-    "Mali",
-    "Malta",
-    "Marshall Islands",
-    "Mauritania",
-    "Mauritius",
-    "Mexico",
-    "Micronesia",
-    "Moldova",
-    "Monaco",
-    "Mongolia",
-    "Montenegro",
-    "Morocco",
-    "Mozambique",
-    "Myanmar",
-    "Namibia",
-    "Nauru",
-    "Nepal",
-    "Netherlands",
-    "New Zealand",
-    "Nicaragua",
-    "Niger",
-    "Nigeria",
-    "North Korea",
-    "North Macedonia",
-    "Norway",
-    "Oman",
-    "Pakistan",
-    "Palau",
-    "Palestine",
-    "Panama",
-    "Papua New Guinea",
-    "Paraguay",
-    "Peru",
-    "Philippines",
-    "Poland",
-    "Portugal",
-    "Qatar",
-    "Romania",
-    "Russia",
-    "Rwanda",
-    "Saint Kitts and Nevis",
-    "Saint Lucia",
-    "Saint Vincent and the Grenadines",
-    "Samoa",
-    "San Marino",
-    "Sao Tome and Principe",
-    "Saudi Arabia",
-    "Senegal",
-    "Serbia",
-    "Seychelles",
-    "Sierra Leone",
-    "Singapore",
-    "Slovakia",
-    "Slovenia",
-    "Solomon Islands",
-    "Somalia",
-    "South Africa",
-    "South Korea",
-    "South Sudan",
-    "Spain",
-    "Sri Lanka",
-    "Sudan",
-    "Suriname",
-    "Sweden",
-    "Switzerland",
-    "Syria",
-    "Taiwan",
-    "Tajikistan",
-    "Tanzania",
-    "Thailand",
-    "Timor-Leste",
-    "Togo",
-    "Tonga",
-    "Trinidad and Tobago",
-    "Tunisia",
-    "Turkey",
-    "Turkmenistan",
-    "Tuvalu",
-    "Uganda",
-    "Ukraine",
-    "United Arab Emirates",
-    "United Kingdom",
-    "United States",
-    "Uruguay",
-    "Uzbekistan",
-    "Vanuatu",
-    "Vatican City",
-    "Venezuela",
-    "Vietnam",
-    "Yemen",
-    "Zambia",
-    "Zimbabwe",
+    "Afghanistan","Albania","Algeria","Andorra","Angola","Argentina","Armenia",
+    "Australia","Austria","Azerbaijan","Bahamas","Bahrain","Bangladesh","Barbados",
+    "Belarus","Belgium","Belize","Benin","Bhutan","Bolivia","Bosnia and Herzegovina",
+    "Botswana","Brazil","Brunei","Bulgaria","Burkina Faso","Burundi","Cambodia",
+    "Cameroon","Canada","Cape Verde","Central African Republic","Chad","Chile",
+    "China","Colombia","Comoros","Congo","Costa Rica","Croatia","Cuba","Cyprus",
+    "Czech Republic","Denmark","Djibouti","Dominica","Dominican Republic","Ecuador",
+    "Egypt","El Salvador","Equatorial Guinea","Eritrea","Estonia","Eswatini",
+    "Ethiopia","Fiji","Finland","France","Gabon","Gambia","Georgia","Germany",
+    "Ghana","Greece","Grenada","Guatemala","Guinea","Guinea-Bissau","Guyana",
+    "Haiti","Honduras","Hungary","Iceland","India","Indonesia","Iran","Iraq",
+    "Ireland","Israel","Italy","Jamaica","Japan","Jordan","Kazakhstan","Kenya",
+    "Kiribati","Kuwait","Kyrgyzstan","Laos","Latvia","Lebanon","Lesotho","Liberia",
+    "Libya","Liechtenstein","Lithuania","Luxembourg","Madagascar","Malawi","Malaysia",
+    "Maldives","Mali","Malta","Marshall Islands","Mauritania","Mauritius","Mexico",
+    "Micronesia","Moldova","Monaco","Mongolia","Montenegro","Morocco","Mozambique",
+    "Myanmar","Namibia","Nauru","Nepal","Netherlands","New Zealand","Nicaragua",
+    "Niger","Nigeria","North Korea","North Macedonia","Norway","Oman","Pakistan",
+    "Palau","Palestine","Panama","Papua New Guinea","Paraguay","Peru","Philippines",
+    "Poland","Portugal","Qatar","Romania","Russia","Rwanda","Saint Kitts and Nevis",
+    "Saint Lucia","Saint Vincent and the Grenadines","Samoa","San Marino",
+    "Sao Tome and Principe","Saudi Arabia","Senegal","Serbia","Seychelles",
+    "Sierra Leone","Singapore","Slovakia","Slovenia","Solomon Islands","Somalia",
+    "South Africa","South Korea","South Sudan","Spain","Sri Lanka","Sudan",
+    "Suriname","Sweden","Switzerland","Syria","Taiwan","Tajikistan","Tanzania",
+    "Thailand","Timor-Leste","Togo","Tonga","Trinidad and Tobago","Tunisia",
+    "Turkey","Turkmenistan","Tuvalu","Uganda","Ukraine","United Arab Emirates",
+    "United Kingdom","United States","Uruguay","Uzbekistan","Vanuatu","Vatican City",
+    "Venezuela","Vietnam","Yemen","Zambia","Zimbabwe",
   ];
 
   const filteredCountries = allCountries.filter((c) =>
@@ -1370,23 +1206,23 @@ function InquiryForm({ tour }: { tour: TourData }) {
     setSending(true);
     try {
       await emailjs.send(
-        "service_2utkl5v", // replace with your EmailJS service ID
-        "template_kzh1jvm", // replace with your EmailJS template ID
+        "service_2utkl5v",
+        "template_kzh1jvm",
         {
           to_email: "lishanichamathka2003@gmail.com",
           tour_title: tour.title,
           tour_days: tour.days,
           tour_price: tour.price,
-          firstName: firstName,
-          lastName: lastName,
-          adults: adults,
-          kids: kids,
-          email: email,
-          phone: phone,
+          firstName,
+          lastName,
+          adults,
+          kids,
+          email,
+          phone,
           country: country || "Not specified",
           extra: extra || "None",
         },
-        "E15zjmQHovis0Upeb", // replace with your EmailJS public key
+        "E15zjmQHovis0Upeb",
       );
       setShowSuccess(true);
       setFirstName("");
@@ -1420,16 +1256,9 @@ function InquiryForm({ tour }: { tour: TourData }) {
 
   return (
     <>
-      {/* ── Success Popup ── */}
       {showSuccess && (
-        <div
-          className="td-success-overlay"
-          onClick={() => setShowSuccess(false)}
-        >
-          <div
-            className="td-success-modal"
-            onClick={(e) => e.stopPropagation()}
-          >
+        <div className="td-success-overlay" onClick={() => setShowSuccess(false)}>
+          <div className="td-success-modal" onClick={(e) => e.stopPropagation()}>
             <div className="td-success-icon">
               <Check size={32} color="#fff" />
             </div>
@@ -1438,10 +1267,7 @@ function InquiryForm({ tour }: { tour: TourData }) {
               Thank you, {firstName || "there"}! Your inquiry has been sent
               successfully. Our team will get back to you within 24 hours.
             </p>
-            <button
-              className="td-success-btn"
-              onClick={() => setShowSuccess(false)}
-            >
+            <button className="td-success-btn" onClick={() => setShowSuccess(false)}>
               Done
             </button>
           </div>
@@ -1449,19 +1275,10 @@ function InquiryForm({ tour }: { tour: TourData }) {
       )}
 
       <div className="td-inquiry-form">
-        <h3 className="td-inquiry-title">Inquire Now</h3>
-        <p className="td-inquiry-sub">
-          Ready to embark on your Sri Lanka adventure? Fill in your details and
-          our team will get back to you within 24 hours.
-        </p>
-
-        {/* Form Card */}
         <div className="td-form-card">
           <div className="td-form-grid">
             <div className="td-field">
-              <label className="td-label">
-                First Name <Req />
-              </label>
+              <label className="td-label">First Name <Req /></label>
               <input
                 className={ic("firstName")}
                 placeholder="John"
@@ -1472,9 +1289,7 @@ function InquiryForm({ tour }: { tour: TourData }) {
               {err("firstName")}
             </div>
             <div className="td-field">
-              <label className="td-label">
-                Last Name <Req />
-              </label>
+              <label className="td-label">Last Name <Req /></label>
               <input
                 className={ic("lastName")}
                 placeholder="Doe"
@@ -1485,21 +1300,13 @@ function InquiryForm({ tour }: { tour: TourData }) {
               {err("lastName")}
             </div>
             <div className="td-field">
-              <label className="td-label">
-                Number of Adults <Req />
-              </label>
+              <label className="td-label">Number of Adults <Req /></label>
               <div className="td-counter">
-                <button
-                  className="td-counter-btn"
-                  onClick={() => setAdults(Math.max(1, adults - 1))}
-                >
+                <button className="td-counter-btn" onClick={() => setAdults(Math.max(1, adults - 1))}>
                   <Minus size={14} />
                 </button>
                 <span className="td-counter-val">{adults}</span>
-                <button
-                  className="td-counter-btn"
-                  onClick={() => setAdults(adults + 1)}
-                >
+                <button className="td-counter-btn" onClick={() => setAdults(adults + 1)}>
                   <Plus size={14} />
                 </button>
               </div>
@@ -1507,44 +1314,31 @@ function InquiryForm({ tour }: { tour: TourData }) {
             <div className="td-field">
               <label className="td-label">Number of Kids</label>
               <div className="td-counter">
-                <button
-                  className="td-counter-btn"
-                  onClick={() => setKids(Math.max(0, kids - 1))}
-                >
+                <button className="td-counter-btn" onClick={() => setKids(Math.max(0, kids - 1))}>
                   <Minus size={14} />
                 </button>
                 <span className="td-counter-val">{kids}</span>
-                <button
-                  className="td-counter-btn"
-                  onClick={() => setKids(kids + 1)}
-                >
+                <button className="td-counter-btn" onClick={() => setKids(kids + 1)}>
                   <Plus size={14} />
                 </button>
               </div>
             </div>
             <div className="td-field">
-              <label className="td-label">
-                Email <Req />
-              </label>
+              <label className="td-label">Email <Req /></label>
               <div className="td-input-wrap">
                 <input
                   type="email"
                   className={ic("email")}
                   placeholder="john@example.com"
                   value={email}
-                  onChange={(e) => {
-                    setEmail(e.target.value);
-                    clrErr("email");
-                  }}
+                  onChange={(e) => { setEmail(e.target.value); clrErr("email"); }}
                 />
                 <Mail size={15} className="td-input-icon" />
               </div>
               {err("email")}
             </div>
             <div className="td-field">
-              <label className="td-label">
-                Contact Number <Req />
-              </label>
+              <label className="td-label">Contact Number <Req /></label>
               <div className="td-input-wrap">
                 <input
                   type="tel"
@@ -1563,7 +1357,6 @@ function InquiryForm({ tour }: { tour: TourData }) {
               <label className="td-label">Country</label>
               <div className="td-input-wrap td-select-wrap">
                 <div style={{ position: "relative" }}>
-                  {/* Display Box */}
                   <div
                     className="td-select"
                     onClick={() => setCountryOpen(!countryOpen)}
@@ -1576,12 +1369,7 @@ function InquiryForm({ tour }: { tour: TourData }) {
                     }}
                   >
                     <span>{country || "Select Country"}</span>
-                    <span style={{ fontSize: "10px" }}>
-                      {/* {countryOpen ? "▲" : "▼"} */}
-                    </span>
                   </div>
-
-                  {/* Dropdown */}
                   {countryOpen && (
                     <div
                       style={{
@@ -1597,7 +1385,6 @@ function InquiryForm({ tour }: { tour: TourData }) {
                         overflow: "hidden",
                       }}
                     >
-                      {/* Search Input */}
                       <div style={{ padding: "8px" }}>
                         <input
                           type="text"
@@ -1616,57 +1403,27 @@ function InquiryForm({ tour }: { tour: TourData }) {
                           }}
                         />
                       </div>
-
-                      {/* Country List */}
-                      <ul
-                        style={{
-                          listStyle: "none",
-                          margin: 0,
-                          padding: 0,
-                          maxHeight: "200px",
-                          overflowY: "auto",
-                        }}
-                      >
+                      <ul style={{ listStyle: "none", margin: 0, padding: 0, maxHeight: "200px", overflowY: "auto" }}>
                         {filteredCountries.length > 0 ? (
                           filteredCountries.map((c) => (
                             <li
                               key={c}
-                              onClick={() => {
-                                setCountry(c);
-                                setCountryOpen(false);
-                                setCountrySearch("");
-                              }}
+                              onClick={() => { setCountry(c); setCountryOpen(false); setCountrySearch(""); }}
                               style={{
                                 padding: "8px 14px",
                                 fontSize: "13px",
                                 cursor: "pointer",
                                 color: "#333",
-                                backgroundColor:
-                                  country === c ? "#f0f0f0" : "transparent",
+                                backgroundColor: country === c ? "#f0f0f0" : "transparent",
                               }}
-                              onMouseEnter={(e) => {
-                                (
-                                  e.currentTarget as HTMLLIElement
-                                ).style.backgroundColor = "#f5f5f5";
-                              }}
-                              onMouseLeave={(e) => {
-                                (
-                                  e.currentTarget as HTMLLIElement
-                                ).style.backgroundColor =
-                                  country === c ? "#f0f0f0" : "transparent";
-                              }}
+                              onMouseEnter={(e) => { (e.currentTarget as HTMLLIElement).style.backgroundColor = "#f5f5f5"; }}
+                              onMouseLeave={(e) => { (e.currentTarget as HTMLLIElement).style.backgroundColor = country === c ? "#f0f0f0" : "transparent"; }}
                             >
                               {c}
                             </li>
                           ))
                         ) : (
-                          <li
-                            style={{
-                              padding: "10px 14px",
-                              fontSize: "13px",
-                              color: "#999",
-                            }}
-                          >
+                          <li style={{ padding: "10px 14px", fontSize: "13px", color: "#999" }}>
                             No results found
                           </li>
                         )}
@@ -1698,13 +1455,7 @@ function InquiryForm({ tour }: { tour: TourData }) {
 }
 
 /* ─────────────────────────── Related Tour Card ─────────────────────────── */
-function RelatedTourCard({
-  tour,
-  onNavigate,
-}: {
-  tour: TourData;
-  onNavigate: (id: number) => void;
-}) {
+function RelatedTourCard({ tour, onNavigate }: { tour: TourData; onNavigate: (id: number) => void }) {
   return (
     <div className="td-related-card">
       <div className="td-related-img-wrap">
@@ -1720,25 +1471,12 @@ function RelatedTourCard({
         <p className="td-related-desc">{tour.description}</p>
         <div className="td-related-footer">
           <div>
-            <div
-              style={{
-                fontSize: "0.68rem",
-                color: "#aaa",
-                fontFamily: "'Clash Display', sans-serif",
-              }}
-            >
-              From
-            </div>
+            <div style={{ fontSize: "0.68rem", color: "#aaa", fontFamily: "'Clash Display', sans-serif" }}>From</div>
             <div className="td-related-price">{tour.price}</div>
           </div>
-          <button
-            className="td-related-btn"
-            onClick={() => onNavigate(tour.id)}
-          >
+          <button className="td-related-btn" onClick={() => onNavigate(tour.id)}>
             View Details
-            <span className="td-related-btn-icon">
-              <ArrowUpRight size={13} />
-            </span>
+            <span className="td-related-btn-icon"><ArrowUpRight size={13} /></span>
           </button>
         </div>
       </div>
@@ -1759,9 +1497,7 @@ export default function TourDetailsPage() {
   const navigate = useNavigate();
   const tourId = parseInt(id || "1", 10);
   const tour = ALL_TOURS.find((t) => t.id === tourId) || ALL_TOURS[0];
-  const relatedTours = ALL_TOURS.filter((t) =>
-    tour.relatedTours.includes(t.id),
-  );
+  const relatedTours = ALL_TOURS.filter((t) => tour.relatedTours.includes(t.id));
 
   const [heroVisible, setHeroVisible] = useState(false);
   const [openDay, setOpenDay] = useState<number | null>(1);
@@ -1809,21 +1545,15 @@ export default function TourDetailsPage() {
 
         /* ══════ HERO ══════ */
         .au-hero {
-          position: relative;
-          width: 100%;
-          min-height: 650px;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          text-align: center;
-          overflow: hidden;
+          position: relative; width: 100%; min-height: 650px;
+          display: flex; flex-direction: column;
+          align-items: center; justify-content: center;
+          text-align: center; overflow: hidden;
         }
         .au-hero-bg {
           position: absolute; inset: 0;
           background: url('/tourspage/tour-detail-bg.jpg') center / cover no-repeat;
-          transform: scale(1.06);
-          transition: transform 9s ease;
+          transform: scale(1.06); transition: transform 9s ease;
         }
         .au-hero-bg.visible { transform: scale(1); }
         .au-hero-overlay {
@@ -1831,127 +1561,65 @@ export default function TourDetailsPage() {
           background: linear-gradient(to bottom, rgba(0,0,0,0.22) 0%, rgba(0,0,0,0.08) 10%, rgba(0,0,0,0.62) 100%);
         }
         .au-hero-content {
-          position: relative; z-index: 2;
-          padding: 0 24px;
+          position: relative; z-index: 2; padding: 0 24px;
           opacity: 0; transform: translateY(28px);
           transition: opacity 1s ease, transform 1s ease;
         }
         .au-hero-content.visible { opacity: 1; transform: translateY(0); }
         .au-hero-title {
-          font-size: clamp(2.8rem, 7.5vw, 5rem);
-          font-weight: 500;
-          color: #fff;
-          line-height: 1.04;
-          letter-spacing: -0.03em;
-          margin-bottom: 16px;
-          max-width: 600px;
+          font-size: clamp(2.8rem, 7.5vw, 5rem); font-weight: 500;
+          color: #fff; line-height: 1.04; letter-spacing: -0.03em;
+          margin-bottom: 16px; max-width: 600px;
         }
         .au-hero-sub {
-          font-size: clamp(0.82rem, 1.8vw, 1rem);
-          color: #C7C7C7;
-          font-weight: 400;
-          letter-spacing: 0.04em;
-          margin-bottom: 36px;
-          max-width: 670px;
-          margin-left: auto; margin-right: auto;
+          font-size: clamp(0.82rem, 1.8vw, 1rem); color: #C7C7C7;
+          font-weight: 400; letter-spacing: 0.04em; margin-bottom: 36px;
+          max-width: 670px; margin-left: auto; margin-right: auto;
         }
-          
+
         /* ── OVERVIEW SECTION ── */
         .td-overview {
-        padding: clamp(48px, 6vw, 0px) clamp(24px, 6vw, 80px);
-        display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 4vw, 56px);
-        align-items: start;
+          padding: clamp(48px, 6vw, 80px) clamp(24px, 6vw, 80px);
+          display: grid; grid-template-columns: 1fr 1fr;
+          gap: clamp(32px, 4vw, 56px); align-items: start;
         }
         .td-overview-left { display: flex; flex-direction: column; gap: 24px; }
         .td-overview-title {
-        font-size: clamp(1.8rem, 3.5vw, 2.5rem); font-weight: 500;
-        color: #111; line-height: 1.1; letter-spacing: -0.025em;
+          font-size: clamp(1.8rem, 3.5vw, 2.5rem); font-weight: 500;
+          color: #111; line-height: 1.1; letter-spacing: -0.025em;
         }
         .td-overview-desc {
-        font-size: clamp(0.8rem, 1.4vw, 0.9rem); color: #999;
-        line-height: 1.8; font-weight: 400;
+          font-size: clamp(0.8rem, 1.4vw, 0.9rem); color: #999;
+          line-height: 1.8; font-weight: 400;
         }
-
-        /* Gallery right column */
         .td-overview-right {
-          display: flex;
-          flex-direction: column;
-          gap: 14px;
+          display: flex; flex-direction: column; gap: 14px;
+          position: sticky; top: 90px;
         }
-
         .td-gallery-desc {
-          font-size: clamp(0.8rem, 1.3vw, 0.88rem);
-          color: #999;
-          line-height: 1.8;
-          font-weight: 400;
+          font-size: clamp(0.8rem, 1.3vw, 0.88rem); color: #999;
+          line-height: 1.8; font-weight: 400;
         }
-
         .td-gallery-grid {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          grid-template-rows: auto;
-          gap: 10px;
-          align-items: start;
+          display: grid; grid-template-columns: 1fr 1fr;
+          grid-template-rows: auto; gap: 10px; align-items: start;
         }
-
-        /* Left column wrapper */
-        .td-gallery-col {
-          display: flex;
-          flex-direction: column;
-          gap: 10px;
-        }
-
-        .td-gallery-img {
-          border-radius: 16px;
-          overflow: hidden;
-          width: 100%;
-        }
-
+        .td-gallery-col { display: flex; flex-direction: column; gap: 10px; }
+        .td-gallery-img { border-radius: 16px; overflow: hidden; width: 100%; }
         .td-gallery-img img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          display: block;
+          width: 100%; height: 100%; object-fit: cover; display: block;
           transition: transform 0.5s ease;
         }
-
-        .td-gallery-img:hover img {
-          transform: scale(1.05);
-        }
-
-        /* Left column - image 1 (tall top) */
-        .td-gallery-col:first-child .td-gallery-img:nth-child(1) {
-          height: 300px;
-          margin-top: 60px;
-          border-radius: 30px;
-        }
-
-        /* Left column - image 2 (short bottom) */
-        .td-gallery-col:first-child .td-gallery-img:nth-child(2) {
-          height: 200px;
-          border-radius: 30px;
-        }
-
-        /* Right column - image 1 (short top) */
-        .td-gallery-col:last-child .td-gallery-img:nth-child(1) {
-          height: 200px;
-          border-radius: 30px;
-        }
-
-        /* Right column - image 2 (tall bottom) */
-        .td-gallery-col:last-child .td-gallery-img:nth-child(2) {
-          height: 300px;
-          border-radius: 30px;
-        }
+        .td-gallery-img:hover img { transform: scale(1.05); }
+        .td-gallery-col:first-child .td-gallery-img:nth-child(1) { height: 300px; margin-top: 60px; border-radius: 30px; }
+        .td-gallery-col:first-child .td-gallery-img:nth-child(2) { height: 200px; border-radius: 30px; }
+        .td-gallery-col:last-child .td-gallery-img:nth-child(1)  { height: 200px; border-radius: 30px; }
+        .td-gallery-col:last-child .td-gallery-img:nth-child(2)  { height: 300px; border-radius: 30px; }
 
         /* Highlights grid */
-        .td-highlights {
-          display: grid; grid-template-columns: repeat(2, 1fr);
-          gap: 14px; margin-top: 4px;
-        }
+        .td-highlights { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 4px; }
         .td-highlight-card {
-          background: #F9F9F7; border: 1px solid #eee;
-          border-radius: 14px; padding: 16px;
+          background: #F9F9F7; border: 1px solid #eee; border-radius: 14px; padding: 16px;
           display: flex; flex-direction: column; gap: 8px;
           transition: box-shadow 0.22s, transform 0.22s;
         }
@@ -1966,14 +1634,11 @@ export default function TourDetailsPage() {
 
         /* Tour dates card */
         .td-dates-card {
-          background: #C3E1FB9D; border: 1.5px solid #C3E1FB9D;
-          border-radius: 16px; padding: 20px 22px;
+          background: #C3E1FB9D; border-radius: 16px; padding: 20px 22px;
           display: flex; flex-direction: column; gap: 12px;
         }
         .td-dates-label { font-size: 0.72rem; font-weight: 400; color: #212121; text-transform: uppercase; letter-spacing: 0.08em; }
-        .td-dates-range {
-          font-size: clamp(1rem, 1.8vw, 1.15rem); font-weight: 600; color: #111;
-        }
+        .td-dates-range { font-size: clamp(1rem, 1.8vw, 1.15rem); font-weight: 600; color: #111; }
         .td-dates-route { display: flex; flex-wrap: wrap; gap: 6px; }
         .td-route-pill {
           background: #65ABEA2E; border: 1px solid #C3E1FB;
@@ -1981,18 +1646,10 @@ export default function TourDetailsPage() {
           font-size: 0.72rem; color: #555; font-weight: 400;
         }
         .td-dates-meta {
-        display: inline-flex;
-        align-items: center;
-        border-radius: 9999px;
-        font-size: 0.78rem;
-        font-weight: 400;
-        color: #212121;
-        width: fit-content;
-        backdrop-filter: blur(4px);
+          display: inline-flex; align-items: center; border-radius: 9999px;
+          font-size: 0.78rem; font-weight: 400; color: #212121;
+          width: fit-content; backdrop-filter: blur(4px);
         }
-
-        /* Right sticky card */
-        .td-overview-right { position: sticky; top: 90px; }
         .td-contact-card {
           background: #fff; border: 1px solid #eee; border-radius: 18px;
           padding: 24px; display: flex; flex-direction: column; gap: 14px;
@@ -2005,17 +1662,9 @@ export default function TourDetailsPage() {
           background: var(--blue-light); color: var(--blue);
           display: flex; align-items: center; justify-content: center; flex-shrink: 0;
         }
-        .td-contact-label { font-size: 0.75rem; font-weight: 600; color: #111; }
-        .td-contact-value { font-size: 0.78rem; color: #555; }
-        .td-contact-note  { font-size: 0.68rem; color: #aaa; }
-        .td-wa-btn {
-          width: 100%; background: #25D366; border: none; border-radius: 12px;
-          padding: 13px; color: #fff; font-size: 0.86rem;
-          font-family: 'Clash Display', sans-serif; font-weight: 600;
-          cursor: pointer; display: flex; align-items: center; justify-content: center;
-          gap: 8px; transition: background 0.22s, transform 0.18s; margin-top: 4px;
-        }
-        .td-wa-btn:hover { background: #1ebe5a; transform: translateY(-1px); }
+        .td-contact-label { font-size: 1.05rem; font-weight: 500; color: #111; margin-bottom: 6px; }
+        .td-contact-value { font-size: 1rem; color: #212121; font-weight: 400; margin-bottom: 6px; }
+        .td-contact-note  { font-size: 0.84rem; color: #999; font-weight: 400; }
         .td-qr-wrap {
           width: 100%; display: flex; flex-direction: column; align-items: center; gap: 10px;
           padding: 16px; background: #F9F9F7; border-radius: 12px; border: 1px solid #eee;
@@ -2026,85 +1675,63 @@ export default function TourDetailsPage() {
         /* ── AGENDA ── */
         .td-agenda-section {
           padding: clamp(40px, 5vw, 0px) clamp(24px, 6vw, 80px);
-          background: #F9F9F7;
+          background: #fff;
         }
         .td-section-title {
           font-size: clamp(1.8rem, 3.5vw, 2.4rem); font-weight: 500;
-          color: #111; line-height: 1.1; letter-spacing: -0.025em;
-          margin-bottom: 8px;
+          color: #111; line-height: 1.1; letter-spacing: -0.025em; margin-bottom: 8px;
         }
         .td-section-sub {
           font-size: clamp(0.78rem, 1.3vw, 0.86rem); color: #aaa;
           margin-bottom: clamp(24px, 4vw, 36px); line-height: 1.65;
         }
         .td-agenda-layout {
-          display: grid; grid-template-columns: 1fr 380px; gap: clamp(24px, 4vw, 48px);
-          align-items: start;
+          display: grid; grid-template-columns: 1fr 380px;
+          gap: clamp(24px, 4vw, 48px); align-items: start;
         }
         .td-agenda-list { display: flex; flex-direction: column; gap: 8px; }
         .td-agenda-item {
-          border: 1px solid #C3E1FB4D; border-radius: 14px; overflow: hidden;
-          background: #C3E1FB4D; cursor: pointer;
-          transition: box-shadow 0.2s, border-color 0.2s;
+          border: none; border-radius: 14px; overflow: hidden;
+          background: #F8F8F8; cursor: pointer; height: 70px; padding: 8px 0;
+          transition: box-shadow 0.2s, border-color 0.2s, background 0.2s;
         }
         .td-agenda-item:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.07); }
-        .td-agenda-item.open { border-color: var(--blue); box-shadow: 0 4px 20px rgba(101,171,234,0.15); }
-        .td-agenda-header {
-          display: flex; align-items: center; gap: 14px; padding: 14px 18px;
+        .td-agenda-item.open {
+          border: none; background: #fff;
+          box-shadow: 0 4px 20px rgba(101,171,234,0.15);
+          height: auto; padding: 0;
         }
+        .td-agenda-header { display: flex; align-items: center; gap: 14px; padding: 14px 18px; }
         .td-agenda-dot {
           width: 32px; height: 32px; border-radius: 50%;
-          background: #F0F0F0; border: 2px solid #e0e0e0;
+          background: #C7C7C7; border: none;
           display: flex; align-items: center; justify-content: center;
-          font-size: 0.68rem; font-weight: 600; color: #888; flex-shrink: 0;
-          transition: background 0.2s, border-color 0.2s, color 0.2s;
+          font-size: 0.68rem; font-weight: 600; color: #fff; flex-shrink: 0;
+          transition: background 0.2s, color 0.2s;
         }
-        .td-agenda-item.open .td-agenda-dot {
-          background: var(--blue); border-color: var(--blue); color: #fff;
-        }
+        .td-agenda-item.open .td-agenda-dot { background: var(--blue); color: #fff; }
         .td-agenda-day-label { font-size: 0.65rem; font-weight: 400; color: #212121; text-transform: uppercase; letter-spacing: 0.08em; }
         .td-agenda-day-title { font-size: 0.92rem; font-weight: 600; color: #111; margin-top: 1px; }
         .td-agenda-day-sub   { font-size: 0.75rem; color: #aaa; margin-top: 1px; }
-        .td-agenda-chevron   { margin-left: auto; color: #bbb; flex-shrink: 0; }
-        .td-agenda-body {
-          padding: 0;  /* remove the old padding */
-          font-size: clamp(0.8rem, 1.3vw, 0.88rem);
-          color: #555;
-          line-height: 1;
-          margin: 0;
-        }
-        /* Sticky image */
+        .td-agenda-chevron   { margin-left: auto; color: #bbb; flex-shrink: 0; transition: color 0.2s; }
+        .td-agenda-item.open .td-agenda-chevron { color: var(--blue); }
         .td-agenda-img-wrap {
-          position: sticky; top: 90px;
-          border-radius: 20px; overflow: hidden;
+          position: sticky; top: 90px; border-radius: 20px; overflow: hidden;
           height: clamp(240px, 30vw, 380px);
         }
         .td-agenda-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
-
         .td-agenda-body-wrap {
-          display: flex;
-          align-items: center;
-          gap: 6px;
+          display: flex; align-items: center; gap: 6px;
           padding: 10px 18px 10px 64px;
         }
-
         .td-agenda-check-icon {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 20px;
-          height: 20px;
-          min-width: 20px;
-          background-color: #65ABEA;
-          border-radius: 50%;
-          color: #fff;
+          display: flex; align-items: center; justify-content: center;
+          width: 20px; height: 20px; min-width: 20px;
+          background-color: #65ABEA; border-radius: 50%; color: #fff;
         }
-
         .td-agenda-body {
           font-size: clamp(0.8rem, 1.3vw, 0.88rem);
-          color: #555;
-          line-height: 1;
-          margin: 0;
+          color: #555; line-height: 1; margin: 0;
         }
 
         /* ── PACKAGE INCLUSIONS ── */
@@ -2116,292 +1743,185 @@ export default function TourDetailsPage() {
         .td-inclusions-section .td-section-sub {
           text-align: center; margin-left: auto; margin-right: auto; max-width: 480px;
         }
-        .td-inclusions-grid {
-          display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 8px;
-        }
-
-        /* Each column is now a card */
+        .td-inclusions-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 8px; }
         .td-incl-card {
-          background: #F8F8F8;
-          border: 1px solid #F8F8F8;
-          border-radius: 18px;
-          padding: 24px 20px;
-          display: flex;
-          flex-direction: column;
-          gap: 14px;
+          background: #F8F8F8; border: 1px solid #F8F8F8; border-radius: 18px;
+          padding: 24px 20px; display: flex; flex-direction: column; gap: 14px;
         }
-
         .td-incl-col { display: flex; flex-direction: column; gap: 10px; }
-
         .td-incl-col-title {
           font-size: 1rem; font-weight: 600; color: #111;
-          display: flex; align-items: center; gap: 8px;
-          margin-bottom: 4px;
+          display: flex; align-items: center; gap: 8px; margin-bottom: 4px;
         }
-
-        /* Each row item */
         .td-incl-item {
-          display: flex;
-          align-items: center;
-          gap: 12px;
-          background: #ECFDF5;
-          border: 1px solid #ECFDF5;
-          border-radius: 10px;
-          padding: 10px 14px;
-          font-size: 0.8rem;
-          color: #333;
-          font-weight: 400;
+          display: flex; align-items: center; gap: 12px;
+          background: #ECFDF5; border: 1px solid #ECFDF5;
+          border-radius: 10px; padding: 10px 14px;
+          font-size: 0.8rem; color: #333; font-weight: 400;
         }
-        .td-incl-item.no {
-          border-color: #FFF1F2;
-          background: #FFF1F2;
-        }
-
-        /* Left icon box */
+        .td-incl-item.no { border-color: #FFF1F2; background: #FFF1F2; }
         .td-incl-icon-left {
           width: 32px; height: 32px; border-radius: 8px;
           display: flex; align-items: center; justify-content: center; flex-shrink: 0;
         }
-        .td-incl-icon-green {
-          background: #F8F8F8;
-          color: #10B981;
-          border: 1px solid #10B9814D;
-        }
-        .td-incl-icon-red {
-          background: #F8F8F8;
-          color: #FB7185;
-          border: 1px solid #FB71854D;
-        }
-
-        /* Text fills middle */
+        .td-incl-icon-green { background: #F8F8F8; color: #10B981; border: 1px solid #10B9814D; }
+        .td-incl-icon-red   { background: #F8F8F8; color: #FB7185; border: 1px solid #FB71854D; }
         .td-incl-text { flex: 1; }
+        .td-incl-check-right { color: #10B981; flex-shrink: 0; }
+        .td-incl-x-right     { color: #FB7185; flex-shrink: 0; }
 
-        /* Right check/x */
-        .td-incl-check-right {
-          color: #10B981; flex-shrink: 0;
+        /* ── INQUIRY FORM ── */
+        .td-inquiry-section {
+          padding: clamp(40px, 5vw, 64px) clamp(24px, 6vw, 80px);
+          background: #fff;
+          display: flex;
+          flex-direction: column;
+          gap: 24px;
         }
-        .td-incl-x-right {
-          color: #FB7185; flex-shrink: 0;
+        .td-inquiry-header { display: flex; flex-direction: column; gap: 8px; }
+        .td-inquiry-body {
+          display: grid;
+          grid-template-columns: 1fr 320px;
+          gap: clamp(32px, 4vw, 56px);
+          align-items: start;
         }
+        .td-inquiry-form { display: flex; flex-direction: column; gap: 0; }
+        .td-inquiry-title {
+          font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 500;
+          color: #111; letter-spacing: -0.025em; margin-bottom: 0;
+        }
+        .td-inquiry-sub {
+          font-size: 0.82rem; color: #aaa;
+          line-height: 1.65; margin-bottom: 0; max-width: 520px;
+        }
+        .td-form-card {
+          background: #F8F8F8; border: 1px solid #F8F8F8;
+          border-radius: 18px; padding: 24px;
+          display: flex; flex-direction: column; gap: 0;
+        }
+        .td-form-grid {
+          display: grid; grid-template-columns: 1fr 1fr;
+          gap: 12px; margin-bottom: 14px;
+        }
+        .td-field { display: flex; flex-direction: column; gap: 5px; }
+        .td-field-full { grid-column: 1 / -1; }
+        .td-label { font-size: 0.75rem; color: #555; font-weight: 500; }
+        .td-input {
+          width: 100%; background: #fff; border: 1px solid #e5e5e5;
+          border-radius: 10px; padding: 10px 14px;
+          font-size: 0.82rem; font-family: 'Clash Display', sans-serif;
+          color: #333; outline: none;
+          transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .td-input:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(101,171,234,0.12); }
+        .td-input::placeholder { color: #bbb; }
+        .td-input-err { border-color: #E53E3E !important; }
+        .td-input-wrap { position: relative; }
+        .td-input-icon { position: absolute; right: 11px; top: 50%; transform: translateY(-50%); color: #bbb; pointer-events: none; }
+        .td-select-wrap { position: relative; }
+        .td-select {
+          width: 100%; background: #fff; border: 1px solid #e5e5e5;
+          border-radius: 10px; padding: 10px 36px 10px 14px;
+          font-size: 0.82rem; font-family: 'Clash Display', sans-serif;
+          color: #333; outline: none; appearance: none; cursor: pointer;
+          transition: border-color 0.2s;
+        }
+        .td-select:focus { border-color: var(--blue); }
+        .td-textarea {
+          width: 100%; background: #fff; border: 1px solid #e5e5e5;
+          border-radius: 10px; padding: 10px 14px;
+          font-size: 0.82rem; font-family: 'Clash Display', sans-serif;
+          color: #333; outline: none; resize: vertical;
+          transition: border-color 0.2s;
+        }
+        .td-textarea:focus { border-color: var(--blue); }
+        .td-textarea::placeholder { color: #bbb; }
+        .td-counter {
+          display: flex; align-items: center; background: #fff;
+          border: 1px solid #e5e5e5; border-radius: 10px; overflow: hidden;
+        }
+        .td-counter-btn {
+          width: 40px; height: 40px; border: none; background: transparent;
+          display: flex; align-items: center; justify-content: center;
+          cursor: pointer; color: #555;
+        }
+        .td-counter-btn:hover { background: #F0F0F0; }
+        .td-counter-val { flex: 1; text-align: center; font-size: 0.86rem; color: #333; font-weight: 500; }
+        .td-inquire-btn {
+          width: 100%; background: var(--blue); border: none; border-radius: 76px;
+          padding: 14px; color: #fff; font-size: 0.92rem;
+          font-family: 'Clash Display', sans-serif; font-weight: 500;
+          cursor: pointer; transition: background 0.22s, transform 0.18s;
+        }
+        .td-inquire-btn:hover { background: #4a9add; transform: translateY(-1px); }
+        .td-inquire-btn:disabled { opacity: 0.65; cursor: not-allowed; }
 
-       /* ── INQUIRY FORM ── */
-      .td-inquiry-section {
-        padding: clamp(40px, 5vw, 64px) clamp(24px, 6vw, 80px);
-        background: #fff;
-        display: grid;
-        grid-template-columns: 1fr 320px;
-        gap: clamp(32px, 4vw, 56px);
-        align-items: start;
-      }
-      .td-inquiry-form {
-        display: flex;
-        flex-direction: column;
-        gap: 0;
-      }
-      .td-inquiry-title {
-        font-size: clamp(1.6rem, 3vw, 2.2rem);
-        font-weight: 500; color: #111;
-        letter-spacing: -0.025em; margin-bottom: 8px;
-      }
-      .td-inquiry-sub {
-        font-size: 0.82rem; color: #aaa;
-        line-height: 1.65; margin-bottom: 20px; max-width: 420px;
-      }
+        /* Side contact */
+        .td-inquiry-side { display: flex; flex-direction: column; gap: 14px; overflow: hidden; }
+        .td-side-card {
+          background: #F5F5F5; border: none; border-radius: 18px;
+          padding: 28px 24px; display: flex; align-items: flex-start; gap: 18px;
+          transition: box-shadow 0.22s, transform 0.22s;
+        }
+        .td-side-card:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.08); transform: translateY(-2px); }
+        .td-side-icon {
+          width: 38px; height: 38px; border-radius: 14px;
+          background: #C3E1FB; color: #000000;
+          display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+        }
+        .td-side-wa-card {
+          background: #F8F8F8; border: 1px solid #F8F8F8; border-radius: 18px;
+          padding: 18px; display: flex; flex-direction: column;
+          align-items: center; gap: 14px; text-align: center;
+        }
+        .td-side-wa-header { display: flex; align-items: center; gap: 10px; width: 100%; }
+        .td-side-wa-icon {
+          width: 40px; height: 40px; border-radius: 10px;
+          background: #E8F8EF; display: flex; align-items: center;
+          justify-content: center; flex-shrink: 0;
+        }
+        .td-side-wa-title { font-size: 0.92rem; font-weight: 600; color: #111; }
+        .td-side-qr { width: 50%; aspect-ratio: 1; border: 1px solid #eee; object-fit: cover; }
+        .td-side-wa-scan-text { font-size: 0.75rem; color: #aaa; margin: 0; }
+        .td-wa-btn {
+          width: 100%; background: #25D366; border: none; border-radius: 9999px;
+          padding: 13px; color: #fff; font-size: 0.88rem;
+          font-family: 'Clash Display', sans-serif; font-weight: 600;
+          cursor: pointer; display: flex; align-items: center;
+          justify-content: center; gap: 8px;
+          transition: background 0.22s, transform 0.18s;
+        }
+        .td-wa-btn:hover { background: #1ebe5a; transform: translateY(-1px); }
 
-      /* White form card wrapping the fields */
-      .td-form-card {
-        background: #F8F8F8;
-        border: 1px solid #F8F8F8;
-        border-radius: 18px;
-        padding: 24px;
-        display: flex;
-        flex-direction: column;
-        gap: 0;
-      }
-
-      .td-form-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 12px;
-        margin-bottom: 14px;
-      }
-      .td-field { display: flex; flex-direction: column; gap: 5px; }
-      .td-field-full { grid-column: 1 / -1; }
-      .td-label { font-size: 0.75rem; color: #555; font-weight: 500; }
-      .td-input {
-        width: 100%; background: #fff; border: 1px solid #e5e5e5;
-        border-radius: 10px; padding: 10px 14px;
-        font-size: 0.82rem; font-family: 'Clash Display', sans-serif;
-        color: #333; outline: none;
-        transition: border-color 0.2s, box-shadow 0.2s;
-      }
-      .td-input:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(101,171,234,0.12); }
-      .td-input::placeholder { color: #bbb; }
-      .td-input-err { border-color: #E53E3E !important; }
-      .td-input-wrap { position: relative; }
-      .td-input-icon { position: absolute; right: 11px; top: 50%; transform: translateY(-50%); color: #bbb; pointer-events: none; }
-      .td-select-wrap { position: relative; }
-      .td-select {
-        width: 100%; background: #fff; border: 1px solid #e5e5e5;
-        border-radius: 10px; padding: 10px 36px 10px 14px;
-        font-size: 0.82rem; font-family: 'Clash Display', sans-serif;
-        color: #333; outline: none; appearance: none; cursor: pointer;
-        transition: border-color 0.2s;
-      }
-      .td-select:focus { border-color: var(--blue); }
-      .td-textarea {
-        width: 100%; background: #fff; border: 1px solid #e5e5e5;
-        border-radius: 10px; padding: 10px 14px;
-        font-size: 0.82rem; font-family: 'Clash Display', sans-serif;
-        color: #333; outline: none; resize: vertical;
-        transition: border-color 0.2s;
-      }
-      .td-textarea:focus { border-color: var(--blue); }
-      .td-textarea::placeholder { color: #bbb; }
-      .td-counter {
-        display: flex; align-items: center; background: #fff;
-        border: 1px solid #e5e5e5; border-radius: 10px; overflow: hidden;
-      }
-      .td-counter-btn {
-        width: 40px; height: 40px; border: none; background: transparent;
-        display: flex; align-items: center; justify-content: center;
-        cursor: pointer; color: #555;
-      }
-      .td-counter-btn:hover { background: #F0F0F0; }
-      .td-counter-val { flex: 1; text-align: center; font-size: 0.86rem; color: #333; font-weight: 500; }
-      .td-inquire-btn {
-        width: 100%; background: var(--blue); border: none; border-radius: 76px;
-        padding: 14px; color: #fff; font-size: 0.92rem;
-        font-family: 'Clash Display', sans-serif; font-weight: 500;
-        cursor: pointer; transition: background 0.22s, transform 0.18s;
-      }
-      .td-inquire-btn:hover { background: #4a9add; transform: translateY(-1px); }
-      .td-inquire-btn:disabled { opacity: 0.65; cursor: not-allowed; }
-
-      /* Side contact */
-      .td-inquiry-side { display: flex; flex-direction: column; gap: 14px; position: sticky; top: 90px; }
-      .td-side-card {
-        background: #F8F8F8; border: 1px solid #F8F8F8; border-radius: 14px;
-        padding: 16px 18px; display: flex; align-items: flex-start; gap: 12px;
-        transition: box-shadow 0.22s, transform 0.22s;
-      }
-      .td-side-card:hover { box-shadow: 0 6px 20px rgba(0,0,0,0.07); transform: translateY(-2px); }
-      .td-side-icon {
-        width: 38px; height: 38px; border-radius: 10px;
-        background: #C3E1FB; color: #000000;
-        display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-      }
-      .td-side-wa-card {
-        background: #F8F8F8;
-        border: 1px solid #F8F8F8;
-        border-radius: 18px;
-        padding: 18px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 14px;
-        text-align: center;
-      }
-
-      /* Top row: icon + label side by side */
-      .td-side-wa-header {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        width: 100%;
-      }
-
-      .td-side-wa-icon {
-        width: 40px;
-        height: 40px;
-        border-radius: 10px;
-        background: #E8F8EF;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-      }
-
-      .td-side-wa-title {
-        font-size: 0.92rem;
-        font-weight: 600;
-        color: #111;
-      }
-
-      /* QR image - large and square */
-      .td-side-qr {
-        width: 50%;
-        aspect-ratio: 1;
-        border: 1px solid #eee;
-        object-fit: cover;
-      }
-
-      .td-side-wa-scan-text {
-        font-size: 0.75rem;
-        color: #aaa;
-        margin: 0;
-      }
-
-      /* Chat Now button */
-      .td-wa-btn {
-        width: 100%;
-        background: #25D366;
-        border: none;
-        border-radius: 9999px;
-        padding: 13px;
-        color: #fff;
-        font-size: 0.88rem;
-        font-family: 'Clash Display', sans-serif;
-        font-weight: 600;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        transition: background 0.22s, transform 0.18s;
-      }
-      .td-wa-btn:hover {
-        background: #1ebe5a;
-        transform: translateY(-1px);
-      }
-
-      /* ── SUCCESS POPUP ── */
-      .td-success-overlay {
-        position: fixed; inset: 0; z-index: 9999;
-        background: rgba(0,0,0,0.45);
-        display: flex; align-items: center; justify-content: center;
-        padding: 24px;
-      }
-      .td-success-modal {
-        background: #fff; border-radius: 20px;
-        padding: 40px 36px; max-width: 420px; width: 100%;
-        display: flex; flex-direction: column; align-items: center;
-        gap: 14px; text-align: center;
-        animation: td-pop 0.3s ease;
-      }
-      @keyframes td-pop {
-        from { transform: scale(0.88); opacity: 0; }
-        to   { transform: scale(1);    opacity: 1; }
-      }
-      .td-success-icon {
-        width: 64px; height: 64px; border-radius: 50%;
-        background: #10B981;
-        display: flex; align-items: center; justify-content: center;
-      }
-      .td-success-title {
-        font-size: 1.4rem; font-weight: 600; color: #111;
-      }
-      .td-success-msg {
-        font-size: 0.84rem; color: #777; line-height: 1.65; max-width: 320px;
-      }
-      .td-success-btn {
-        margin-top: 8px; background: var(--blue); border: none;
-        border-radius: 12px; padding: 12px 40px;
-        color: #fff; font-size: 0.9rem;
-        font-family: 'Clash Display', sans-serif; font-weight: 600;
-        cursor: pointer; transition: background 0.2s;
-      }
-      .td-success-btn:hover { background: #4a9add; }
+        /* ── SUCCESS POPUP ── */
+        .td-success-overlay {
+          position: fixed; inset: 0; z-index: 9999;
+          background: rgba(0,0,0,0.45);
+          display: flex; align-items: center; justify-content: center; padding: 24px;
+        }
+        .td-success-modal {
+          background: #fff; border-radius: 20px; padding: 40px 36px;
+          max-width: 420px; width: 100%;
+          display: flex; flex-direction: column; align-items: center;
+          gap: 14px; text-align: center; animation: td-pop 0.3s ease;
+        }
+        @keyframes td-pop {
+          from { transform: scale(0.88); opacity: 0; }
+          to   { transform: scale(1);    opacity: 1; }
+        }
+        .td-success-icon {
+          width: 64px; height: 64px; border-radius: 50%; background: #10B981;
+          display: flex; align-items: center; justify-content: center;
+        }
+        .td-success-title { font-size: 1.4rem; font-weight: 600; color: #111; }
+        .td-success-msg { font-size: 0.84rem; color: #777; line-height: 1.65; max-width: 320px; }
+        .td-success-btn {
+          margin-top: 8px; background: var(--blue); border: none;
+          border-radius: 12px; padding: 12px 40px; color: #fff; font-size: 0.9rem;
+          font-family: 'Clash Display', sans-serif; font-weight: 600;
+          cursor: pointer; transition: background 0.2s;
+        }
+        .td-success-btn:hover { background: #4a9add; }
 
         /* ── RELATED TOURS ── */
         .td-related-section {
@@ -2414,7 +1934,10 @@ export default function TourDetailsPage() {
         }
         .td-related-sub { font-size: 0.84rem; color: #aaa; max-width: 380px; line-height: 1.65; padding-top: 24px; }
         .td-related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-        .td-related-card { border: 1px solid #eee; border-radius: 16px; overflow: hidden; background: #fff; transition: box-shadow 0.28s, transform 0.28s; }
+        .td-related-card {
+          border: 1px solid #eee; border-radius: 16px; overflow: hidden;
+          background: #fff; transition: box-shadow 0.28s, transform 0.28s;
+        }
         .td-related-card:hover { box-shadow: 0 12px 36px rgba(0,0,0,0.09); transform: translateY(-4px); }
         .td-related-img-wrap { position: relative; height: clamp(140px, 16vw, 220px); overflow: hidden; }
         .td-related-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
@@ -2427,8 +1950,8 @@ export default function TourDetailsPage() {
         }
         .td-related-body { padding: 16px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
         .td-related-title { font-size: 0.88rem; font-weight: 600; color: #111; line-height: 1.3; }
-        .td-related-desc  { font-size: 0.73rem; color: #999; line-height: 1.6; flex: 1; }
-        .td-related-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 10px; }
+        .td-related-desc  { font-size: 0.73rem; color: #999; line-height: 1.6; flex: 1; padding-bottom: 10px; border-bottom: 1px solid #e0e0e0; margin-bottom: 10px; }
+        .td-related-footer { display: flex; align-items: center; justify-content: space-between; margin-top: auto; }
         .td-related-price { font-size: 0.84rem; color: var(--blue); font-weight: 600; }
         .td-related-btn {
           display: inline-flex; align-items: center; gap: 6px;
@@ -2450,7 +1973,7 @@ export default function TourDetailsPage() {
           .td-overview-right  { position: static; }
           .td-agenda-layout   { grid-template-columns: 1fr; }
           .td-agenda-img-wrap { position: static; height: clamp(180px, 40vw, 280px); }
-          .td-inquiry-section { grid-template-columns: 1fr; }
+          .td-inquiry-body    { grid-template-columns: 1fr; }
           .td-inquiry-side    { position: static; }
         }
         @media (max-width: 768px) {
@@ -2458,17 +1981,28 @@ export default function TourDetailsPage() {
           .td-inclusions-grid { grid-template-columns: 1fr; }
           .td-related-grid    { grid-template-columns: repeat(2, 1fr); }
           .td-related-sub     { padding-top: 0; }
+          .td-inquiry-body    { grid-template-columns: 1fr; gap: 24px; }
+          .td-form-grid       { grid-template-columns: 1fr 1fr; }
+          .td-inquiry-side    { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+          .td-side-wa-card    { grid-column: 1 / -1; }
+          .td-side-card       { padding: 20px 18px; }
         }
         @media (max-width: 580px) {
           .td-form-grid       { grid-template-columns: 1fr; }
           .td-field-full      { grid-column: 1; }
           .td-related-grid    { grid-template-columns: 1fr; }
-          .au-hero { min-height: 400px; }
-          .au-hero-content { padding: 0 12px; margin-top: 60px; }
+          .au-hero            { min-height: 400px; }
+          .au-hero-content    { padding: 0 12px; margin-top: 60px; }
           .td-gallery-col:first-child .td-gallery-img:nth-child(1) { height: 220px; margin-top: 40px; }
           .td-gallery-col:first-child .td-gallery-img:nth-child(2) { height: 160px; }
-          .td-gallery-col:last-child .td-gallery-img:nth-child(1) { height: 160px; }
-          .td-gallery-col:last-child .td-gallery-img:nth-child(2) { height: 220px; }
+          .td-gallery-col:last-child .td-gallery-img:nth-child(1)  { height: 160px; }
+          .td-gallery-col:last-child .td-gallery-img:nth-child(2)  { height: 220px; }
+          .td-inquiry-body    { grid-template-columns: 1fr; gap: 16px; }
+          .td-inquiry-section { padding: 24px clamp(12px, 4vw, 24px); }
+          .td-inquiry-side    { display: flex; flex-direction: column; gap: 12px; }
+          .td-side-card       { padding: 20px 18px; }
+          .td-inclusions-grid { grid-template-columns: 1fr; }
+          .td-agenda-layout   { grid-template-columns: 1fr; }
         }
       `}</style>
 
@@ -2495,7 +2029,6 @@ export default function TourDetailsPage() {
               <br />
               Unforgettable Days
             </h2>
-
             <div className="td-highlights">
               {tour.highlights.map((h, i) => (
                 <div key={i} className="td-highlight-card">
@@ -2505,7 +2038,6 @@ export default function TourDetailsPage() {
                 </div>
               ))}
             </div>
-
             <div className="td-dates-card">
               <div className="td-dates-label">Tour Dates</div>
               <div className="td-dates-range">
@@ -2517,35 +2049,22 @@ export default function TourDetailsPage() {
               </div>
               <div className="td-dates-route">
                 {tour.route.map((r, i) => (
-                  <span key={i} className="td-route-pill">
-                    {r}
-                  </span>
+                  <span key={i} className="td-route-pill">{r}</span>
                 ))}
               </div>
             </div>
           </div>
 
-          {/* Right: description + photo gallery */}
           <div className="td-overview-right">
             <p className="td-gallery-desc">{tour.description}</p>
             <div className="td-gallery-grid">
-              {/* Left column: tall top, short bottom */}
               <div className="td-gallery-col">
-                <div className="td-gallery-img">
-                  <img src={tour.heroImage} alt={tour.title} />
-                </div>
-                <div className="td-gallery-img">
-                  <img src={tour.galleryImages[0]} alt={tour.title} />
-                </div>
+                <div className="td-gallery-img"><img src={tour.heroImage} alt={tour.title} /></div>
+                <div className="td-gallery-img"><img src={tour.galleryImages[0]} alt={tour.title} /></div>
               </div>
-              {/* Right column: short top, tall bottom */}
               <div className="td-gallery-col">
-                <div className="td-gallery-img">
-                  <img src={tour.galleryImages[1]} alt={tour.title} />
-                </div>
-                <div className="td-gallery-img">
-                  <img src={tour.galleryImages[2]} alt={tour.title} />
-                </div>
+                <div className="td-gallery-img"><img src={tour.galleryImages[1]} alt={tour.title} /></div>
+                <div className="td-gallery-img"><img src={tour.galleryImages[2]} alt={tour.title} /></div>
               </div>
             </div>
           </div>
@@ -2553,11 +2072,7 @@ export default function TourDetailsPage() {
 
         {/* ── AGENDA ── */}
         <section className="td-agenda-section">
-          <h2 className="td-section-title">
-            Your Tour
-            <br />
-            Agenda
-          </h2>
+          <h2 className="td-section-title">Your Tour<br />Agenda</h2>
           <p className="td-section-sub">
             {tour.tourDates.start} to {tour.tourDates.end} – every day is
             planned to take you across Sri Lanka's most iconic destinations.
@@ -2568,44 +2083,31 @@ export default function TourDetailsPage() {
                 <div
                   key={day.day}
                   className={`td-agenda-item ${openDay === day.day ? "open" : ""}`}
-                  onClick={() =>
-                    setOpenDay(openDay === day.day ? null : day.day)
-                  }
+                  onClick={() => setOpenDay(openDay === day.day ? null : day.day)}
                 >
                   <div className="td-agenda-header">
                     <div className="td-agenda-dot">{day.day}</div>
                     <div style={{ flex: 1, minWidth: 0 }}>
-                      <div className="td-agenda-day-label">
-                        Day {day.day} – {day.location}
-                      </div>
+                      <div className="td-agenda-day-label">Day {day.day} – {day.location}</div>
                       <div className="td-agenda-day-title">{day.title}</div>
                     </div>
                     <div className="td-agenda-chevron">
-                      {openDay === day.day ? (
-                        <ChevronUp size={16} />
-                      ) : (
-                        <ChevronDown size={16} />
-                      )}
+                      {openDay === day.day ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
                     </div>
                   </div>
                   {openDay === day.day && (
                     <div className="td-agenda-body-wrap">
-                      <div className="td-agenda-check-icon">
-                        <Check size={12} />
-                      </div>
+                      <div className="td-agenda-check-icon"><Check size={12} /></div>
                       <div className="td-agenda-body">{day.subtitle}</div>
                     </div>
                   )}
                 </div>
               ))}
             </div>
-
-            {/* Sticky image showing active day's image or first available */}
             <div className="td-agenda-img-wrap">
               <img
                 src={
-                  tour.agenda.find((d) => d.day === openDay && d.image)
-                    ?.image ||
+                  tour.agenda.find((d) => d.day === openDay && d.image)?.image ||
                   tour.agenda.find((d) => d.image)?.image ||
                   tour.heroImage
                 }
@@ -2623,37 +2125,26 @@ export default function TourDetailsPage() {
             clearly laid out so you know exactly what's included.
           </p>
           <div className="td-inclusions-grid">
-            {/* What's Included card */}
             <div className="td-incl-card">
               <div className="td-incl-col-title">What's Included</div>
               <div className="td-incl-col">
                 {tour.included.map((item, i) => (
                   <div key={i} className="td-incl-item">
-                    <div className="td-incl-icon-left td-incl-icon-green">
-                      {getInclusionIcon(item.text)}
-                    </div>
+                    <div className="td-incl-icon-left td-incl-icon-green">{getInclusionIcon(item.text)}</div>
                     <span className="td-incl-text">{item.text}</span>
-                    <div className="td-incl-check-right">
-                      <Check size={13} />
-                    </div>
+                    <div className="td-incl-check-right"><Check size={13} /></div>
                   </div>
                 ))}
               </div>
             </div>
-
-            {/* Not Included card */}
             <div className="td-incl-card">
               <div className="td-incl-col-title">Not Included</div>
               <div className="td-incl-col">
                 {tour.notIncluded.map((item, i) => (
                   <div key={i} className="td-incl-item no">
-                    <div className="td-incl-icon-left td-incl-icon-red">
-                      {getInclusionIcon(item.text)}
-                    </div>
+                    <div className="td-incl-icon-left td-incl-icon-red">{getInclusionIcon(item.text)}</div>
                     <span className="td-incl-text">{item.text}</span>
-                    <div className="td-incl-x-right">
-                      <X size={13} />
-                    </div>
+                    <div className="td-incl-x-right"><X size={13} /></div>
                   </div>
                 ))}
               </div>
@@ -2663,53 +2154,48 @@ export default function TourDetailsPage() {
 
         {/* ── INQUIRY FORM ── */}
         <section className="td-inquiry-section">
-          <InquiryForm tour={tour} />
-
-          <div className="td-inquiry-side">
-            {contactCards.map((c, i) => (
-              <div key={i} className="td-side-card">
-                <div className="td-side-icon">{c.icon}</div>
-                <div>
-                  <div className="td-contact-label">{c.label}</div>
-                  <div className="td-contact-value">{c.value}</div>
-                  <div className="td-contact-note">{c.note}</div>
+          <div className="td-inquiry-header">
+            <h3 className="td-inquiry-title">Inquire Now</h3>
+            <p className="td-inquiry-sub">
+              Ready to embark on your Sri Lanka adventure? Fill in your details
+              and our team will get back to you within 24 hours.
+            </p>
+          </div>
+          <div className="td-inquiry-body">
+            <InquiryForm tour={tour} />
+            <div className="td-inquiry-side">
+              {contactCards.map((c, i) => (
+                <div key={i} className="td-side-card">
+                  <div className="td-side-icon">{c.icon}</div>
+                  <div>
+                    <div className="td-contact-label">{c.label}</div>
+                    <div className="td-contact-value">{c.value}</div>
+                    <div className="td-contact-note">{c.note}</div>
+                  </div>
                 </div>
-              </div>
-            ))}
-            <div className="td-side-wa-card">
-              <div className="td-side-wa-header">
-                <div className="td-side-wa-icon">
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="#25D366"
-                  >
+              ))}
+              <div className="td-side-wa-card">
+                <div className="td-side-wa-header">
+                  <div className="td-side-wa-icon">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="#25D366">
+                      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" />
+                    </svg>
+                  </div>
+                  <span className="td-side-wa-title">Whatsapp</span>
+                </div>
+                <img
+                  src="https://api.qrserver.com/v1/create-qr-code/?size=148x148&data=https://wa.me/94703272582"
+                  alt="WhatsApp QR Code"
+                  className="td-side-qr"
+                />
+                <p className="td-side-wa-scan-text">Scan to chat on Whatsapp</p>
+                <button className="td-wa-btn" onClick={() => window.open("https://wa.me/94703272582", "_blank")}>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="white">
                     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" />
                   </svg>
-                </div>
-                <span className="td-side-wa-title">Whatsapp</span>
+                  Chat Now
+                </button>
               </div>
-
-              <img
-                src="https://api.qrserver.com/v1/create-qr-code/?size=148x148&data=https://wa.me/94703272582"
-                alt="WhatsApp QR Code"
-                className="td-side-qr"
-              />
-
-              <p className="td-side-wa-scan-text">Scan to chat on Whatsapp</p>
-
-              <button
-                className="td-wa-btn"
-                onClick={() =>
-                  window.open("https://wa.me/94703272582", "_blank")
-                }
-              >
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="white">
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" />
-                </svg>
-                Chat Now
-              </button>
             </div>
           </div>
         </section>
@@ -2718,9 +2204,7 @@ export default function TourDetailsPage() {
         <section className="td-related-section">
           <div className="td-related-header">
             <h2 className="td-section-title" style={{ marginBottom: 0 }}>
-              Explore More
-              <br />
-              Tours
+              Explore More<br />Tours
             </h2>
             <p className="td-related-sub">
               Looking for other adventures? Check out our other hand-picked
@@ -2729,11 +2213,7 @@ export default function TourDetailsPage() {
           </div>
           <div className="td-related-grid">
             {relatedTours.map((t) => (
-              <RelatedTourCard
-                key={t.id}
-                tour={t}
-                onNavigate={handleNavigate}
-              />
+              <RelatedTourCard key={t.id} tour={t} onNavigate={handleNavigate} />
             ))}
           </div>
         </section>
