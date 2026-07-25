@@ -8,51 +8,51 @@ import { useNavigate } from "react-router-dom";
 const tours = [
   {
     id: 1,
-    title: "Classic Sri Lanka Tour",
-    desc: "Explore Sri Lanka's top cultural and natural landmarks, from Sigiriya to Yala National Park.",
+    title: "A Historical Journey",
+    desc: "Discover Sri Lanka's ancient kingdoms, sacred temples, UNESCO World Heritage Sites, and rich cultural heritage.",
     price: "$899 P/P",
     duration: "7 Days / 6 Nights",
     image: "/homepage/tour1.jpg",
   },
   {
     id: 2,
-    title: "Sri Lanka Adventure & Wildlife Safari",
-    desc: "An action-packed tour with safaris, rainforest treks, and breathtaking landscapes in Sri Lanka's wild heart.",
+    title: "Southern Sands Voyage",
+    desc: "Relax along Sri Lanka's stunning southern coastline with golden beaches, whale watching, and historic coastal towns.",
     price: "$1,199 P/P",
     duration: "9 Days / 8 Nights",
-    image: "/homepage/tour2.jpg",
+    image: "/Beach-04.jpg",
   },
   {
     id: 3,
-    title: "Luxury Beach Getaway",
-    desc: "Indulge in a relaxing beach retreat with luxury resorts, whale watching, and private yacht tours.",
+    title: "Wildlife, Culture & Beach Adventure",
+    desc: "Experience the perfect blend of wildlife safaris, cultural landmarks, scenic hill country, and tropical beaches.",
     price: "$1,499 P/P",
     duration: "6 Days / 5 Nights",
-    image: "/homepage/tour3.jpg",
+    image: "/homepage/tour2.jpg",
   },
   {
     id: 4,
-    title: "Adventure Trekking Expedition",
-    desc: "Embark on a thrilling trekking adventure through Sri Lanka's rugged mountain ranges and stunning waterfalls.",
+    title: "Sri Lanka Wildlife Tours",
+    desc: "Encounter elephants, leopards, and exotic birdlife across Sri Lanka's most spectacular national parks.",
     price: "$1,099 P/P",
     duration: "8 Days / 7 Nights",
-    image: "/homepage/tour4.jpg",
+    image: "/Wildlife-01.avif",
   },
   {
     id: 5,
-    title: "Cultural Heritage Tour",
-    desc: "Dive deep into Sri Lanka's rich cultural heritage, exploring ancient cities and sacred landmarks.",
+    title: "Scenic Beauty of Sri Lanka",
+    desc: "Explore misty mountains, tea plantations, waterfalls, scenic train journeys, and breathtaking natural landscapes.",
     price: "$749 P/P",
     duration: "6 Days / 5 Nights",
-    image: "/homepage/tour5.jpg",
+    image: "/Culture-04-scaled.jpg",
   },
   {
     id: 6,
-    title: "Sri Lanka Family Getaway",
-    desc: "A perfect family-friendly tour filled with adventure, wildlife, and relaxation along Sri Lanka's coast.",
+    title: "A Quick Escape to the Hills",
+    desc: "Enjoy a refreshing hill country getaway featuring Kandy, Nuwara Eliya, Ella, tea plantations, and scenic train rides.",
     price: "$899 P/P",
     duration: "7 Days / 6 Nights",
-    image: "/homepage/tour6.jpg",
+    image: "/Ella-1.jpg",
   },
 ];
 
@@ -109,10 +109,12 @@ function TourCard({ tour, index }: { tour: (typeof tours)[0]; index: number }) {
           <span className="tour-card__dur">{tour.duration}</span>
         </div>
 
-        <div className={`tour-card__btn-wrap${hovered ? " tour-card__btn-wrap--visible" : ""}`}>
-           <button
+        <div
+          className={`tour-card__btn-wrap${hovered ? " tour-card__btn-wrap--visible" : ""}`}
+        >
+          <button
             className="tour-card__btn"
-            onClick={() => {                         
+            onClick={() => {
               navigate(`/tours/${tour.id}`);
               window.scrollTo({ top: 0, behavior: "smooth" });
             }}
@@ -133,11 +135,12 @@ export default function ToursSection() {
   const headerInView = useInView(headerRef, { once: true, amount: 0.3 });
 
   useEffect(() => {
-    if (!document.querySelector('link[data-clash]')) {
+    if (!document.querySelector("link[data-clash]")) {
       const l = document.createElement("link");
       l.rel = "stylesheet";
       l.setAttribute("data-clash", "true");
-      l.href = "https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap";
+      l.href =
+        "https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap";
       document.head.appendChild(l);
     }
   }, []);
@@ -392,10 +395,13 @@ export default function ToursSection() {
         >
           <div className="tours-header-left">
             <h2 className="tours-title">
-              Explore the Best of Sri Lanka with<br />Our Handpicked Tours
+              Explore the Best of Sri Lanka with
+              <br />
+              Our Handpicked Tours
             </h2>
             <p className="tours-subtitle">
-              Discover our handpicked tours that showcase Sri Lanka's beauty, culture, and adventure. Find your perfect getaway today!
+              Discover our handpicked tours that showcase Sri Lanka's beauty,
+              culture, and adventure. Find your perfect getaway today!
             </p>
           </div>
           {/* <motion.button
@@ -410,72 +416,72 @@ export default function ToursSection() {
             </span>
           </motion.button> */}
           <a
-              href="/tours"
-              className="vc-explore-button"
+            href="/tours"
+            className="vc-explore-button"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "10px",
+              border: "1.5px solid rgba(255,255,255,0.32)",
+              borderRadius: "9999px",
+              padding: "10px 10px 10px 18px",
+              color: "rgba(255,255,255,0.90)",
+              fontSize: "1rem",
+              fontWeight: 400,
+              textDecoration: "none",
+              transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+              cursor: "pointer",
+              width: "fit-content",
+              flexShrink: 0,
+              background: "#65ABEA",
+              backdropFilter: "blur(4px)",
+            }}
+            onMouseEnter={(e) => {
+              const button = e.currentTarget;
+              const arrow = button.querySelector(".vc-arrow-icon");
+              button.style.transform = "translateX(5px)";
+              button.style.borderColor = "rgba(255,255,255,0.6)";
+              button.style.background = "#0096df";
+              if (arrow) {
+                (arrow as HTMLElement).style.transform = "translateX(4px)";
+                (arrow as HTMLElement).style.background = "#fff";
+                (arrow as HTMLElement).style.color = "#000";
+              }
+            }}
+            onMouseLeave={(e) => {
+              const button = e.currentTarget;
+              const arrow = button.querySelector(".vc-arrow-icon");
+              button.style.transform = "translateX(0px)";
+              button.style.borderColor = "rgba(255,255,255,0.32)";
+              button.style.background = "#65ABEA";
+              if (arrow) {
+                (arrow as HTMLElement).style.transform = "translateX(0px)";
+                (arrow as HTMLElement).style.background = "#fff";
+                (arrow as HTMLElement).style.color = "#000";
+              }
+            }}
+          >
+            See All Tours
+            <span
+              className="vc-arrow-icon"
               style={{
+                width: "26px",
+                height: "26px",
+                borderRadius: "9999px",
+                border: "1.5px solid rgba(255,255,255,0.36)",
                 display: "inline-flex",
                 alignItems: "center",
-                gap: "10px",
-                border: "1.5px solid rgba(255,255,255,0.32)",
-                borderRadius: "9999px",
-                padding: "10px 10px 10px 18px",
-                color: "rgba(255,255,255,0.90)",
-                fontSize: "1rem",
-                fontWeight: 400,
-                textDecoration: "none",
-                transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
-                cursor: "pointer",
-                width: "fit-content",
-                flexShrink: 0,
-                background: "#65ABEA",
-                backdropFilter: "blur(4px)",
-              }}
-              onMouseEnter={(e) => {
-                const button = e.currentTarget;
-                const arrow = button.querySelector(".vc-arrow-icon");
-                button.style.transform = "translateX(5px)";
-                button.style.borderColor = "rgba(255,255,255,0.6)";
-                button.style.background = "#0096df";
-                if (arrow) {
-                  (arrow as HTMLElement).style.transform = "translateX(4px)";
-                  (arrow as HTMLElement).style.background = "#fff";
-                  (arrow as HTMLElement).style.color = "#000";
-                }
-              }}
-              onMouseLeave={(e) => {
-                const button = e.currentTarget;
-                const arrow = button.querySelector(".vc-arrow-icon");
-                button.style.transform = "translateX(0px)";
-                button.style.borderColor = "rgba(255,255,255,0.32)";
-                button.style.background = "#65ABEA";
-                if (arrow) {
-                  (arrow as HTMLElement).style.transform = "translateX(0px)";
-                  (arrow as HTMLElement).style.background = "#fff";
-                  (arrow as HTMLElement).style.color = "#000";
-                }
+                justifyContent: "center",
+                fontSize: "0.82rem",
+                color: "#000",
+                background: "#fff",
+                transition:
+                  "transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), background 0.3s ease",
               }}
             >
-              See All Tours
-              <span
-                className="vc-arrow-icon"
-                style={{
-                  width: "26px",
-                  height: "26px",
-                  borderRadius: "9999px",
-                  border: "1.5px solid rgba(255,255,255,0.36)",
-                  display: "inline-flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  fontSize: "0.82rem",
-                  color: "#000",
-                  background: "#fff",
-                  transition:
-                    "transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), background 0.3s ease",
-                }}
-              >
-                <ArrowUpRight size={16} />
-              </span>
-            </a>
+              <ArrowUpRight size={16} />
+            </span>
+          </a>
         </motion.div>
 
         <div className="tours-grid">

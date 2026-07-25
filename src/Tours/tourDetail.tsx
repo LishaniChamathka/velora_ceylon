@@ -97,996 +97,1535 @@ const INCLUSION_ICONS: Record<string, React.ReactNode> = {
 const ALL_TOURS: TourData[] = [
   {
     id: 1,
-    title: "Classic Sri Lanka Tour",
-    days: 7,
-    price: "$899 P/P",
-    priceRaw: 899,
-    rating: 4,
-    reviews: 110,
+    title: "A Historical Journey",
+    days: 6,
+    price: "$845 P/P",
+    priceRaw: 845,
+    rating: 5,
+    reviews: 126,
     heroImage: "/homepage/tour1.jpg",
     galleryImages: [
       "/tourspage/tour2.jpg",
       "/tourspage/tour3.jpg",
       "/tourspage/tour4.jpg",
     ],
+
     description:
-      "From the ancient rock fortress of Sigiriya to the golden shores of Mirissa, this carefully curated journey takes you through the very best Sri Lanka has to offer – culture, wildlife, nature and relaxation all in one seamless adventure.",
+      "Discover the timeless wonders of Sri Lanka's Cultural Triangle on a carefully curated six-day journey through ancient kingdoms, sacred temples, UNESCO World Heritage Sites, and vibrant cultural cities. Explore Anuradhapura, Sigiriya, Dambulla, Polonnaruwa, Kandy, and Colombo while experiencing the island's remarkable history, spirituality, and architectural brilliance.",
+
     highlights: [
       {
         icon: "mountain",
-        title: "Ancient Wonders",
-        desc: "Explore UNESCO World Heritage Sites including Sigiriya Rock and Dambulla Cave Temple.",
+        title: "Sigiriya Rock Fortress",
+        desc: "Climb Sri Lanka's most iconic UNESCO World Heritage Site and admire breathtaking panoramic views.",
       },
       {
-        icon: "waves",
-        title: "Nature & Wildlife",
-        desc: "See elephants while watching sea turtles and stunning sunrises await you.",
-      },
-      {
-        icon: "utensils",
-        title: "Authentic Cuisine",
-        desc: "Savour authentic Sri Lankan dishes featuring authentic aromas across the island's specialities.",
+        icon: "globe",
+        title: "Ancient Kingdoms",
+        desc: "Explore the historic capitals of Anuradhapura and Polonnaruwa, home to centuries of royal heritage.",
       },
       {
         icon: "shield",
-        title: "Comfort & Style",
-        desc: "Stay in carefully selected hotels with modern amenities throughout the journey.",
+        title: "Sacred Temples",
+        desc: "Visit Dambulla Cave Temple and the revered Temple of the Sacred Tooth Relic in Kandy.",
+      },
+      {
+        icon: "camera",
+        title: "Cultural Experiences",
+        desc: "Discover Sri Lanka's rich traditions, colonial landmarks, and local lifestyles throughout the journey.",
       },
     ],
-    tourDates: { start: "April 2nd", end: "10th, 2026" },
-    tourType: "Private Group Tour",
-    route: ["Sigiriya", "Dambulla", "Ella", "Yala", "Galle", "Mirissa"],
+
+    tourDates: {
+      start: "January 12th",
+      end: "17th, 2027",
+    },
+
+    tourType: "Private Chauffeur Guided Tour",
+
+    route: [
+      "Negombo",
+      "Kandy",
+      "Dambulla",
+      "Sigiriya",
+      "Polonnaruwa",
+      "Colombo",
+    ],
+
     agenda: [
       {
         day: 1,
-        location: "SIGIRIYA",
-        title: "Airport to Sigiriya",
-        subtitle: "Village tour and village – style lunch",
-        image: "/tourspage/tour4.jpg",
+        location: "NEGOMBO",
+        title: "Arrival in Sri Lanka",
+        subtitle: "Airport welcome and leisure stay in Negombo",
+        image: "/homepage/tour1.jpg",
       },
       {
         day: 2,
-        location: "SIGIRIYA",
-        title: "Sigiriya Exploration",
-        subtitle: "Rock fortress climb and museum visit",
+        location: "KANDY",
+        title: "Sacred City of Kandy",
+        subtitle: "Temple of the Sacred Tooth Relic and city exploration",
       },
       {
         day: 3,
         location: "DAMBULLA",
-        title: "Sigiriya to Dambulla",
-        subtitle: "Cave temple tour and spice garden",
+        title: "Dambulla & Sigiriya",
+        subtitle: "Royal Cave Temple and Sigiriya Rock Fortress",
       },
       {
         day: 4,
-        location: "KANDY",
-        title: "Sigiriya to Kandy",
-        subtitle: "Temple of the Tooth and cultural show",
+        location: "POLONNARUWA",
+        title: "Ancient Kingdom Exploration",
+        subtitle:
+          "Discover Polonnaruwa's royal ruins before returning to Sigiriya",
       },
       {
         day: 5,
-        location: "NUWARA ELIYA",
-        title: "Kandy to Nuwara Eliya",
-        subtitle: "Tea plantation and scenic train ride",
+        location: "COLOMBO",
+        title: "Capital City Experience",
+        subtitle: "Visit the Red Mosque, enjoy a city tour and shopping",
       },
       {
         day: 6,
-        location: "NUWARA ELIYA",
-        title: "Nuwara Eliya",
-        subtitle: "Gregory Lake and local market",
-      },
-      {
-        day: 7,
-        location: "ELLA",
-        title: "Nuwara Eliya to Ella by Train",
-        subtitle: "Nine Arch Bridge and Little Adam's Peak",
-      },
-      {
-        day: 8,
-        location: "YALA",
-        title: "Ella Adventure",
-        subtitle: "Ravana Falls and Ella Rock trek",
-      },
-      {
-        day: 9,
-        location: "YALA",
-        title: "Ella to Yala",
-        subtitle: "Jeep safari – leopards & elephants",
-      },
-      {
-        day: 10,
-        location: "MIRISSA",
-        title: "Yala to Mirissa",
-        subtitle: "Beach relaxation and whale watching",
-      },
-      {
-        day: 11,
-        location: "GALLE",
-        title: "Mirissa to Galle",
-        subtitle: "Dutch Fort and colonial old town",
-      },
-      {
-        day: 12,
-        location: "COLOMBO",
-        title: "Back to Airport",
-        subtitle: "Departure transfer and farewell",
+        location: "AIRPORT",
+        title: "Departure",
+        subtitle: "Transfer to Bandaranaike International Airport",
       },
     ],
+
     included: [
-      { text: "Accommodation in 3–4 star Hotels" },
-      { text: "All transportation (private vehicle & train)" },
-      { text: "Daily meals (breakfast, lunch & dinner)" },
-      { text: "Entrance fees to attractions and temples" },
-      { text: "Experienced professional tour guide" },
-      { text: "Wildlife safaris (Yala & Udawalawa)" },
-      { text: "Whale watching & snorkelling activities" },
-      { text: "All local taxes and service charges" },
+      {
+        text: "Accommodation in carefully selected hotels",
+      },
+      {
+        text: "Private air-conditioned transportation",
+      },
+      {
+        text: "Professional English-speaking chauffeur guide",
+      },
+      {
+        text: "Entrance tickets to all listed attractions",
+      },
+      {
+        text: "Government taxes and service charges",
+      },
+      {
+        text: "Airport pickup and departure transfers",
+      },
     ],
+
     notIncluded: [
-      { text: "International flights" },
-      { text: "Personal expenses" },
-      { text: "Optional activities" },
-      { text: "Travel insurance" },
-      { text: "Tips for guides and drivers" },
+      {
+        text: "International flights",
+      },
+      {
+        text: "Visa fees",
+      },
+      {
+        text: "Travel insurance",
+      },
+      {
+        text: "Alcoholic beverages",
+      },
+      {
+        text: "Meals and beverages not mentioned",
+      },
+      {
+        text: "Early check-in & late check-out charges",
+      },
+      {
+        text: "Personal expenses",
+      },
+      {
+        text: "Tips for chauffeur guide and staff",
+      },
     ],
+
     relatedTours: [2, 3, 5],
   },
   {
     id: 2,
-    title: "Sri Lanka Adventure & Wildlife Safari",
-    days: 9,
-    price: "$1,199 P/P",
-    priceRaw: 1199,
-    rating: 4,
-    reviews: 110,
-    heroImage: "/tourspage/tour2.jpg",
+    title: "Southern Sands Voyage",
+    days: 10,
+    price: "$1,395 P/P",
+    priceRaw: 1395,
+    rating: 5,
+    reviews: 148,
+
+    heroImage: "/Beach-04.jpg",
+
     galleryImages: [
-      "/homepage/tour1.jpg",
-      "/tourspage/tour5.jpg",
+      "/tourspage/tour3.jpg",
       "/tourspage/tour6.jpg",
+      "/tourspage/tour7.jpg",
     ],
+
     description:
-      "An action-packed adventure through Sri Lanka's wildest landscapes. From thrilling Yala safaris to rainforest treks in Sinharaja, this tour is built for those who crave adrenaline and authentic wildlife encounters.",
+      "Discover the breathtaking southern coastline of Sri Lanka on this relaxing beach holiday. From the vibrant fishing town of Negombo to the golden shores of Tangalle, Mirissa, Galle, Hikkaduwa and Bentota, this unforgettable journey combines marine adventures, wildlife encounters, colonial heritage and luxurious coastal relaxation.",
+
     highlights: [
       {
-        icon: "mountain",
-        title: "Thrilling Safaris",
-        desc: "Spot leopards, elephants and crocodiles on expert-led Yala & Udawalawe safaris.",
-      },
-      {
         icon: "waves",
-        title: "Rainforest Treks",
-        desc: "Explore the UNESCO Sinharaja Biosphere Reserve with an experienced naturalist guide.",
+        title: "Sri Lanka's Best Beaches",
+        desc: "Relax on some of the island's most beautiful beaches including Tangalle, Mirissa, Bentota and Hikkaduwa.",
       },
       {
         icon: "camera",
-        title: "Wildlife Photography",
-        desc: "Golden-hour game drives give you the perfect light to capture Sri Lanka's Big 5.",
+        title: "Whale & Dolphin Watching",
+        desc: "Experience an unforgettable early morning whale and dolphin watching excursion off Mirissa.",
       },
       {
-        icon: "car",
-        title: "Off-Road Expedition",
-        desc: "4×4 transfers through rugged terrain connect remote lodges and national parks.",
+        icon: "globe",
+        title: "Historic Galle Fort",
+        desc: "Walk through the UNESCO-listed Dutch Fort while exploring colonial architecture and charming streets.",
+      },
+      {
+        icon: "mountain",
+        title: "Marine Adventures",
+        desc: "Enjoy snorkeling, scuba diving, kayaking and glass-bottom boat rides across Sri Lanka's southern coast.",
       },
     ],
-    tourDates: { start: "May 5th", end: "14th, 2026" },
-    tourType: "Private Group Tour",
-    route: ["Colombo", "Dambulla", "Kandy", "Sinharaja", "Yala", "Mirissa"],
+
+    tourDates: {
+      start: "February 6th",
+      end: "15th, 2027",
+    },
+
+    tourType: "Private Beach Holiday",
+
+    route: [
+      "Negombo",
+      "Tangalle",
+      "Mirissa",
+      "Galle",
+      "Hikkaduwa",
+      "Bentota",
+      "Airport",
+    ],
+
     agenda: [
       {
         day: 1,
-        location: "COLOMBO",
-        title: "Arrival & City Tour",
-        subtitle: "Airport pickup and Colombo highlights",
+        location: "NEGOMBO",
+        title: "Arrival in Sri Lanka",
+        subtitle: "Airport pickup, Negombo beach and lagoon experience",
         image: "/tourspage/tour2.jpg",
       },
       {
         day: 2,
-        location: "DAMBULLA",
-        title: "Colombo to Dambulla",
-        subtitle: "Pinnawala Elephant Orphanage en-route",
+        location: "TANGALLE",
+        title: "Journey to Tangalle",
+        subtitle: "Visit Hummanaya Blow Hole and Mulgirigala Temple",
       },
       {
         day: 3,
-        location: "DAMBULLA",
-        title: "Dambulla Exploration",
-        subtitle: "Cave temples and Minneriya safari",
+        location: "TANGALLE",
+        title: "Southern Coastal Adventure",
+        subtitle: "Bird Sanctuary visit, snorkeling and scuba diving",
       },
       {
         day: 4,
-        location: "KANDY",
-        title: "Dambulla to Kandy",
-        subtitle: "Spice gardens and cultural performance",
+        location: "MIRISSA",
+        title: "Mirissa Beach Escape",
+        subtitle: "Visit Coconut Tree Hill and Dondra Head",
       },
       {
         day: 5,
-        location: "SINHARAJA",
-        title: "Kandy to Sinharaja",
-        subtitle: "Rainforest trekking & birdwatching",
+        location: "MIRISSA",
+        title: "Whale Watching Experience",
+        subtitle: "Early morning whale & dolphin watching followed by surfing",
       },
       {
         day: 6,
-        location: "SINHARAJA",
-        title: "Sinharaja Deep Trek",
-        subtitle: "Full-day guided rainforest expedition",
+        location: "GALLE",
+        title: "Historic Galle",
+        subtitle: "Visit Jungle Beach and explore the Dutch Fort",
       },
       {
         day: 7,
-        location: "YALA",
-        title: "Sinharaja to Yala",
-        subtitle: "Afternoon game drive at dusk",
+        location: "HIKKADUWA",
+        title: "Marine Discovery",
+        subtitle: "Coral reef snorkeling and glass-bottom boat ride",
       },
       {
         day: 8,
-        location: "YALA",
-        title: "Yala Full-Day Safari",
-        subtitle: "Morning & evening jeep safaris",
+        location: "HIKKADUWA",
+        title: "Mangrove Adventure",
+        subtitle: "Kayaking through the lagoon and leisure by the beach",
       },
       {
         day: 9,
-        location: "MIRISSA",
-        title: "Yala to Mirissa",
-        subtitle: "Whale watching and beach farewell",
+        location: "BENTOTA",
+        title: "Bentota Leisure",
+        subtitle: "Visit Kosgoda Turtle Hatchery and relax on Bentota Beach",
+      },
+      {
+        day: 10,
+        location: "AIRPORT",
+        title: "Departure",
+        subtitle: "Airport transfer for your onward flight",
       },
     ],
+
     included: [
-      { text: "Accommodation in eco-lodges & boutique hotels" },
-      { text: "All safari jeep transfers and national park fees" },
-      { text: "Daily meals (breakfast, lunch & dinner)" },
-      { text: "Expert wildlife guide and naturalist" },
-      { text: "Rainforest guided trek in Sinharaja" },
-      { text: "Whale watching excursion in Mirissa" },
-      { text: "All local taxes and service charges" },
+      {
+        text: "Accommodation in carefully selected beach hotels & resorts",
+      },
+      {
+        text: "Private air-conditioned transportation",
+      },
+      {
+        text: "Professional English-speaking chauffeur guide",
+      },
+      {
+        text: "Entrance tickets to listed attractions",
+      },
+      {
+        text: "Government taxes and service charges",
+      },
+      {
+        text: "Airport arrival & departure transfers",
+      },
     ],
+
     notIncluded: [
-      { text: "International flights" },
-      { text: "Personal expenses" },
-      { text: "Optional activities" },
-      { text: "Travel insurance" },
-      { text: "Tips for guides and drivers" },
+      {
+        text: "International airfare",
+      },
+      {
+        text: "Visa fees",
+      },
+      {
+        text: "Travel insurance",
+      },
+      {
+        text: "Alcoholic beverages",
+      },
+      {
+        text: "Meals and drinks not specified",
+      },
+      {
+        text: "Optional water sports activities",
+      },
+      {
+        text: "Personal expenses",
+      },
+      {
+        text: "Tips for chauffeur guide and hotel staff",
+      },
     ],
-    relatedTours: [1, 4, 9],
+
+    relatedTours: [1, 3, 8],
   },
   {
     id: 3,
-    title: "Luxury Beach Getaway",
-    days: 5,
-    price: "$1,499 P/P",
-    priceRaw: 1499,
-    rating: 4,
-    reviews: 110,
-    heroImage: "/tourspage/tour3.jpg",
+    title: "Wildlife, Culture & Beach Adventure",
+    days: 14,
+    price: "$2,095 P/P",
+    priceRaw: 2095,
+    rating: 5,
+    reviews: 214,
+
+    heroImage: "/homepage/tour2.jpg",
+
     galleryImages: [
-      "/tourspage/tour7.jpg",
+      "/tourspage/tour4.jpg",
+      "/tourspage/tour5.jpg",
       "/tourspage/tour8.jpg",
-      "/homepage/tour1.jpg",
+      "/tourspage/tour9.jpg",
     ],
+
     description:
-      "Indulge in Sri Lanka's most pristine coastal stretches. From the colonial charm of Galle Fort to a private yacht sunset off Mirissa and world-class whale watching, this is the ultimate luxury beach retreat.",
+      "Experience the very best of Sri Lanka on this carefully crafted fourteen-day journey combining ancient heritage, breathtaking wildlife, misty hill country, scenic train rides and relaxing tropical beaches. Explore UNESCO World Heritage Sites, encounter elephants and leopards in their natural habitat, enjoy authentic Sri Lankan culture and unwind along the island's stunning southern coastline.",
+
     highlights: [
       {
-        icon: "waves",
-        title: "Pristine Beaches",
-        desc: "Unwind on exclusive stretches of golden sand along the southern and western coasts.",
+        icon: "mountain",
+        title: "Sigiriya Rock Fortress",
+        desc: "Climb Sri Lanka's legendary rock fortress and admire spectacular panoramic views.",
       },
       {
         icon: "shield",
-        title: "Luxury Resorts",
-        desc: "Hand-picked 5-star properties with infinity pools, spa facilities and butler service.",
-      },
-      {
-        icon: "camera",
-        title: "Private Yacht Sunset",
-        desc: "Enjoy sundowners on a private catamaran sailing along Mirissa's turquoise waters.",
+        title: "National Park Safaris",
+        desc: "Experience exciting jeep safaris in Yala and Udawalawe National Parks.",
       },
       {
         icon: "globe",
-        title: "Colonial Heritage",
-        desc: "Stroll through Galle Fort's cobblestone streets and 17th-century Dutch architecture.",
+        title: "Scenic Hill Country",
+        desc: "Discover tea plantations, waterfalls and breathtaking mountain landscapes in Nuwara Eliya and Ella.",
+      },
+      {
+        icon: "waves",
+        title: "Southern Beach Escape",
+        desc: "Relax on Sri Lanka's beautiful southern beaches while enjoying whale watching and coastal adventures.",
       },
     ],
-    tourDates: { start: "June 1st", end: "6th, 2026" },
-    tourType: "Private Group Tour",
-    route: ["Colombo", "Bentota", "Galle", "Mirissa", "Tangalle"],
+
+    tourDates: {
+      start: "March 8th",
+      end: "21st, 2027",
+    },
+
+    tourType: "Private Grand Tour",
+
+    route: [
+      "Negombo",
+      "Sigiriya",
+      "Polonnaruwa",
+      "Kandy",
+      "Nuwara Eliya",
+      "Ella",
+      "Yala",
+      "Mirissa",
+      "Galle",
+      "Bentota",
+      "Colombo",
+    ],
+
     agenda: [
       {
         day: 1,
-        location: "BENTOTA",
-        title: "Arrival & Bentota",
-        subtitle: "Luxury water villa check-in and beach sunset",
+        location: "NEGOMBO",
+        title: "Arrival in Sri Lanka",
+        subtitle: "Airport welcome and overnight stay in Negombo.",
         image: "/tourspage/tour3.jpg",
       },
       {
         day: 2,
-        location: "BENTOTA",
-        title: "Bentota Beach Day",
-        subtitle: "Water sports and Ayurvedic spa session",
-      },
-      {
-        day: 3,
-        location: "GALLE",
-        title: "Bentota to Galle",
-        subtitle: "Galle Fort tour and lighthouse walk",
-      },
-      {
-        day: 4,
-        location: "MIRISSA",
-        title: "Galle to Mirissa",
-        subtitle: "Private yacht sunset and seafood dinner",
-      },
-      {
-        day: 5,
-        location: "MIRISSA",
-        title: "Whale Watching & Departure",
-        subtitle: "Early morning whale watching, airport transfer",
-      },
-    ],
-    included: [
-      { text: "5-star luxury resort accommodation" },
-      { text: "Private air-conditioned transfers" },
-      { text: "Daily breakfast and selected dinners" },
-      { text: "Private yacht sunset cruise" },
-      { text: "Whale watching excursion" },
-      { text: "Ayurvedic spa session (60 min)" },
-      { text: "Galle Fort guided tour" },
-      { text: "All local taxes and service charges" },
-    ],
-    notIncluded: [
-      { text: "International flights" },
-      { text: "Personal expenses" },
-      { text: "Optional activities" },
-      { text: "Travel insurance" },
-      { text: "Tips for guides and drivers" },
-    ],
-    relatedTours: [6, 7, 1],
-  },
-  {
-    id: 4,
-    title: "Adventure Trekking Expedition",
-    days: 8,
-    price: "$1,099 P/P",
-    priceRaw: 1099,
-    rating: 4,
-    reviews: 110,
-    heroImage: "/tourspage/tour4.jpg",
-    galleryImages: [
-      "/tourspage/tour2.jpg",
-      "/tourspage/tour9.jpg",
-      "/tourspage/tour5.jpg",
-    ],
-    description:
-      "Strap on your boots and tackle Sri Lanka's most dramatic mountain terrain. From the mist-draped peaks of Horton Plains to the sunrise at Adam's Peak, this trek-focused journey rewards every step with jaw-dropping scenery.",
-    highlights: [
-      {
-        icon: "mountain",
-        title: "Adam's Peak Sunrise",
-        desc: "Undertake the sacred pilgrimage climb to Sri Pada and watch dawn break over the island.",
-      },
-      {
-        icon: "waves",
-        title: "Horton Plains Trek",
-        desc: "Hike to World's End cliff for vertigo-inducing views over the southern lowlands.",
-      },
-      {
-        icon: "camera",
-        title: "Waterfall Wonders",
-        desc: "Discover Diyaluma, Bambarakanda and Ravana Falls along the trekking routes.",
-      },
-      {
-        icon: "car",
-        title: "Scenic Train Rides",
-        desc: "Journey on the world-famous Kandy–Ella railway through cloud-forest and tea estates.",
-      },
-    ],
-    tourDates: { start: "July 3rd", end: "11th, 2026" },
-    tourType: "Private Group Tour",
-    route: ["Kandy", "Nuwara Eliya", "Horton Plains", "Ella", "Adam's Peak"],
-    agenda: [
-      {
-        day: 1,
-        location: "KANDY",
-        title: "Arrival & Kandy",
-        subtitle: "Temple of the Tooth and city orientation",
-        image: "/tourspage/tour4.jpg",
-      },
-      {
-        day: 2,
-        location: "NUWARA ELIYA",
-        title: "Kandy to Nuwara Eliya",
-        subtitle: "Tea estates and Gregory Lake walk",
-      },
-      {
-        day: 3,
-        location: "HORTON PLAINS",
-        title: "Horton Plains Trek",
-        subtitle: "World's End and Baker's Falls",
-      },
-      {
-        day: 4,
-        location: "ELLA",
-        title: "Nuwara Eliya to Ella",
-        subtitle: "Scenic train journey through hill country",
-      },
-      {
-        day: 5,
-        location: "ELLA",
-        title: "Ella Rock Trek",
-        subtitle: "Full-day mountain ridge hike",
-      },
-      {
-        day: 6,
-        location: "ELLA",
-        title: "Ravana Falls & Nine Arches",
-        subtitle: "Waterfall swim and bridge photography",
-      },
-      {
-        day: 7,
-        location: "ADAM'S PEAK",
-        title: "Ella to Adam's Peak",
-        subtitle: "Afternoon transfer and pre-climb rest",
-      },
-      {
-        day: 8,
-        location: "COLOMBO",
-        title: "Summit Climb & Departure",
-        subtitle: "2 AM ascent for sunrise, then airport transfer",
-      },
-    ],
-    included: [
-      { text: "Boutique mountain guesthouse stays" },
-      { text: "All transfers including scenic train" },
-      { text: "Daily meals (breakfast, lunch & dinner)" },
-      { text: "Expert trekking guide throughout" },
-      { text: "Adam's Peak and Horton Plains entry fees" },
-      { text: "Waterfall excursions and permits" },
-      { text: "All local taxes and service charges" },
-    ],
-    notIncluded: [
-      { text: "International flights" },
-      { text: "Personal expenses" },
-      { text: "Optional activities" },
-      { text: "Travel insurance" },
-      { text: "Tips for guides and drivers" },
-    ],
-    relatedTours: [2, 8, 9],
-  },
-  {
-    id: 5,
-    title: "Cultural Heritage Tour",
-    days: 6,
-    price: "$749 P/P",
-    priceRaw: 749,
-    rating: 4,
-    reviews: 110,
-    heroImage: "/tourspage/tour5.jpg",
-    galleryImages: [
-      "/homepage/tour1.jpg",
-      "/tourspage/tour6.jpg",
-      "/tourspage/tour3.jpg",
-    ],
-    description:
-      "Dive into 2,500 years of civilisation on a tour that threads through the Cultural Triangle, ancient kingdoms and living Buddhist traditions. See the island's greatest UNESCO sites in their full glory.",
-    highlights: [
-      {
-        icon: "globe",
-        title: "UNESCO Heritage",
-        desc: "Visit five UNESCO World Heritage Sites including Sigiriya, Polonnaruwa and Anuradhapura.",
-      },
-      {
-        icon: "utensils",
-        title: "Traditional Cuisine",
-        desc: "Join cooking classes and temple-side rice & curry lunches with local families.",
-      },
-      {
-        icon: "camera",
-        title: "Ancient Frescoes",
-        desc: "Witness the famous Sigiriya frescoes and Dambulla Cave temple paintings up close.",
-      },
-      {
-        icon: "shield",
-        title: "Expert Guides",
-        desc: "Archaeologist-led tours provide context and stories that guidebooks can't capture.",
-      },
-    ],
-    tourDates: { start: "August 8th", end: "14th, 2026" },
-    tourType: "Private Group Tour",
-    route: ["Anuradhapura", "Sigiriya", "Dambulla", "Polonnaruwa", "Kandy"],
-    agenda: [
-      {
-        day: 1,
-        location: "ANURADHAPURA",
-        title: "Arrival & Anuradhapura",
-        subtitle: "Sacred Bo Tree and Ruwanwelisaya stupa",
-        image: "/tourspage/tour5.jpg",
-      },
-      {
-        day: 2,
-        location: "ANURADHAPURA",
-        title: "Ancient City Exploration",
-        subtitle: "Jetavanarama and moonstone carvings",
+        location: "SIGIRIYA",
+        title: "Journey to the Cultural Triangle",
+        subtitle: "Visit Dambulla Cave Temple before checking into Sigiriya.",
       },
       {
         day: 3,
         location: "SIGIRIYA",
         title: "Sigiriya Rock Fortress",
-        subtitle: "Mirror Wall frescoes and water gardens",
+        subtitle:
+          "Explore the iconic UNESCO World Heritage Site and village surroundings.",
       },
       {
         day: 4,
-        location: "DAMBULLA",
-        title: "Dambulla Cave Temples",
-        subtitle: "Five royal caves and gold Buddha statues",
-      },
-      {
-        day: 5,
         location: "POLONNARUWA",
-        title: "Polonnaruwa Kingdom",
-        subtitle: "Gal Vihara and mediaeval palace ruins",
-      },
-      {
-        day: 6,
-        location: "KANDY",
-        title: "Kandy & Departure",
-        subtitle: "Tooth Temple and Perahera cultural show",
-      },
-    ],
-    included: [
-      { text: "Accommodation in heritage boutique hotels" },
-      { text: "All transfers with air-conditioned vehicle" },
-      { text: "Daily breakfast and selected lunches" },
-      { text: "Archaeologist-led guided tours" },
-      { text: "All entrance fees to UNESCO sites" },
-      { text: "Traditional cooking class" },
-      { text: "All local taxes and service charges" },
-    ],
-    notIncluded: [
-      { text: "International flights" },
-      { text: "Personal expenses" },
-      { text: "Optional activities" },
-      { text: "Travel insurance" },
-      { text: "Tips for guides and drivers" },
-    ],
-    relatedTours: [1, 4, 9],
-  },
-  {
-    id: 6,
-    title: "Sri Lanka Family Gateway",
-    days: 7,
-    price: "$899 P/P",
-    priceRaw: 899,
-    rating: 4,
-    reviews: 110,
-    heroImage: "/tourspage/tour6.jpg",
-    galleryImages: [
-      "/tourspage/tour3.jpg",
-      "/homepage/tour1.jpg",
-      "/tourspage/tour5.jpg",
-    ],
-    description:
-      "Designed for families with children of all ages, this perfectly paced tour blends wildlife encounters, beach time and gentle cultural experiences — creating memories the whole family will treasure for a lifetime.",
-    highlights: [
-      {
-        icon: "mountain",
-        title: "Elephant Encounters",
-        desc: "Visit Pinnawala Elephant Orphanage and watch gentle giants bathe in the river.",
-      },
-      {
-        icon: "waves",
-        title: "Beach Family Fun",
-        desc: "Safe swimming beaches on the west coast with calm waters and water sports.",
-      },
-      {
-        icon: "camera",
-        title: "Wildlife Safaris",
-        desc: "Family-friendly jeep safaris at Yala with a specialist guide keeping kids engaged.",
-      },
-      {
-        icon: "utensils",
-        title: "Kid-Friendly Meals",
-        desc: "Every meal planned with children in mind — familiar flavours alongside local tastes.",
-      },
-    ],
-    tourDates: { start: "July 18th", end: "25th, 2026" },
-    tourType: "Private Group Tour",
-    route: ["Colombo", "Pinnawala", "Kandy", "Yala", "Bentota"],
-    agenda: [
-      {
-        day: 1,
-        location: "COLOMBO",
-        title: "Arrival in Colombo",
-        subtitle: "Airport transfer and hotel check-in",
-        image: "/tourspage/tour6.jpg",
-      },
-      {
-        day: 2,
-        location: "PINNAWALA",
-        title: "Elephant Orphanage",
-        subtitle: "Feeding and bathing session with elephants",
-      },
-      {
-        day: 3,
-        location: "KANDY",
-        title: "Kandy Cultural Day",
-        subtitle: "Cultural show and Botanic Gardens",
-      },
-      {
-        day: 4,
-        location: "YALA",
-        title: "Kandy to Yala",
-        subtitle: "Afternoon settle in and sunset safari",
+        title: "Ancient Kingdom",
+        subtitle:
+          "Discover the magnificent ruins of Polonnaruwa and Minneriya National Park.",
       },
       {
         day: 5,
-        location: "YALA",
-        title: "Full-Day Yala Safari",
-        subtitle: "Morning & evening family jeep safaris",
+        location: "KANDY",
+        title: "Sacred City of Kandy",
+        subtitle:
+          "Temple of the Tooth, Botanical Gardens and cultural performances.",
       },
       {
         day: 6,
-        location: "BENTOTA",
-        title: "Yala to Bentota Beach",
-        subtitle: "Beach resort check-in and water sports",
-      },
-      {
-        day: 7,
-        location: "COLOMBO",
-        title: "Bentota & Departure",
-        subtitle: "Leisure morning and airport transfer",
-      },
-    ],
-    included: [
-      { text: "Family-friendly hotel & resort accommodation" },
-      { text: "All private transfers with child seats" },
-      { text: "Daily breakfast and selected dinners" },
-      { text: "Pinnawala Elephant Orphanage entry" },
-      { text: "Yala family safari with specialist guide" },
-      { text: "Bentota beach water sports session" },
-      { text: "All local taxes and service charges" },
-    ],
-    notIncluded: [
-      { text: "International flights" },
-      { text: "Personal expenses" },
-      { text: "Optional activities" },
-      { text: "Travel insurance" },
-      { text: "Tips for guides and drivers" },
-    ],
-    relatedTours: [1, 3, 5],
-  },
-  {
-    id: 7,
-    title: "Sri Lanka Wellness Retreat",
-    days: 7,
-    price: "$1,099 P/P",
-    priceRaw: 1099,
-    rating: 4,
-    reviews: 110,
-    heroImage: "/tourspage/tour7.jpg",
-    galleryImages: [
-      "/tourspage/tour3.jpg",
-      "/tourspage/tour5.jpg",
-      "/homepage/tour1.jpg",
-    ],
-    description:
-      "Restore your body and mind in some of Sri Lanka's most serene settings. From Ayurvedic treatments in Kandy to sunrise yoga on Unawatuna beach, every moment is crafted to bring deep renewal.",
-    highlights: [
-      {
-        icon: "shield",
-        title: "Ayurvedic Healing",
-        desc: "Receive authentic treatments at NABH-certified Ayurvedic centres in Kandy and the south.",
-      },
-      {
-        icon: "mountain",
-        title: "Sunrise Yoga",
-        desc: "Daily dawn yoga sessions overlooking misty hills, rice paddies and the Indian Ocean.",
-      },
-      {
-        icon: "utensils",
-        title: "Wellness Cuisine",
-        desc: "Plant-based, nutritionist-curated menus using organic locally sourced ingredients.",
-      },
-      {
-        icon: "waves",
-        title: "Nature Meditations",
-        desc: "Guided forest bathing and silent meditation walks through botanical gardens.",
-      },
-    ],
-    tourDates: { start: "September 3rd", end: "10th, 2026" },
-    tourType: "Private Group Tour",
-    route: ["Kandy", "Nuwara Eliya", "Ella", "Unawatuna", "Tangalle"],
-    agenda: [
-      {
-        day: 1,
-        location: "KANDY",
-        title: "Arrival & Kandy",
-        subtitle: "Ayurvedic consultation and initial treatments",
-        image: "/tourspage/tour7.jpg",
-      },
-      {
-        day: 2,
-        location: "KANDY",
-        title: "Ayurvedic Immersion",
-        subtitle: "Full-day Panchakarma and herbal bath",
-      },
-      {
-        day: 3,
         location: "NUWARA ELIYA",
-        title: "Kandy to Nuwara Eliya",
-        subtitle: "Yoga at dawn, tea-estate walk",
-      },
-      {
-        day: 4,
-        location: "ELLA",
-        title: "Nuwara Eliya to Ella",
-        subtitle: "Meditation and scenic train to Ella",
-      },
-      {
-        day: 5,
-        location: "UNAWATUNA",
-        title: "Ella to Unawatuna",
-        subtitle: "Beach yoga and snorkelling",
-      },
-      {
-        day: 6,
-        location: "TANGALLE",
-        title: "Unawatuna to Tangalle",
-        subtitle: "Silent beach walk and sunset meditation",
+        title: "Tea Country",
+        subtitle: "Visit tea plantations, waterfalls and colonial landmarks.",
       },
       {
         day: 7,
-        location: "COLOMBO",
-        title: "Tangalle & Departure",
-        subtitle: "Morning wellness breakfast and airport transfer",
-      },
-    ],
-    included: [
-      { text: "Ayurvedic resort and wellness lodge stays" },
-      { text: "Daily wellness cuisine (breakfast & dinner)" },
-      { text: "Ayurvedic treatments (2 full sessions)" },
-      { text: "Daily yoga and meditation classes" },
-      { text: "All transfers with private vehicle" },
-      { text: "Guided forest bathing and nature walks" },
-      { text: "All local taxes and service charges" },
-    ],
-    notIncluded: [
-      { text: "International flights" },
-      { text: "Personal expenses" },
-      { text: "Optional activities" },
-      { text: "Travel insurance" },
-      { text: "Tips for guides and drivers" },
-    ],
-    relatedTours: [3, 5, 6],
-  },
-  {
-    id: 8,
-    title: "Ultimate Adventure Tour",
-    days: 10,
-    price: "$1,399 P/P",
-    priceRaw: 1399,
-    rating: 4,
-    reviews: 110,
-    heroImage: "/tourspage/tour8.jpg",
-    galleryImages: [
-      "/tourspage/tour2.jpg",
-      "/tourspage/tour4.jpg",
-      "/tourspage/tour9.jpg",
-    ],
-    description:
-      "The most action-packed Sri Lanka experience available — white-water rafting in Kitulgala, surfing at Arugam Bay, scaling Adam's Peak, Yala safari, and cliff diving at Mirissa. Not for the faint-hearted.",
-    highlights: [
-      {
-        icon: "waves",
-        title: "White-Water Rafting",
-        desc: "Tackle Grade 3–4 rapids on the Kelani River in Kitulgala, Sri Lanka's rafting capital.",
-      },
-      {
-        icon: "mountain",
-        title: "Surfing at Arugam",
-        desc: "Ride world-class waves at Arugam Bay, ranked among Asia's top 10 surf spots.",
-      },
-      {
-        icon: "camera",
-        title: "Yala Night Safari",
-        desc: "Exclusive nocturnal game drive to spot leopards and sloth bears after dark.",
-      },
-      {
-        icon: "car",
-        title: "Cliff Diving",
-        desc: "Leap from the dramatic sea cliffs of Mirissa into the deep blue Indian Ocean.",
-      },
-    ],
-    tourDates: { start: "October 5th", end: "15th, 2026" },
-    tourType: "Private Group Tour",
-    route: [
-      "Colombo",
-      "Kitulgala",
-      "Adam's Peak",
-      "Arugam Bay",
-      "Yala",
-      "Mirissa",
-    ],
-    agenda: [
-      {
-        day: 1,
-        location: "COLOMBO",
-        title: "Arrival & Briefing",
-        subtitle: "Airport transfer and adventure kit fitting",
-        image: "/tourspage/tour8.jpg",
-      },
-      {
-        day: 2,
-        location: "KITULGALA",
-        title: "White-Water Rafting Day",
-        subtitle: "Grade 3–4 rapids and cliff jumping",
-      },
-      {
-        day: 3,
-        location: "KITULGALA",
-        title: "Kelani River Kayaking",
-        subtitle: "Morning kayak and jungle waterfall hike",
-      },
-      {
-        day: 4,
-        location: "ADAM'S PEAK",
-        title: "Sacred Climb",
-        subtitle: "Midnight ascent for spectacular sunrise",
-      },
-      {
-        day: 5,
         location: "ELLA",
-        title: "Adam's Peak to Ella",
-        subtitle: "Recovery day and Ella Rock gentle hike",
-      },
-      {
-        day: 6,
-        location: "ARUGAM BAY",
-        title: "Ella to Arugam Bay",
-        subtitle: "East coast transfer and evening surf",
-      },
-      {
-        day: 7,
-        location: "ARUGAM BAY",
-        title: "Surf Day",
-        subtitle: "Full-day surf lessons and open ocean swim",
+        title: "Scenic Train Journey",
+        subtitle:
+          "Travel through Sri Lanka's most picturesque railway route to Ella.",
       },
       {
         day: 8,
-        location: "YALA",
-        title: "Arugam Bay to Yala",
-        subtitle: "Afternoon arrival and dusk game drive",
+        location: "ELLA",
+        title: "Hill Country Adventure",
+        subtitle: "Nine Arches Bridge, Little Adam's Peak and Ravana Falls.",
       },
       {
         day: 9,
         location: "YALA",
-        title: "Yala Night Safari",
-        subtitle: "Exclusive nocturnal leopard-spotting drive",
+        title: "Wildlife Safari",
+        subtitle: "Afternoon jeep safari in Yala National Park.",
       },
       {
         day: 10,
         location: "MIRISSA",
-        title: "Yala to Mirissa & Departure",
-        subtitle: "Cliff diving, whale watching, airport transfer",
+        title: "Beach Relaxation",
+        subtitle:
+          "Travel to Mirissa and enjoy the beautiful southern coastline.",
+      },
+      {
+        day: 11,
+        location: "MIRISSA",
+        title: "Whale Watching",
+        subtitle: "Early morning whale and dolphin watching excursion.",
+      },
+      {
+        day: 12,
+        location: "GALLE",
+        title: "Historic Galle",
+        subtitle: "Explore Galle Dutch Fort and nearby coastal attractions.",
+      },
+      {
+        day: 13,
+        location: "BENTOTA",
+        title: "Leisure by the Beach",
+        subtitle: "Visit Kosgoda Turtle Hatchery and enjoy Bentota Beach.",
+      },
+      {
+        day: 14,
+        location: "COLOMBO / AIRPORT",
+        title: "Departure",
+        subtitle: "Colombo city tour before airport transfer.",
       },
     ],
+
     included: [
-      { text: "Adventure lodges and boutique hotel stays" },
-      { text: "All activity equipment and safety gear" },
-      { text: "Daily breakfast and post-activity meals" },
-      { text: "Certified rafting and surf instructors" },
-      { text: "Yala night safari with specialist tracker" },
-      { text: "All national park and activity entry fees" },
-      { text: "All local taxes and service charges" },
+      {
+        text: "13 nights accommodation in quality hotels & resorts",
+      },
+      {
+        text: "Daily breakfast throughout the tour",
+      },
+      {
+        text: "Private air-conditioned vehicle",
+      },
+      {
+        text: "Professional English-speaking chauffeur guide",
+      },
+      {
+        text: "Airport pickup and departure transfers",
+      },
+      {
+        text: "Government taxes and service charges",
+      },
+      {
+        text: "Entrance tickets to major attractions",
+      },
+      {
+        text: "Yala National Park Jeep Safari",
+      },
     ],
+
     notIncluded: [
-      { text: "International flights" },
-      { text: "Personal expenses" },
-      { text: "Travel insurance (mandatory for this tour)" },
-      { text: "Optional activities" },
-      { text: "Tips for guides and drivers" },
+      {
+        text: "International airfare",
+      },
+      {
+        text: "Sri Lanka visa fees",
+      },
+      {
+        text: "Travel insurance",
+      },
+      {
+        text: "Lunches and dinners unless specified",
+      },
+      {
+        text: "Optional activities and excursions",
+      },
+      {
+        text: "Personal expenses",
+      },
+      {
+        text: "Laundry and telephone charges",
+      },
+      {
+        text: "Tips and gratuities",
+      },
     ],
-    relatedTours: [2, 4, 9],
+
+    relatedTours: [1, 2, 4],
   },
   {
-    id: 9,
-    title: "Wildlife & Nature Explorer",
-    days: 7,
-    price: "$899 P/P",
-    priceRaw: 899,
-    rating: 4,
-    reviews: 110,
-    heroImage: "/tourspage/tour9.jpg",
+    id: 4,
+    title: "Sri Lanka Wildlife Tours",
+    days: 10,
+    price: "$1,695 P/P",
+    priceRaw: 1695,
+    rating: 5,
+    reviews: 173,
+
+    heroImage: "/Wildlife-01.avif",
+
     galleryImages: [
-      "/tourspage/tour2.jpg",
+      "/tourspage/tour5.jpg",
+      "/tourspage/tour6.jpg",
+      "/tourspage/tour7.jpg",
       "/tourspage/tour8.jpg",
-      "/tourspage/tour4.jpg",
     ],
+
     description:
-      "Discover Sri Lanka's wild side on a nature-first expedition. From birdwatching in Bundala to elephant herds at Minneriya and leopard-spotting in Yala, this tour is a wildlife photographer's paradise.",
+      "Embark on an unforgettable wildlife adventure across Sri Lanka's most spectacular national parks and nature reserves. Witness majestic elephants, elusive leopards, sloth bears, crocodiles, colorful birdlife and breathtaking landscapes while experiencing the island's rich biodiversity together with cultural heritage and scenic countryside.",
+
     highlights: [
       {
-        icon: "camera",
-        title: "Bird Photography",
-        desc: "Spot 250+ species including the Sri Lanka blue magpie and painted stork in Bundala.",
+        icon: "shield",
+        title: "Yala National Park Safari",
+        desc: "Search for Sri Lankan leopards, elephants, crocodiles and countless bird species.",
       },
       {
         icon: "mountain",
-        title: "Elephant Gathering",
-        desc: "Witness hundreds of wild elephants at Minneriya during the world's greatest elephant gathering.",
+        title: "Udawalawe National Park",
+        desc: "Observe large elephant herds roaming freely in their natural habitat.",
       },
       {
-        icon: "waves",
-        title: "Marine Wildlife",
-        desc: "Snorkel Hikkaduwa's coral reefs and spot sea turtles nesting on Rekawa beach at night.",
+        icon: "camera",
+        title: "Minneriya Elephant Gathering",
+        desc: "Witness one of Asia's largest gatherings of wild elephants during the season.",
       },
       {
         icon: "globe",
-        title: "Expert Naturalists",
-        desc: "All guides are certified naturalists who share deep ecological knowledge throughout.",
+        title: "Nature & Culture",
+        desc: "Combine wildlife experiences with ancient cities, temples and scenic landscapes.",
       },
     ],
-    tourDates: { start: "November 6th", end: "13th, 2026" },
-    tourType: "Private Group Tour",
-    route: ["Minneriya", "Sigiriya", "Sinharaja", "Bundala", "Yala"],
+
+    tourDates: {
+      start: "April 5th",
+      end: "14th, 2027",
+    },
+
+    tourType: "Private Wildlife Expedition",
+
+    route: [
+      "Negombo",
+      "Wilpattu",
+      "Sigiriya",
+      "Minneriya",
+      "Kandy",
+      "Ella",
+      "Udawalawe",
+      "Yala",
+      "Galle",
+      "Colombo",
+    ],
+
     agenda: [
       {
         day: 1,
+        location: "NEGOMBO",
+        title: "Arrival",
+        subtitle: "Meet your guide and relax after your international flight.",
+        image: "/tourspage/tour4.jpg",
+      },
+      {
+        day: 2,
+        location: "WILPATTU",
+        title: "Wilpattu National Park",
+        subtitle: "Afternoon jeep safari in Sri Lanka's largest national park.",
+      },
+      {
+        day: 3,
+        location: "SIGIRIYA",
+        title: "Journey to Sigiriya",
+        subtitle:
+          "Visit Dambulla Cave Temple and enjoy an evening village experience.",
+      },
+      {
+        day: 4,
         location: "MINNERIYA",
-        title: "Arrival & Minneriya",
-        subtitle: "The Gathering – hundreds of wild elephants",
+        title: "Elephant Safari",
+        subtitle:
+          "Morning climb to Sigiriya followed by Minneriya National Park safari.",
+      },
+      {
+        day: 5,
+        location: "KANDY",
+        title: "Sacred City",
+        subtitle: "Temple of the Tooth and Royal Botanical Gardens.",
+      },
+      {
+        day: 6,
+        location: "ELLA",
+        title: "Hill Country",
+        subtitle:
+          "Tea plantations, waterfalls and the famous scenic train experience.",
+      },
+      {
+        day: 7,
+        location: "UDAWALAWE",
+        title: "Elephant Country",
+        subtitle: "Udawalawe Jeep Safari and Elephant Transit Home visit.",
+      },
+      {
+        day: 8,
+        location: "YALA",
+        title: "Leopard Safari",
+        subtitle:
+          "Explore Sri Lanka's premier wildlife reserve in search of leopards.",
+      },
+      {
+        day: 9,
+        location: "GALLE",
+        title: "Southern Coast",
+        subtitle: "Relax by the beach before visiting Galle Dutch Fort.",
+      },
+      {
+        day: 10,
+        location: "AIRPORT",
+        title: "Departure",
+        subtitle: "Transfer to Bandaranaike International Airport.",
+      },
+    ],
+
+    included: [
+      {
+        text: "9 nights accommodation in carefully selected hotels",
+      },
+      {
+        text: "Daily breakfast",
+      },
+      {
+        text: "Private air-conditioned vehicle",
+      },
+      {
+        text: "Professional English-speaking chauffeur guide",
+      },
+      {
+        text: "Airport transfers",
+      },
+      {
+        text: "Jeep safaris in Wilpattu, Minneriya, Udawalawe and Yala",
+      },
+      {
+        text: "Entrance fees to listed attractions",
+      },
+      {
+        text: "Government taxes and service charges",
+      },
+    ],
+
+    notIncluded: [
+      {
+        text: "International flights",
+      },
+      {
+        text: "Sri Lanka visa fees",
+      },
+      {
+        text: "Travel insurance",
+      },
+      {
+        text: "Lunches and dinners",
+      },
+      {
+        text: "Optional excursions",
+      },
+      {
+        text: "Camera or video permit fees where applicable",
+      },
+      {
+        text: "Personal expenses",
+      },
+      {
+        text: "Tips and gratuities",
+      },
+    ],
+
+    relatedTours: [3, 5, 6],
+  },
+  {
+    id: 5,
+    title: "Scenic Beauty of Sri Lanka",
+    days: 10,
+    price: "$1,545 P/P",
+    priceRaw: 1545,
+    rating: 5,
+    reviews: 162,
+
+    heroImage: "/Culture-04-scaled.jpg",
+
+    galleryImages: [
+      "/tourspage/tour6.jpg",
+      "/tourspage/tour7.jpg",
+      "/tourspage/tour8.jpg",
+      "/tourspage/tour9.jpg",
+    ],
+
+    description:
+      "Discover the breathtaking natural beauty of Sri Lanka on this unforgettable ten-day journey through misty mountains, cascading waterfalls, lush tea plantations, picturesque train routes and tranquil lakes. From the cool climate of Nuwara Eliya to the stunning viewpoints of Ella and the golden beaches of the south coast, this tour offers the perfect balance of nature, adventure and relaxation.",
+
+    highlights: [
+      {
+        icon: "mountain",
+        title: "Sri Lanka Hill Country",
+        desc: "Explore breathtaking mountain landscapes, tea estates and cool-climate towns.",
+      },
+      {
+        icon: "camera",
+        title: "Scenic Train Journey",
+        desc: "Experience one of the world's most beautiful railway journeys between Nanu Oya and Ella.",
+      },
+      {
+        icon: "globe",
+        title: "Tea Plantation Experience",
+        desc: "Visit world-famous Ceylon tea factories and plantations while learning the tea-making process.",
+      },
+      {
+        icon: "waves",
+        title: "Southern Coast Escape",
+        desc: "Relax along Sri Lanka's stunning southern beaches before returning to Colombo.",
+      },
+    ],
+
+    tourDates: {
+      start: "May 10th",
+      end: "19th, 2027",
+    },
+
+    tourType: "Private Scenic Tour",
+
+    route: [
+      "Negombo",
+      "Kandy",
+      "Nuwara Eliya",
+      "Ella",
+      "Udawalawe",
+      "Mirissa",
+      "Bentota",
+      "Colombo",
+    ],
+
+    agenda: [
+      {
+        day: 1,
+        location: "NEGOMBO",
+        title: "Arrival in Sri Lanka",
+        subtitle: "Airport pickup and overnight stay in Negombo.",
+        image: "/tourspage/tour5.jpg",
+      },
+      {
+        day: 2,
+        location: "KANDY",
+        title: "Journey to Kandy",
+        subtitle:
+          "Visit Pinnawala Elephant Orphanage and Temple of the Sacred Tooth Relic.",
+      },
+      {
+        day: 3,
+        location: "NUWARA ELIYA",
+        title: "Tea Country",
+        subtitle: "Explore Ramboda Falls, tea plantations and Gregory Lake.",
+      },
+      {
+        day: 4,
+        location: "ELLA",
+        title: "Scenic Train Experience",
+        subtitle:
+          "Travel through spectacular mountain scenery before visiting Nine Arches Bridge.",
+      },
+      {
+        day: 5,
+        location: "ELLA",
+        title: "Ella Adventure",
+        subtitle:
+          "Little Adam's Peak, Ravana Falls and surrounding viewpoints.",
+      },
+      {
+        day: 6,
+        location: "UDAWALAWE",
+        title: "Wildlife Experience",
+        subtitle: "Morning safari and visit to the Elephant Transit Home.",
+      },
+      {
+        day: 7,
+        location: "MIRISSA",
+        title: "Southern Beaches",
+        subtitle: "Relax on Mirissa Beach and enjoy optional whale watching.",
+      },
+      {
+        day: 8,
+        location: "BENTOTA",
+        title: "Coastal Leisure",
+        subtitle: "Bentota Beach, Madu River Boat Safari and Turtle Hatchery.",
+      },
+      {
+        day: 9,
+        location: "COLOMBO",
+        title: "Capital Exploration",
+        subtitle: "City tour, shopping and colonial landmarks.",
+      },
+      {
+        day: 10,
+        location: "AIRPORT",
+        title: "Departure",
+        subtitle: "Transfer to Bandaranaike International Airport.",
+      },
+    ],
+
+    included: [
+      {
+        text: "9 nights accommodation in premium hotels",
+      },
+      {
+        text: "Daily breakfast",
+      },
+      {
+        text: "Private luxury air-conditioned vehicle",
+      },
+      {
+        text: "Professional English-speaking chauffeur guide",
+      },
+      {
+        text: "Airport arrival & departure transfers",
+      },
+      {
+        text: "Scenic train tickets (subject to availability)",
+      },
+      {
+        text: "Entrance tickets to major attractions",
+      },
+      {
+        text: "Government taxes & service charges",
+      },
+    ],
+
+    notIncluded: [
+      {
+        text: "International airfare",
+      },
+      {
+        text: "Sri Lanka tourist visa",
+      },
+      {
+        text: "Travel insurance",
+      },
+      {
+        text: "Lunches & dinners",
+      },
+      {
+        text: "Optional adventure activities",
+      },
+      {
+        text: "Personal expenses",
+      },
+      {
+        text: "Tips & gratuities",
+      },
+      {
+        text: "Alcoholic beverages",
+      },
+    ],
+
+    relatedTours: [3, 4, 6],
+  },
+  {
+    id: 6,
+    title: "A Quick Escape to the Hills",
+    days: 5,
+    price: "$895 P/P",
+    priceRaw: 895,
+    rating: 5,
+    reviews: 94,
+
+    heroImage: "/Ella-1.jpg",
+
+    galleryImages: [
+      "/tourspage/tour5.jpg",
+      "/tourspage/tour7.jpg",
+      "/tourspage/tour8.jpg",
+      "/tourspage/tour9.jpg",
+    ],
+
+    description:
+      "Escape to Sri Lanka's breathtaking hill country on this relaxing five-day getaway. Discover the cultural charm of Kandy, the lush tea plantations of Nuwara Eliya and the spectacular scenery of Ella while travelling through misty mountains, waterfalls and picturesque railway routes.",
+
+    highlights: [
+      {
+        icon: "mountain",
+        title: "Beautiful Hill Country",
+        desc: "Experience cool weather, scenic mountains and lush tea plantations.",
+      },
+      {
+        icon: "camera",
+        title: "World Famous Train Ride",
+        desc: "Travel through breathtaking landscapes on Sri Lanka's iconic hill country railway.",
+      },
+      {
+        icon: "globe",
+        title: "Tea Factory Visit",
+        desc: "Learn how world-famous Ceylon Tea is produced while tasting fresh premium tea.",
+      },
+      {
+        icon: "shield",
+        title: "Cultural Heritage",
+        desc: "Visit the Temple of the Sacred Tooth Relic and explore the historic city of Kandy.",
+      },
+    ],
+
+    tourDates: {
+      start: "June 12th",
+      end: "16th, 2027",
+    },
+
+    tourType: "Private Hill Country Tour",
+
+    route: ["Negombo", "Kandy", "Nuwara Eliya", "Ella", "Airport"],
+
+    agenda: [
+      {
+        day: 1,
+        location: "KANDY",
+        title: "Journey to Kandy",
+        subtitle:
+          "Visit Pinnawala Elephant Orphanage before exploring Kandy and the Temple of the Sacred Tooth Relic.",
+        image: "/tourspage/tour6.jpg",
+      },
+      {
+        day: 2,
+        location: "NUWARA ELIYA",
+        title: "Tea Country",
+        subtitle:
+          "Visit Ramboda Falls, a working tea factory, Gregory Lake and Hakgala Botanical Garden.",
+      },
+      {
+        day: 3,
+        location: "ELLA",
+        title: "Scenic Railway Adventure",
+        subtitle:
+          "Enjoy the spectacular train journey to Ella and visit Nine Arches Bridge and Little Adam's Peak.",
+      },
+      {
+        day: 4,
+        location: "ELLA",
+        title: "Explore Ella",
+        subtitle:
+          "Visit Ravana Falls, Ella Gap viewpoint and spend a relaxing evening in the town.",
+      },
+      {
+        day: 5,
+        location: "AIRPORT",
+        title: "Departure",
+        subtitle:
+          "Travel back to Colombo with optional city sightseeing before airport transfer.",
+      },
+    ],
+
+    included: [
+      {
+        text: "4 nights accommodation in carefully selected hotels",
+      },
+      {
+        text: "Daily breakfast",
+      },
+      {
+        text: "Private air-conditioned vehicle",
+      },
+      {
+        text: "Professional English-speaking chauffeur guide",
+      },
+      {
+        text: "Airport pickup & departure transfers",
+      },
+      {
+        text: "Scenic train ticket (subject to availability)",
+      },
+      {
+        text: "Entrance fees to listed attractions",
+      },
+      {
+        text: "Government taxes and service charges",
+      },
+    ],
+
+    notIncluded: [
+      {
+        text: "International flights",
+      },
+      {
+        text: "Sri Lanka visa fees",
+      },
+      {
+        text: "Travel insurance",
+      },
+      {
+        text: "Lunches & dinners",
+      },
+      {
+        text: "Optional adventure activities",
+      },
+      {
+        text: "Personal expenses",
+      },
+      {
+        text: "Laundry & telephone charges",
+      },
+      {
+        text: "Tips for guides and drivers",
+      },
+    ],
+
+    relatedTours: [5, 3, 7],
+  },
+  {
+    id: 7,
+    title: "Sunrise Shores Tour",
+    days: 7,
+    price: "$1,145 P/P",
+    priceRaw: 1145,
+    rating: 5,
+    reviews: 118,
+
+    heroImage: "/Bentota-2-scaled.avif",
+
+    galleryImages: [
+      "/tourspage/tour8.jpg",
+      "/tourspage/tour9.jpg",
+      "/tourspage/tour3.jpg",
+    ],
+
+    description:
+      "Escape to Sri Lanka's spectacular eastern coastline where pristine beaches, crystal-clear waters and unforgettable marine experiences await. Discover the relaxed atmosphere of Trincomalee and Nilaveli while exploring historic temples, enjoying whale watching, snorkeling at Pigeon Island National Park and relaxing on some of the island's most beautiful beaches.",
+
+    highlights: [
+      {
+        icon: "waves",
+        title: "Nilaveli Beach",
+        desc: "Relax on one of Sri Lanka's most beautiful white sandy beaches with crystal-clear waters.",
+      },
+      {
+        icon: "camera",
+        title: "Pigeon Island Marine Park",
+        desc: "Snorkel among colorful coral reefs, tropical fish and sea turtles.",
+      },
+      {
+        icon: "globe",
+        title: "Trincomalee Heritage",
+        desc: "Visit the sacred Koneswaram Temple and the famous Lover's Leap viewpoint.",
+      },
+      {
+        icon: "mountain",
+        title: "Whale Watching",
+        desc: "Enjoy seasonal whale and dolphin watching in the Indian Ocean.",
+      },
+    ],
+
+    tourDates: {
+      start: "July 14th",
+      end: "20th, 2027",
+    },
+
+    tourType: "Private Beach Holiday",
+
+    route: ["Negombo", "Dambulla", "Trincomalee", "Nilaveli", "Colombo"],
+
+    agenda: [
+      {
+        day: 1,
+        location: "NEGOMBO",
+        title: "Arrival",
+        subtitle: "Airport pickup and overnight stay in Negombo.",
+        image: "/tourspage/tour7.jpg",
+      },
+      {
+        day: 2,
+        location: "DAMBULLA",
+        title: "Journey to the East",
+        subtitle:
+          "Visit Dambulla Cave Temple before continuing to Trincomalee.",
+      },
+      {
+        day: 3,
+        location: "TRINCOMALEE",
+        title: "Historic Trincomalee",
+        subtitle: "Explore Koneswaram Temple, Fort Frederick and Lover's Leap.",
+      },
+      {
+        day: 4,
+        location: "NILAVELI",
+        title: "Pigeon Island Adventure",
+        subtitle: "Snorkeling, swimming and marine life exploration.",
+      },
+      {
+        day: 5,
+        location: "NILAVELI",
+        title: "Beach Leisure",
+        subtitle:
+          "Relax on the beach with optional whale watching and water sports.",
+      },
+      {
+        day: 6,
+        location: "COLOMBO",
+        title: "Return Journey",
+        subtitle:
+          "Travel back to Colombo with optional shopping and sightseeing.",
+      },
+      {
+        day: 7,
+        location: "AIRPORT",
+        title: "Departure",
+        subtitle: "Airport transfer for your onward flight.",
+      },
+    ],
+
+    included: [
+      {
+        text: "6 nights accommodation in quality beach resorts",
+      },
+      {
+        text: "Daily breakfast",
+      },
+      {
+        text: "Private luxury transportation",
+      },
+      {
+        text: "Professional English-speaking chauffeur guide",
+      },
+      {
+        text: "Airport arrival & departure transfers",
+      },
+      {
+        text: "Entrance fees to listed attractions",
+      },
+      {
+        text: "Government taxes and service charges",
+      },
+    ],
+
+    notIncluded: [
+      {
+        text: "International flights",
+      },
+      {
+        text: "Sri Lanka visa fees",
+      },
+      {
+        text: "Travel insurance",
+      },
+      {
+        text: "Lunches and dinners",
+      },
+      {
+        text: "Snorkeling equipment rental",
+      },
+      {
+        text: "Optional water sports activities",
+      },
+      {
+        text: "Personal expenses",
+      },
+      {
+        text: "Tips and gratuities",
+      },
+    ],
+
+    relatedTours: [5, 8, 9],
+  },
+  {
+    id: 8,
+    title: "Hill Country Retreat",
+    days: 6,
+    price: "$995 P/P",
+    priceRaw: 995,
+    rating: 5,
+    reviews: 108,
+
+    heroImage: "/Waterfall-scaled.avif",
+
+    galleryImages: [
+      "/tourspage/tour6.jpg",
+      "/tourspage/tour7.jpg",
+      "/tourspage/tour9.jpg",
+      "/tourspage/tour10.jpg",
+    ],
+
+    description:
+      "Immerse yourself in the refreshing beauty of Sri Lanka's hill country on this six-day retreat through mist-covered mountains, lush tea estates, charming colonial towns and breathtaking viewpoints. Experience the peaceful atmosphere of Kandy, Nuwara Eliya and Ella while enjoying scenic train journeys, waterfalls and unforgettable natural landscapes.",
+
+    highlights: [
+      {
+        icon: "mountain",
+        title: "Beautiful Tea Country",
+        desc: "Explore rolling tea plantations and experience the cool climate of Sri Lanka's central highlands.",
+      },
+      {
+        icon: "camera",
+        title: "Scenic Railway",
+        desc: "Travel on one of the world's most beautiful train journeys through mountains and valleys.",
+      },
+      {
+        icon: "globe",
+        title: "Colonial Heritage",
+        desc: "Visit charming colonial towns, historic buildings and beautiful botanical gardens.",
+      },
+      {
+        icon: "waves",
+        title: "Waterfalls & Viewpoints",
+        desc: "Discover spectacular waterfalls, mountain viewpoints and peaceful lakes.",
+      },
+    ],
+
+    tourDates: {
+      start: "August 9th",
+      end: "14th, 2027",
+    },
+
+    tourType: "Private Hill Country Escape",
+
+    route: ["Negombo", "Kandy", "Nuwara Eliya", "Ella", "Colombo"],
+
+    agenda: [
+      {
+        day: 1,
+        location: "KANDY",
+        title: "Journey to Kandy",
+        subtitle:
+          "Visit Pinnawala Elephant Orphanage before exploring Kandy city.",
+        image: "/tourspage/tour8.jpg",
+      },
+      {
+        day: 2,
+        location: "KANDY",
+        title: "Cultural Discovery",
+        subtitle:
+          "Temple of the Sacred Tooth Relic, Botanical Gardens and cultural dance performance.",
+      },
+      {
+        day: 3,
+        location: "NUWARA ELIYA",
+        title: "Tea Plantation Experience",
+        subtitle: "Visit Ramboda Falls, tea factories and Gregory Lake.",
+      },
+      {
+        day: 4,
+        location: "ELLA",
+        title: "Scenic Train Journey",
+        subtitle:
+          "Travel through breathtaking mountain scenery before visiting Nine Arches Bridge.",
+      },
+      {
+        day: 5,
+        location: "ELLA",
+        title: "Nature Adventure",
+        subtitle: "Little Adam's Peak, Ravana Falls and Ella Gap viewpoint.",
+      },
+      {
+        day: 6,
+        location: "AIRPORT",
+        title: "Departure",
+        subtitle: "Return to Colombo with airport transfer.",
+      },
+    ],
+
+    included: [
+      {
+        text: "5 nights accommodation in premium hill country hotels",
+      },
+      {
+        text: "Daily breakfast",
+      },
+      {
+        text: "Private air-conditioned transportation",
+      },
+      {
+        text: "Professional English-speaking chauffeur guide",
+      },
+      {
+        text: "Airport pickup & departure transfers",
+      },
+      {
+        text: "Scenic train ticket (subject to availability)",
+      },
+      {
+        text: "Entrance fees to listed attractions",
+      },
+      {
+        text: "Government taxes and service charges",
+      },
+    ],
+
+    notIncluded: [
+      {
+        text: "International airfare",
+      },
+      {
+        text: "Sri Lanka tourist visa",
+      },
+      {
+        text: "Travel insurance",
+      },
+      {
+        text: "Lunches & dinners",
+      },
+      {
+        text: "Optional adventure activities",
+      },
+      {
+        text: "Personal expenses",
+      },
+      {
+        text: "Laundry services",
+      },
+      {
+        text: "Tips and gratuities",
+      },
+    ],
+
+    relatedTours: [5, 6, 9],
+  },
+  {
+    id: 9,
+    title: "Eastern Blue Bliss",
+    days: 8,
+    price: "$1,295 P/P",
+    priceRaw: 1295,
+    rating: 5,
+    reviews: 136,
+
+    heroImage: "/Mirissa-scaled.avif",
+
+    galleryImages: [
+      "/tourspage/tour3.jpg",
+      "/tourspage/tour8.jpg",
+      "/tourspage/tour7.jpg",
+      "/tourspage/tour6.jpg",
+    ],
+
+    description:
+      "Discover the untouched beauty of Sri Lanka's stunning eastern coastline on this relaxing eight-day beach holiday. From the cultural heritage of Trincomalee to the crystal-clear waters of Nilaveli and the peaceful shores of Pasikudah, this journey offers the perfect combination of relaxation, marine adventures, history and unforgettable tropical scenery.",
+
+    highlights: [
+      {
+        icon: "waves",
+        title: "Pristine East Coast Beaches",
+        desc: "Relax on the white sandy beaches of Nilaveli and Pasikudah with calm turquoise waters.",
+      },
+      {
+        icon: "camera",
+        title: "Marine Adventures",
+        desc: "Enjoy snorkeling, scuba diving and optional whale watching in the Indian Ocean.",
+      },
+      {
+        icon: "globe",
+        title: "Historic Trincomalee",
+        desc: "Explore Fort Frederick, Koneswaram Temple and breathtaking coastal viewpoints.",
+      },
+      {
+        icon: "mountain",
+        title: "Island Relaxation",
+        desc: "Experience peaceful beach resorts, fresh seafood and spectacular sunrises.",
+      },
+    ],
+
+    tourDates: {
+      start: "September 15th",
+      end: "22nd, 2027",
+    },
+
+    tourType: "Private East Coast Beach Tour",
+
+    route: [
+      "Negombo",
+      "Dambulla",
+      "Trincomalee",
+      "Nilaveli",
+      "Pasikudah",
+      "Colombo",
+    ],
+
+    agenda: [
+      {
+        day: 1,
+        location: "NEGOMBO",
+        title: "Arrival in Sri Lanka",
+        subtitle: "Airport welcome and overnight stay in Negombo.",
         image: "/tourspage/tour9.jpg",
       },
       {
         day: 2,
-        location: "SIGIRIYA",
-        title: "Minneriya to Sigiriya",
-        subtitle: "Morning birdwatching and rock fortress",
+        location: "TRINCOMALEE",
+        title: "Journey to the East Coast",
+        subtitle:
+          "Travel through the Cultural Triangle with a visit to Dambulla Cave Temple.",
       },
       {
         day: 3,
-        location: "SINHARAJA",
-        title: "Sigiriya to Sinharaja",
-        subtitle: "Rainforest birdwatching with naturalist",
+        location: "TRINCOMALEE",
+        title: "Historic Trincomalee",
+        subtitle: "Visit Fort Frederick, Koneswaram Temple and Lover's Leap.",
       },
       {
         day: 4,
-        location: "SINHARAJA",
-        title: "Sinharaja Deep Forest",
-        subtitle: "Endemic species trail and waterfall pool",
+        location: "NILAVELI",
+        title: "Pigeon Island Marine Park",
+        subtitle:
+          "Snorkeling among vibrant coral reefs and tropical marine life.",
       },
       {
         day: 5,
-        location: "BUNDALA",
-        title: "Sinharaja to Bundala",
-        subtitle: "Wetland bird safari and flamingo sighting",
+        location: "NILAVELI",
+        title: "Beach Leisure",
+        subtitle:
+          "Relax by the beach or enjoy optional scuba diving and whale watching.",
       },
       {
         day: 6,
-        location: "YALA",
-        title: "Bundala to Yala",
-        subtitle: "Afternoon game drive – leopard tracking",
+        location: "PASIKUDAH",
+        title: "Pasikudah Beach",
+        subtitle:
+          "Spend the day enjoying calm shallow waters and beachside relaxation.",
       },
       {
         day: 7,
         location: "COLOMBO",
-        title: "Yala Full Safari & Departure",
-        subtitle: "Dawn game drive and airport transfer",
+        title: "Return to Colombo",
+        subtitle: "Enjoy a city tour and shopping before your final evening.",
+      },
+      {
+        day: 8,
+        location: "AIRPORT",
+        title: "Departure",
+        subtitle: "Transfer to Bandaranaike International Airport.",
       },
     ],
+
     included: [
-      { text: "Nature lodges and eco-resort accommodation" },
-      { text: "All transfers with wildlife-specialist guide" },
-      { text: "Daily meals (breakfast, lunch & dinner)" },
-      { text: "Minneriya, Yala and Bundala safari fees" },
-      { text: "Sinharaja guided rainforest trek" },
-      { text: "Turtle nesting beach night tour" },
-      { text: "All local taxes and service charges" },
+      {
+        text: "7 nights accommodation in premium beach resorts",
+      },
+      {
+        text: "Daily breakfast",
+      },
+      {
+        text: "Private luxury air-conditioned transportation",
+      },
+      {
+        text: "Professional English-speaking chauffeur guide",
+      },
+      {
+        text: "Airport pickup & departure transfers",
+      },
+      {
+        text: "Entrance tickets to listed attractions",
+      },
+      {
+        text: "Government taxes and service charges",
+      },
     ],
+
     notIncluded: [
-      { text: "International flights" },
-      { text: "Personal expenses" },
-      { text: "Optional activities" },
-      { text: "Travel insurance" },
-      { text: "Tips for guides and drivers" },
+      {
+        text: "International flights",
+      },
+      {
+        text: "Sri Lanka tourist visa",
+      },
+      {
+        text: "Travel insurance",
+      },
+      {
+        text: "Lunches & dinners",
+      },
+      {
+        text: "Optional water sports and diving activities",
+      },
+      {
+        text: "Personal expenses",
+      },
+      {
+        text: "Laundry and beverages",
+      },
+      {
+        text: "Tips and gratuities",
+      },
     ],
-    relatedTours: [2, 4, 8],
+
+    relatedTours: [7, 8, 2],
   },
 ];
 
@@ -1138,35 +1677,199 @@ function InquiryForm({ tour }: { tour: TourData }) {
   const [countryOpen, setCountryOpen] = useState(false);
 
   const allCountries = [
-    "Afghanistan","Albania","Algeria","Andorra","Angola","Argentina","Armenia",
-    "Australia","Austria","Azerbaijan","Bahamas","Bahrain","Bangladesh","Barbados",
-    "Belarus","Belgium","Belize","Benin","Bhutan","Bolivia","Bosnia and Herzegovina",
-    "Botswana","Brazil","Brunei","Bulgaria","Burkina Faso","Burundi","Cambodia",
-    "Cameroon","Canada","Cape Verde","Central African Republic","Chad","Chile",
-    "China","Colombia","Comoros","Congo","Costa Rica","Croatia","Cuba","Cyprus",
-    "Czech Republic","Denmark","Djibouti","Dominica","Dominican Republic","Ecuador",
-    "Egypt","El Salvador","Equatorial Guinea","Eritrea","Estonia","Eswatini",
-    "Ethiopia","Fiji","Finland","France","Gabon","Gambia","Georgia","Germany",
-    "Ghana","Greece","Grenada","Guatemala","Guinea","Guinea-Bissau","Guyana",
-    "Haiti","Honduras","Hungary","Iceland","India","Indonesia","Iran","Iraq",
-    "Ireland","Israel","Italy","Jamaica","Japan","Jordan","Kazakhstan","Kenya",
-    "Kiribati","Kuwait","Kyrgyzstan","Laos","Latvia","Lebanon","Lesotho","Liberia",
-    "Libya","Liechtenstein","Lithuania","Luxembourg","Madagascar","Malawi","Malaysia",
-    "Maldives","Mali","Malta","Marshall Islands","Mauritania","Mauritius","Mexico",
-    "Micronesia","Moldova","Monaco","Mongolia","Montenegro","Morocco","Mozambique",
-    "Myanmar","Namibia","Nauru","Nepal","Netherlands","New Zealand","Nicaragua",
-    "Niger","Nigeria","North Korea","North Macedonia","Norway","Oman","Pakistan",
-    "Palau","Palestine","Panama","Papua New Guinea","Paraguay","Peru","Philippines",
-    "Poland","Portugal","Qatar","Romania","Russia","Rwanda","Saint Kitts and Nevis",
-    "Saint Lucia","Saint Vincent and the Grenadines","Samoa","San Marino",
-    "Sao Tome and Principe","Saudi Arabia","Senegal","Serbia","Seychelles",
-    "Sierra Leone","Singapore","Slovakia","Slovenia","Solomon Islands","Somalia",
-    "South Africa","South Korea","South Sudan","Spain","Sri Lanka","Sudan",
-    "Suriname","Sweden","Switzerland","Syria","Taiwan","Tajikistan","Tanzania",
-    "Thailand","Timor-Leste","Togo","Tonga","Trinidad and Tobago","Tunisia",
-    "Turkey","Turkmenistan","Tuvalu","Uganda","Ukraine","United Arab Emirates",
-    "United Kingdom","United States","Uruguay","Uzbekistan","Vanuatu","Vatican City",
-    "Venezuela","Vietnam","Yemen","Zambia","Zimbabwe",
+    "Afghanistan",
+    "Albania",
+    "Algeria",
+    "Andorra",
+    "Angola",
+    "Argentina",
+    "Armenia",
+    "Australia",
+    "Austria",
+    "Azerbaijan",
+    "Bahamas",
+    "Bahrain",
+    "Bangladesh",
+    "Barbados",
+    "Belarus",
+    "Belgium",
+    "Belize",
+    "Benin",
+    "Bhutan",
+    "Bolivia",
+    "Bosnia and Herzegovina",
+    "Botswana",
+    "Brazil",
+    "Brunei",
+    "Bulgaria",
+    "Burkina Faso",
+    "Burundi",
+    "Cambodia",
+    "Cameroon",
+    "Canada",
+    "Cape Verde",
+    "Central African Republic",
+    "Chad",
+    "Chile",
+    "China",
+    "Colombia",
+    "Comoros",
+    "Congo",
+    "Costa Rica",
+    "Croatia",
+    "Cuba",
+    "Cyprus",
+    "Czech Republic",
+    "Denmark",
+    "Djibouti",
+    "Dominica",
+    "Dominican Republic",
+    "Ecuador",
+    "Egypt",
+    "El Salvador",
+    "Equatorial Guinea",
+    "Eritrea",
+    "Estonia",
+    "Eswatini",
+    "Ethiopia",
+    "Fiji",
+    "Finland",
+    "France",
+    "Gabon",
+    "Gambia",
+    "Georgia",
+    "Germany",
+    "Ghana",
+    "Greece",
+    "Grenada",
+    "Guatemala",
+    "Guinea",
+    "Guinea-Bissau",
+    "Guyana",
+    "Haiti",
+    "Honduras",
+    "Hungary",
+    "Iceland",
+    "India",
+    "Indonesia",
+    "Iran",
+    "Iraq",
+    "Ireland",
+    "Israel",
+    "Italy",
+    "Jamaica",
+    "Japan",
+    "Jordan",
+    "Kazakhstan",
+    "Kenya",
+    "Kiribati",
+    "Kuwait",
+    "Kyrgyzstan",
+    "Laos",
+    "Latvia",
+    "Lebanon",
+    "Lesotho",
+    "Liberia",
+    "Libya",
+    "Liechtenstein",
+    "Lithuania",
+    "Luxembourg",
+    "Madagascar",
+    "Malawi",
+    "Malaysia",
+    "Maldives",
+    "Mali",
+    "Malta",
+    "Marshall Islands",
+    "Mauritania",
+    "Mauritius",
+    "Mexico",
+    "Micronesia",
+    "Moldova",
+    "Monaco",
+    "Mongolia",
+    "Montenegro",
+    "Morocco",
+    "Mozambique",
+    "Myanmar",
+    "Namibia",
+    "Nauru",
+    "Nepal",
+    "Netherlands",
+    "New Zealand",
+    "Nicaragua",
+    "Niger",
+    "Nigeria",
+    "North Korea",
+    "North Macedonia",
+    "Norway",
+    "Oman",
+    "Pakistan",
+    "Palau",
+    "Palestine",
+    "Panama",
+    "Papua New Guinea",
+    "Paraguay",
+    "Peru",
+    "Philippines",
+    "Poland",
+    "Portugal",
+    "Qatar",
+    "Romania",
+    "Russia",
+    "Rwanda",
+    "Saint Kitts and Nevis",
+    "Saint Lucia",
+    "Saint Vincent and the Grenadines",
+    "Samoa",
+    "San Marino",
+    "Sao Tome and Principe",
+    "Saudi Arabia",
+    "Senegal",
+    "Serbia",
+    "Seychelles",
+    "Sierra Leone",
+    "Singapore",
+    "Slovakia",
+    "Slovenia",
+    "Solomon Islands",
+    "Somalia",
+    "South Africa",
+    "South Korea",
+    "South Sudan",
+    "Spain",
+    "Sri Lanka",
+    "Sudan",
+    "Suriname",
+    "Sweden",
+    "Switzerland",
+    "Syria",
+    "Taiwan",
+    "Tajikistan",
+    "Tanzania",
+    "Thailand",
+    "Timor-Leste",
+    "Togo",
+    "Tonga",
+    "Trinidad and Tobago",
+    "Tunisia",
+    "Turkey",
+    "Turkmenistan",
+    "Tuvalu",
+    "Uganda",
+    "Ukraine",
+    "United Arab Emirates",
+    "United Kingdom",
+    "United States",
+    "Uruguay",
+    "Uzbekistan",
+    "Vanuatu",
+    "Vatican City",
+    "Venezuela",
+    "Vietnam",
+    "Yemen",
+    "Zambia",
+    "Zimbabwe",
   ];
 
   const filteredCountries = allCountries.filter((c) =>
@@ -1257,8 +1960,14 @@ function InquiryForm({ tour }: { tour: TourData }) {
   return (
     <>
       {showSuccess && (
-        <div className="td-success-overlay" onClick={() => setShowSuccess(false)}>
-          <div className="td-success-modal" onClick={(e) => e.stopPropagation()}>
+        <div
+          className="td-success-overlay"
+          onClick={() => setShowSuccess(false)}
+        >
+          <div
+            className="td-success-modal"
+            onClick={(e) => e.stopPropagation()}
+          >
             <div className="td-success-icon">
               <Check size={32} color="#fff" />
             </div>
@@ -1267,7 +1976,10 @@ function InquiryForm({ tour }: { tour: TourData }) {
               Thank you, {firstName || "there"}! Your inquiry has been sent
               successfully. Our team will get back to you within 24 hours.
             </p>
-            <button className="td-success-btn" onClick={() => setShowSuccess(false)}>
+            <button
+              className="td-success-btn"
+              onClick={() => setShowSuccess(false)}
+            >
               Done
             </button>
           </div>
@@ -1278,7 +1990,9 @@ function InquiryForm({ tour }: { tour: TourData }) {
         <div className="td-form-card">
           <div className="td-form-grid">
             <div className="td-field">
-              <label className="td-label">First Name <Req /></label>
+              <label className="td-label">
+                First Name <Req />
+              </label>
               <input
                 className={ic("firstName")}
                 placeholder="John"
@@ -1289,7 +2003,9 @@ function InquiryForm({ tour }: { tour: TourData }) {
               {err("firstName")}
             </div>
             <div className="td-field">
-              <label className="td-label">Last Name <Req /></label>
+              <label className="td-label">
+                Last Name <Req />
+              </label>
               <input
                 className={ic("lastName")}
                 placeholder="Doe"
@@ -1300,13 +2016,21 @@ function InquiryForm({ tour }: { tour: TourData }) {
               {err("lastName")}
             </div>
             <div className="td-field">
-              <label className="td-label">Number of Adults <Req /></label>
+              <label className="td-label">
+                Number of Adults <Req />
+              </label>
               <div className="td-counter">
-                <button className="td-counter-btn" onClick={() => setAdults(Math.max(1, adults - 1))}>
+                <button
+                  className="td-counter-btn"
+                  onClick={() => setAdults(Math.max(1, adults - 1))}
+                >
                   <Minus size={14} />
                 </button>
                 <span className="td-counter-val">{adults}</span>
-                <button className="td-counter-btn" onClick={() => setAdults(adults + 1)}>
+                <button
+                  className="td-counter-btn"
+                  onClick={() => setAdults(adults + 1)}
+                >
                   <Plus size={14} />
                 </button>
               </div>
@@ -1314,31 +2038,44 @@ function InquiryForm({ tour }: { tour: TourData }) {
             <div className="td-field">
               <label className="td-label">Number of Kids</label>
               <div className="td-counter">
-                <button className="td-counter-btn" onClick={() => setKids(Math.max(0, kids - 1))}>
+                <button
+                  className="td-counter-btn"
+                  onClick={() => setKids(Math.max(0, kids - 1))}
+                >
                   <Minus size={14} />
                 </button>
                 <span className="td-counter-val">{kids}</span>
-                <button className="td-counter-btn" onClick={() => setKids(kids + 1)}>
+                <button
+                  className="td-counter-btn"
+                  onClick={() => setKids(kids + 1)}
+                >
                   <Plus size={14} />
                 </button>
               </div>
             </div>
             <div className="td-field">
-              <label className="td-label">Email <Req /></label>
+              <label className="td-label">
+                Email <Req />
+              </label>
               <div className="td-input-wrap">
                 <input
                   type="email"
                   className={ic("email")}
                   placeholder="john@example.com"
                   value={email}
-                  onChange={(e) => { setEmail(e.target.value); clrErr("email"); }}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                    clrErr("email");
+                  }}
                 />
                 <Mail size={15} className="td-input-icon" />
               </div>
               {err("email")}
             </div>
             <div className="td-field">
-              <label className="td-label">Contact Number <Req /></label>
+              <label className="td-label">
+                Contact Number <Req />
+              </label>
               <div className="td-input-wrap">
                 <input
                   type="tel"
@@ -1403,27 +2140,55 @@ function InquiryForm({ tour }: { tour: TourData }) {
                           }}
                         />
                       </div>
-                      <ul style={{ listStyle: "none", margin: 0, padding: 0, maxHeight: "200px", overflowY: "auto" }}>
+                      <ul
+                        style={{
+                          listStyle: "none",
+                          margin: 0,
+                          padding: 0,
+                          maxHeight: "200px",
+                          overflowY: "auto",
+                        }}
+                      >
                         {filteredCountries.length > 0 ? (
                           filteredCountries.map((c) => (
                             <li
                               key={c}
-                              onClick={() => { setCountry(c); setCountryOpen(false); setCountrySearch(""); }}
+                              onClick={() => {
+                                setCountry(c);
+                                setCountryOpen(false);
+                                setCountrySearch("");
+                              }}
                               style={{
                                 padding: "8px 14px",
                                 fontSize: "13px",
                                 cursor: "pointer",
                                 color: "#333",
-                                backgroundColor: country === c ? "#f0f0f0" : "transparent",
+                                backgroundColor:
+                                  country === c ? "#f0f0f0" : "transparent",
                               }}
-                              onMouseEnter={(e) => { (e.currentTarget as HTMLLIElement).style.backgroundColor = "#f5f5f5"; }}
-                              onMouseLeave={(e) => { (e.currentTarget as HTMLLIElement).style.backgroundColor = country === c ? "#f0f0f0" : "transparent"; }}
+                              onMouseEnter={(e) => {
+                                (
+                                  e.currentTarget as HTMLLIElement
+                                ).style.backgroundColor = "#f5f5f5";
+                              }}
+                              onMouseLeave={(e) => {
+                                (
+                                  e.currentTarget as HTMLLIElement
+                                ).style.backgroundColor =
+                                  country === c ? "#f0f0f0" : "transparent";
+                              }}
                             >
                               {c}
                             </li>
                           ))
                         ) : (
-                          <li style={{ padding: "10px 14px", fontSize: "13px", color: "#999" }}>
+                          <li
+                            style={{
+                              padding: "10px 14px",
+                              fontSize: "13px",
+                              color: "#999",
+                            }}
+                          >
                             No results found
                           </li>
                         )}
@@ -1455,7 +2220,13 @@ function InquiryForm({ tour }: { tour: TourData }) {
 }
 
 /* ─────────────────────────── Related Tour Card ─────────────────────────── */
-function RelatedTourCard({ tour, onNavigate }: { tour: TourData; onNavigate: (id: number) => void }) {
+function RelatedTourCard({
+  tour,
+  onNavigate,
+}: {
+  tour: TourData;
+  onNavigate: (id: number) => void;
+}) {
   return (
     <div className="td-related-card">
       <div className="td-related-img-wrap">
@@ -1471,12 +2242,25 @@ function RelatedTourCard({ tour, onNavigate }: { tour: TourData; onNavigate: (id
         <p className="td-related-desc">{tour.description}</p>
         <div className="td-related-footer">
           <div>
-            <div style={{ fontSize: "0.68rem", color: "#aaa", fontFamily: "'Clash Display', sans-serif" }}>From</div>
+            <div
+              style={{
+                fontSize: "0.68rem",
+                color: "#aaa",
+                fontFamily: "'Clash Display', sans-serif",
+              }}
+            >
+              From
+            </div>
             <div className="td-related-price">{tour.price}</div>
           </div>
-          <button className="td-related-btn" onClick={() => onNavigate(tour.id)}>
+          <button
+            className="td-related-btn"
+            onClick={() => onNavigate(tour.id)}
+          >
             View Details
-            <span className="td-related-btn-icon"><ArrowUpRight size={13} /></span>
+            <span className="td-related-btn-icon">
+              <ArrowUpRight size={13} />
+            </span>
           </button>
         </div>
       </div>
@@ -1497,7 +2281,9 @@ export default function TourDetailsPage() {
   const navigate = useNavigate();
   const tourId = parseInt(id || "1", 10);
   const tour = ALL_TOURS.find((t) => t.id === tourId) || ALL_TOURS[0];
-  const relatedTours = ALL_TOURS.filter((t) => tour.relatedTours.includes(t.id));
+  const relatedTours = ALL_TOURS.filter((t) =>
+    tour.relatedTours.includes(t.id),
+  );
 
   const [heroVisible, setHeroVisible] = useState(false);
   const [openDay, setOpenDay] = useState<number | null>(1);
@@ -2049,7 +2835,9 @@ export default function TourDetailsPage() {
               </div>
               <div className="td-dates-route">
                 {tour.route.map((r, i) => (
-                  <span key={i} className="td-route-pill">{r}</span>
+                  <span key={i} className="td-route-pill">
+                    {r}
+                  </span>
                 ))}
               </div>
             </div>
@@ -2059,12 +2847,20 @@ export default function TourDetailsPage() {
             <p className="td-gallery-desc">{tour.description}</p>
             <div className="td-gallery-grid">
               <div className="td-gallery-col">
-                <div className="td-gallery-img"><img src={tour.heroImage} alt={tour.title} /></div>
-                <div className="td-gallery-img"><img src={tour.galleryImages[0]} alt={tour.title} /></div>
+                <div className="td-gallery-img">
+                  <img src={tour.heroImage} alt={tour.title} />
+                </div>
+                <div className="td-gallery-img">
+                  <img src={tour.galleryImages[0]} alt={tour.title} />
+                </div>
               </div>
               <div className="td-gallery-col">
-                <div className="td-gallery-img"><img src={tour.galleryImages[1]} alt={tour.title} /></div>
-                <div className="td-gallery-img"><img src={tour.galleryImages[2]} alt={tour.title} /></div>
+                <div className="td-gallery-img">
+                  <img src={tour.galleryImages[1]} alt={tour.title} />
+                </div>
+                <div className="td-gallery-img">
+                  <img src={tour.galleryImages[2]} alt={tour.title} />
+                </div>
               </div>
             </div>
           </div>
@@ -2072,7 +2868,11 @@ export default function TourDetailsPage() {
 
         {/* ── AGENDA ── */}
         <section className="td-agenda-section">
-          <h2 className="td-section-title">Your Tour<br />Agenda</h2>
+          <h2 className="td-section-title">
+            Your Tour
+            <br />
+            Agenda
+          </h2>
           <p className="td-section-sub">
             {tour.tourDates.start} to {tour.tourDates.end} – every day is
             planned to take you across Sri Lanka's most iconic destinations.
@@ -2083,21 +2883,31 @@ export default function TourDetailsPage() {
                 <div
                   key={day.day}
                   className={`td-agenda-item ${openDay === day.day ? "open" : ""}`}
-                  onClick={() => setOpenDay(openDay === day.day ? null : day.day)}
+                  onClick={() =>
+                    setOpenDay(openDay === day.day ? null : day.day)
+                  }
                 >
                   <div className="td-agenda-header">
                     <div className="td-agenda-dot">{day.day}</div>
                     <div style={{ flex: 1, minWidth: 0 }}>
-                      <div className="td-agenda-day-label">Day {day.day} – {day.location}</div>
+                      <div className="td-agenda-day-label">
+                        Day {day.day} – {day.location}
+                      </div>
                       <div className="td-agenda-day-title">{day.title}</div>
                     </div>
                     <div className="td-agenda-chevron">
-                      {openDay === day.day ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+                      {openDay === day.day ? (
+                        <ChevronUp size={16} />
+                      ) : (
+                        <ChevronDown size={16} />
+                      )}
                     </div>
                   </div>
                   {openDay === day.day && (
                     <div className="td-agenda-body-wrap">
-                      <div className="td-agenda-check-icon"><Check size={12} /></div>
+                      <div className="td-agenda-check-icon">
+                        <Check size={12} />
+                      </div>
                       <div className="td-agenda-body">{day.subtitle}</div>
                     </div>
                   )}
@@ -2107,7 +2917,8 @@ export default function TourDetailsPage() {
             <div className="td-agenda-img-wrap">
               <img
                 src={
-                  tour.agenda.find((d) => d.day === openDay && d.image)?.image ||
+                  tour.agenda.find((d) => d.day === openDay && d.image)
+                    ?.image ||
                   tour.agenda.find((d) => d.image)?.image ||
                   tour.heroImage
                 }
@@ -2130,9 +2941,13 @@ export default function TourDetailsPage() {
               <div className="td-incl-col">
                 {tour.included.map((item, i) => (
                   <div key={i} className="td-incl-item">
-                    <div className="td-incl-icon-left td-incl-icon-green">{getInclusionIcon(item.text)}</div>
+                    <div className="td-incl-icon-left td-incl-icon-green">
+                      {getInclusionIcon(item.text)}
+                    </div>
                     <span className="td-incl-text">{item.text}</span>
-                    <div className="td-incl-check-right"><Check size={13} /></div>
+                    <div className="td-incl-check-right">
+                      <Check size={13} />
+                    </div>
                   </div>
                 ))}
               </div>
@@ -2142,9 +2957,13 @@ export default function TourDetailsPage() {
               <div className="td-incl-col">
                 {tour.notIncluded.map((item, i) => (
                   <div key={i} className="td-incl-item no">
-                    <div className="td-incl-icon-left td-incl-icon-red">{getInclusionIcon(item.text)}</div>
+                    <div className="td-incl-icon-left td-incl-icon-red">
+                      {getInclusionIcon(item.text)}
+                    </div>
                     <span className="td-incl-text">{item.text}</span>
-                    <div className="td-incl-x-right"><X size={13} /></div>
+                    <div className="td-incl-x-right">
+                      <X size={13} />
+                    </div>
                   </div>
                 ))}
               </div>
@@ -2177,7 +2996,12 @@ export default function TourDetailsPage() {
               <div className="td-side-wa-card">
                 <div className="td-side-wa-header">
                   <div className="td-side-wa-icon">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="#25D366">
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="#25D366"
+                    >
                       <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" />
                     </svg>
                   </div>
@@ -2189,7 +3013,12 @@ export default function TourDetailsPage() {
                   className="td-side-qr"
                 />
                 <p className="td-side-wa-scan-text">Scan to chat on Whatsapp</p>
-                <button className="td-wa-btn" onClick={() => window.open("https://wa.me/94703272582", "_blank")}>
+                <button
+                  className="td-wa-btn"
+                  onClick={() =>
+                    window.open("https://wa.me/94703272582", "_blank")
+                  }
+                >
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="white">
                     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" />
                   </svg>
@@ -2204,7 +3033,9 @@ export default function TourDetailsPage() {
         <section className="td-related-section">
           <div className="td-related-header">
             <h2 className="td-section-title" style={{ marginBottom: 0 }}>
-              Explore More<br />Tours
+              Explore More
+              <br />
+              Tours
             </h2>
             <p className="td-related-sub">
               Looking for other adventures? Check out our other hand-picked
@@ -2213,7 +3044,11 @@ export default function TourDetailsPage() {
           </div>
           <div className="td-related-grid">
             {relatedTours.map((t) => (
-              <RelatedTourCard key={t.id} tour={t} onNavigate={handleNavigate} />
+              <RelatedTourCard
+                key={t.id}
+                tour={t}
+                onNavigate={handleNavigate}
+              />
             ))}
           </div>
         </section>
